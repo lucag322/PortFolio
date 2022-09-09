@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Yrsa";
+  src: url("../assets/YrsaFont/Yrsa-Light.eot");
+  src: local("Yrsa Light"), local("Yrsa-Light"),
+    url("../assets/YrsaFont/Yrsa-Light.eot?#iefix") format("embedded-opentype"),
+    url("../assets/YrsaFont/Yrsa-Light.woff2") format("woff2"),
+    url("../assets/YrsaFont/Yrsa-Light.woff") format("woff"),
+    url("../assets/YrsaFont/Yrsa-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yrsa";
+  src: url("../assets/YrsaFont/Yrsa-Bold.eot");
+  src: local("Yrsa Bold"), local("Yrsa-Bold"),
+    url("../assets/YrsaFont/Yrsa-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/YrsaFont/Yrsa-Bold.woff2") format("woff2"),
+    url("../assets/YrsaFont/Yrsa-Bold.woff") format("woff"),
+    url("../assets/YrsaFont/Yrsa-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yrsa";
+  src: url("../assets/YrsaFont/Yrsa-SemiBold.eot");
+  src: local("Yrsa SemiBold"), local("Yrsa-SemiBold"),
+    url("../assets/YrsaFont/Yrsa-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/YrsaFont/Yrsa-SemiBold.woff2") format("woff2"),
+    url("../assets/YrsaFont/Yrsa-SemiBold.woff") format("woff"),
+    url("../assets/YrsaFont/Yrsa-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yrsa";
+  src: url("Yrsa-Regular.eot");
+  src: local("Yrsa Regular"), local("Yrsa-Regular"),
+    url("../assets/YrsaFont/Yrsa-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/YrsaFont/Yrsa-Regular.woff2") format("woff2"),
+    url("../assets/YrsaFont/Yrsa-Regular.woff") format("woff"),
+    url("../assets/YrsaFont/Yrsa-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yrsa";
+  src: url("../assets/YrsaFont/Yrsa-Medium.eot");
+  src: local("Yrsa Medium"), local("Yrsa-Medium"),
+    url("../assets/YrsaFont/Yrsa-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../assets/YrsaFont/Yrsa-Medium.woff2") format("woff2"),
+    url("../assets/YrsaFont/Yrsa-Medium.woff") format("woff"),
+    url("../assets/YrsaFont/Yrsa-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
