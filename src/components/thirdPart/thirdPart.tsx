@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./../../css/thirdpart.css";
+import "./../../css/thirdPart.css";
 import cloud from "./../../img/cloud.png";
 import { Container, Row, Col } from "react-bootstrap";
 import { Controller, Scene } from "react-scrollmagic";
