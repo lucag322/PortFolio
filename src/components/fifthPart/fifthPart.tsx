@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Controller, Scene } from "react-scrollmagic";
 import Spline from "@splinetool/react-spline";
 import monstera from "./../../img/monstera.png";
+import ContacteForm from "./ContacteForm";
 
 function FifthPart() {
   const ref: any = useRef();
@@ -19,12 +20,7 @@ function FifthPart() {
               Contacte
             </h2>
             <div className="contacteForm mt-3">
-                <form action="" className="form">
-                    <input type="text" placeholder="Email" className="email"/>
-                    <input type="text" placeholder="Name" className="name"/>
-                    <input type="text" placeholder="Your message" className="message" />
-                </form>
-
+                <ContacteForm />
             </div>
           </Col>
           </Row>
