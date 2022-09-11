@@ -3,9 +3,9 @@ import "./../../css/fifthPart.css";
 import {useState} from 'react';
 
 interface FormPost {
-  firstname?: string
-  lastname?: string
+  name?: string
   email?: string
+  message?: string
 }
 
 
@@ -39,6 +39,12 @@ const Form = () => {
         [e.currentTarget.id]: e.currentTarget.value,
       });
     };
+    const handleChange2 = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setState({
+          ...state,
+          [event.currentTarget.id]: event.currentTarget.value,
+        });
+      };
   
     return (
        <div>
@@ -56,7 +62,7 @@ const Form = () => {
           </div>
           <div>
               <textarea name="message" id="message" placeholder="Message"
-              onChange={event => handleChange} />
+              onChange={handleChange2} />
           </div>
           <div>
             <button type="submit">
