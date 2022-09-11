@@ -53,25 +53,25 @@ const Form = () => {
           <div>
             <div>
             <input type="text" id="name" name="name" placeholder="Name"
-            onChange={handleChange} />
+            onChange={handleChange} className='inputForm m-2'/>
             </div>
             <div>
             <input type="text" id="email" name="email" placeholder="Email"
-            onChange={handleChange} />
+            onChange={handleChange} className='inputForm m-2'/>
             </div>
           </div>
           <div>
               <textarea name="message" id="message" placeholder="Message"
-              onChange={handleChange2} />
+              onChange={handleChange2} className='inputForm m-2' />
           </div>
-          <div>
-            <button type="submit">
-                Get Access
+          <div className='submitBox text-end'>
+            <button type="submit" className='submit m-2'>
+                Send
             </button>
           </div>
         </form>}
         { submitted && 
-          <h5>Thanks for submitting! We&apos;ll reach out ASAP!</h5>
+          <h5 className='submitCheck'>Thanks for submitting! I  reach out ASAP!</h5>
         }
       </div>
     )

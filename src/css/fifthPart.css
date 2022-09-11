@@ -23,5 +23,52 @@
     background-color: #FFF;
     box-shadow: 20px 20px 2px 1px #4b6b7d;
     padding: 20px;
+    text-align: center;
+}
+
+.inputForm{
+  border-bottom: 3px solid #4B6B7D !important;
+  border: none;
+  width: 80%;
+  font-size: 24px;
+  font-family: 'Yrsa', serif;
+}
+.inputForm:focus-visible{
+  border-bottom: 3px solid #4B6B7D !important;
+  border: none;
+  width: 80%;
+  font-size: 24px;
+  outline:none;
+}
+
+textarea[name="message"]{
+  resize: none;
+  height: 200px;  
+}
+.submitBox{
+  width:80%;
+}
+.submit{
+  background-color: transparent;
+    padding: 5px 20px;
+    font-size: 20px;
+    font-family: 'yrsa';
+    border: 3px solid #4B6B7D;
+    border-radius: 5px;
+    color: #525050;
+    box-shadow: 10px 9px 2px 1px #4b6b7d;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+.submit:hover {
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+.submitCheck{
+  font-family: 'yrsa';
+    font-size: 30px;
+    padding-top: 15%;
+    color: #525050;
 }
 

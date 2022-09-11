@@ -17,7 +17,7 @@ function FifthPart() {
         <Row className="pb-5">
           <Col lg={12} sm={12} xs={12}>
             <h2 className="partName  fw-light fst-italic pt-2 position-relative zindex-sticky">
-              Contacte
+              Contact
             </h2>
             <div className="contacteForm mt-3">
                 <ContacteForm />
