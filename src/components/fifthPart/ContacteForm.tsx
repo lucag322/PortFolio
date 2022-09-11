@@ -55,8 +55,8 @@ const Form = () => {
             </div>
           </div>
           <div>
-              <input type="text" name="message" id="message" placeholder="Message"
-              onChange={handleChange} />
+              <textarea name="message" id="message" placeholder="Message"
+              onChange={event => handleChange} />
           </div>
           <div>
             <button type="submit">
