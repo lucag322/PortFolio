@@ -1,10 +1,19 @@
-import react, { useEffect } from "react";
+import react, { useEffect, useRef } from "react";
 import "./../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Hours from "./Hours";
 
 function FirstPart() {
-  /*<h3 className=' m-0 text-'>FrontEnd Developer</h3>*/
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 1000,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="firstPart">
       <div className="gradiant">
@@ -25,7 +34,7 @@ function FirstPart() {
         </Container>
         <nav className="noSelect navbarCustom">
           <ul className="navbarContent thrn fw-bold ">
-            <li>Skills</li>
+            <li onClick={scrollToTop}> Skills</li>
             <li className="py-2">-</li>
             <li>About </li>
             <li className="py-2">-</li>

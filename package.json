@@ -12,11 +12,13 @@
     "@splinetool/react-spline": "^2.2.2",
     "@splinetool/runtime": "^0.9.106",
     "bootstrap": "^5.2.0",
+    "framer-motion": "^7.3.2",
     "gsap": "^3.10.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
     "react-gsap": "^3.2.1",
+    "react-intersection-observer": "^9.4.0",
     "react-router-dom": "^6.3.0",
     "react-scrollmagic": "^2.3.0",
     "scrollmagic-plugin-gsap": "^1.0.4"
