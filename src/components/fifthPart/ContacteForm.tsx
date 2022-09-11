@@ -46,17 +46,16 @@ const Form = () => {
           <input type="hidden" name="form-name" value="contact" />
           <div>
             <div>
-            <input type="text" id="firstname" name="firstname" placeholder="First Name"
+            <input type="text" id="name" name="name" placeholder="First Name"
             onChange={handleChange} />
             </div>
             <div>
-            <input type="text" id="lastname" name="lastname" placeholder="Last Name"
+            <input type="text" id="email" name="email" placeholder="Last Name"
             onChange={handleChange} />
             </div>
           </div>
           <div>
-              <input type="text" name="email" id="email" placeholder="Email"
-              onChange={handleChange} />
+              <textarea name="message" id="message" placeholder="Email"/>
           </div>
           <div>
             <button type="submit">
