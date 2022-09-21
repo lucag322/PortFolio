@@ -28,7 +28,7 @@ function secondPart() {
             </p>
           </Col>
           <Col lg={3} sm={3} xs={3}>
-            <img src={handtapping} alt="" />
+           
           </Col>
         </Row>
         <Row className="d-flex justify-content-between position-relative zindex ">

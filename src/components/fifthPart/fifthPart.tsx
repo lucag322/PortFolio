@@ -12,7 +12,7 @@ function FifthPart() {
 
   return (
     <div className="FifthPart">
-        <div className="gradiantEnd">
+
         <Container className="">
         <Row className="pb-5">
           <Col lg={12} sm={12} xs={12}>
@@ -25,7 +25,7 @@ function FifthPart() {
           </Col>
           </Row>
           </Container>
-        </div>
+
     </div>
   );
 }

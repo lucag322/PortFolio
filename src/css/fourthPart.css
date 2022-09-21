@@ -1,9 +1,10 @@
 .fourthPart {
-  background-color: #bdcdfe;
+  background-color: white;
   overflow: hidden;
   min-height: 70vh;
   z-index: 1;
   position: relative;
+  color: #1B3B6F;
 }
 .monsteraIMG {
   width: 400px;
@@ -16,17 +17,4 @@
 
 .aboutText {
   font-size: 24px;
-}
-
-.buble3::before {
-  background-image: url(/src/img/buble3.svg);
-    position: absolute;
-    z-index: 0;
-    width: 650px;
-    height: 650px;
-    left: -148px;
-    top: -159px;
-    content: '';
-    background-size: 665px 605px;
-    background-repeat: no-repeat;
 }
