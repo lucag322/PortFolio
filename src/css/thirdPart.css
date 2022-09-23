@@ -1,6 +1,30 @@
 .thirdPart {
   height: 100vh;
+  width: 600vw;
   background: #1B3B6F;
   z-index: 1;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.testtt{
+  width: 30rem;
+  height: 40rem;
+  background: white;
+  margin: 40px;
+}
+
+.card{
+  width:30rem;
+  margin: 0px 60px;
+}
+.img-box{
+  height: 300px;
+  overflow: hidden;
+}
+.img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
