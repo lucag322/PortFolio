@@ -16,8 +16,11 @@ function thirdPart() {
 
   return(
    <div className="thirdPart"> 
+    <div className="TextBg">
+      Projets
+    </div>
    
-  
+
         <div className="card yrsa">
           <div className="img-box">
             <img src={Img1} className="card-img-top" alt="..."/>
@@ -68,13 +71,13 @@ function thirdPart() {
           <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+      </div>
     
 
     
           
         
-        
-  </div>
+
   )
 }
 

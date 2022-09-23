@@ -16,7 +16,7 @@ function secondPart() {
       <Container className="">
         <Row className="pb-5">
           <Col lg={9} sm={9} xs={9}>
-            <h2 className="partName  fw-light fst-italic pt-2 position-relative zindex-sticky">
+            <h2 className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky">
               Skills
             </h2>
             <p className="yrsa position-relative zindex-sticky">

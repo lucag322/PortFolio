@@ -24,8 +24,16 @@ function FirstPart() {
           <Row className="firstRow">
             <Col>
               <div className="namePart noSelect">
-                <h2 className=" m-0 fw-light fst-italic">Luca</h2>
-                <h2 className=" m-0 text-end fw-light fst-italic">Grousset</h2>
+                <h2 className=" m-0 fw-light fst-italic">Luca Grousset</h2>
+              </div>
+              <div className="favorite noSelect">
+                <h2 className=" m-0 fw-light fst-italic">Your Favorite</h2>
+              </div>
+              <div className="frontend noSelect">
+                <h2 className=" m-0 fw-light fst-italic">FrontEnd</h2>
+              </div>
+              <div className="favorite noSelect">
+                <h2 className=" m-0 fw-light fst-italic">Developer</h2>
               </div>
             </Col>
           </Row>
