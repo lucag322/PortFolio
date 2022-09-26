@@ -32,7 +32,7 @@ function secondPart() {
            
           </Col>
         </Row>
-        <Row className="d-flex justify-content-between position-relative zindex ">
+        <Row className="d-flex justify-content-between position-relative zindex " id="drag">
           <Slider/>
         </Row>
       </Container>

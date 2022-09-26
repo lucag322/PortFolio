@@ -57,6 +57,6 @@
   display: flex;
 }
 .carrousel{
-  cursor: grab;
+  cursor: url("../img/drag 1.svg"), auto;
   overflow: hidden;
 }

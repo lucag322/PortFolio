@@ -15,10 +15,7 @@ function thirdPart() {
   const ref: any = useRef();
 
   return(
-   <div className="thirdPart"> 
-    <div className="TextBg">
-      Projets
-    </div>
+   <div className="thirdPart" id="drag"> 
    
 
         <div className="card yrsa">

@@ -99,6 +99,7 @@ h2 {
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  color: #1B3B6F;
   
 }
 .heure {
@@ -109,6 +110,7 @@ h2 {
   position: fixed;
   right: 0;
   z-index: 5;
+  color: #1B3B6F;
 }
 
 .dote{
