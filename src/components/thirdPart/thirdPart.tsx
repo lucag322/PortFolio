@@ -5,11 +5,6 @@ import Img2 from "./../../img/capture2.png";
 import Img3 from "./../../img/capture3.png";
 import Img4 from "./../../img/capture4.png";
 
-import { Container, Row, Col } from "react-bootstrap";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
-import Spline from "@splinetool/react-spline";
-import handtapping from "./../../img/hand-coding-animate.svg";
 
 function thirdPart() {
   const ref: any = useRef();

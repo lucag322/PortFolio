@@ -1,32 +1,59 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "./slider";
 import "./../../css/secondPart.css";
-import cloud from "./../../img/cloud.png";
 import { Container, Row, Col } from "react-bootstrap";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
-import Spline from "@splinetool/react-spline";
-import handtapping from "./../../img/hand-coding-animate.svg";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 
 function secondPart() {
-  const ref: any = useRef();
+  
+  const { ref, inView } = useInView();
+  const animation1 = useAnimation();
+  const animation2 = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation1.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 2,
+          bounce: 0.3,
+        },
+      });
+      animation2.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 3,
+          bounce: 0.3,
+        },
+      });
+    }
+    if (!inView) {
+      animation1.start({ x: "-100vw" });
+      animation2.start({ x: "-200vw" });
+    }
+  }, [inView]);
+
 
   return (
     <div className="secondPart skillsTitle pb-5">
-      <Container className="">
-        <Row className="pb-5">
+      <Container >
+        <Row className="pb-5" ref={ref}>
           <Col lg={9} sm={9} xs={9}>
-            <h2 className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky">
-              Skills
-            </h2>
-            <p className="yrsa position-relative zindex-sticky">
+
+
+            <motion.h2 animate={animation1} className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky"> Skills</motion.h2>
+            <motion.p animate={animation2} className="yrsa position-relative zindex-sticky">
               Lorem ipsum dolor sit amet.Sed beatae quas sit fugit fugiat sit
               placeat doloribus ut eius atque est odio voluptates. Ut possimus
               veritatis eum libero deleniti ab illo optio Lorem ipsum dolor sit
               amet.Sed beatae quas sit fugit fugiat sit placeat doloribus ut
               eius atque est odio voluptates. Ut possimus veritatis eum libero
               deleniti ab illo optio
-            </p>
+            </motion.p>
           </Col>
           <Col lg={3} sm={3} xs={3}>
            

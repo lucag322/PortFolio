@@ -19,10 +19,23 @@ function slider() {
 
   }, []);
   return (
-    <motion.div ref={carrousel} className="carrousel" whileTap={{cursor:"grabbing"}}>
+    <motion.div ref={carrousel} className="carrousel">
       <motion.div drag="x" dragConstraints={{right:0, left: -width}} className="inner-carrousel">
        
-            <motion.div className="item">
+            <motion.div className="item" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+               <Col className="test box" lg={3} sm={3} xs={3}>
+                  <h3 className="boxTitle">Lorem Ipsum</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet.Sed beatae quas sit fugit fugiat sit
+                    placeat doloribus ut eius atque est odio voluptates. Ut possimus
+                    veritatis eum libero deleniti ab illo optio Lorem ipsum dolor sit
+                    amet.Sed beatae quas sit fugit fugiat sit placeat doloribus ut
+                    eius atque est odio voluptates. Ut possimus veritatis eum libero
+                    deleniti ab illo optio
+                  </p>
+          </Col>
+            </motion.div>
+            <motion.div className="item" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                <Col className="test box" lg={3} sm={3} xs={3}>
             <h3 className="boxTitle">Lorem Ipsum</h3>
             <p>
@@ -35,7 +48,7 @@ function slider() {
             </p>
           </Col>
             </motion.div>
-            <motion.div className="item">
+            <motion.div className="item" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                <Col className="test box" lg={3} sm={3} xs={3}>
             <h3 className="boxTitle">Lorem Ipsum</h3>
             <p>
@@ -48,20 +61,7 @@ function slider() {
             </p>
           </Col>
             </motion.div>
-            <motion.div className="item">
-               <Col className="test box" lg={3} sm={3} xs={3}>
-            <h3 className="boxTitle">Lorem Ipsum</h3>
-            <p>
-              Lorem ipsum dolor sit amet.Sed beatae quas sit fugit fugiat sit
-              placeat doloribus ut eius atque est odio voluptates. Ut possimus
-              veritatis eum libero deleniti ab illo optio Lorem ipsum dolor sit
-              amet.Sed beatae quas sit fugit fugiat sit placeat doloribus ut
-              eius atque est odio voluptates. Ut possimus veritatis eum libero
-              deleniti ab illo optio
-            </p>
-          </Col>
-            </motion.div>
-            <motion.div className="item">
+            <motion.div className="item" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                <Col className="test box" lg={3} sm={3} xs={3}>
             <h3 className="boxTitle">Lorem Ipsum</h3>
             <p>
