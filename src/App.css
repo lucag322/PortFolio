@@ -2,4 +2,8 @@
 
 .app{
     color: #1B3B6F;
+    overflow-x: hidden;
+}
+.pin-spacer{
+    background-color: ivory;
 }

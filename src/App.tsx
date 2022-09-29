@@ -26,11 +26,11 @@ function App() {
     const totalPanels = panels.current.length;
 
     gsap.to(panels.current, {
-      xPercent: -100 * (totalPanels - 1),
+      xPercent: -250 * (totalPanels-1),
       ease: "none",
       scrollTrigger: {
         trigger: panelsContainer.current,
-        markers: false,
+        markers: true,
         pin: true,
         scrub: 1,
         
@@ -46,8 +46,9 @@ function App() {
         <FirstPart />
         <SecondPart />
         <div ref={panelsContainer}>
-          <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
+          <div className="panel" ref={(e) => createPanelsRefs(e, 1)} >
             <ThirdPart />
+            
           </div>  
         </div>
         <FourthPart />
