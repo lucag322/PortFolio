@@ -7,6 +7,7 @@
   display: inline-flex;
   align-items: center;
   position: relative;
+  border: none;
 }
 
 
@@ -21,13 +22,19 @@
 }
 
 .card{
-  width:25rem;
   margin: 0px 5rem;
   text-align: left;
+  background-color: white!important;
+  width: 27rem;
+  font-family: arial;
+  --bs-card-border-radius: 0rem!important;
+  --bs-card-inner-border-radius: 0px!important;
+  border: none!important;
+  color: #1B3B6F;
 }
 .img-box{
-  height: 40rem;
-  width: 25rem;
+  height: 16rem;
+  width: 27rem;
   overflow: hidden;
 }
 .img-box img{
@@ -39,14 +46,7 @@
 .projects{
   z-index: 5;
 }
-.card{
-  background-color: transparent!important;
-    border: none!important;
-    color: white;
-    font-family: arial;
-    --bs-card-border-radius: 0rem!important;
-    --bs-card-inner-border-radius: 0px!important;
-}
+
 .card h3 {
   font-family: 'Times New Roman', Times, serif;
 }
@@ -56,12 +56,13 @@
     background-color: transparent !important;
     border-bottom-width: 20%;
     border: none!important;
-    border-bottom: 1px solid white  !important;
+    border-bottom: 1px solid #1B3B6F  !important;
     border-radius: 0;
     font-family: Arial !important;
     display: flex !important;
     align-items: center !important;
     transition: width 0.5s;
+    color: #1B3B6F;
 }
 .btn-arrow{
   padding: 0px 0px 0px 10px;
@@ -73,4 +74,5 @@
 }
 a:hover {
   width: 50%;
+  color: #1B3B6F!important;
 }

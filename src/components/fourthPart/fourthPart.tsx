@@ -18,7 +18,7 @@ function fourthPart() {
         transition: {
           type: "spring",
           duration: 1,
-          bounce: 0.3,
+          bounce: 0.2,
         },
       });
       animation2.start({
@@ -26,7 +26,7 @@ function fourthPart() {
         transition: {
           type: "spring",
           duration: 2,
-          bounce: 0.3,
+          bounce: 0.2,
         },
       });
     }

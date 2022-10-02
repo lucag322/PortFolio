@@ -5,5 +5,11 @@
     overflow-x: hidden;
 }
 .pin-spacer{
-    background-color: ivory;
+  background-image: url(img/frontend.png) ;
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+}
+.pin-spacer > div{
+  border: 10px solid #1B3B6F;
+  max-height: 98vh!important;
 }

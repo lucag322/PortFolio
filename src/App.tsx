@@ -30,7 +30,7 @@ function App() {
       ease: "none",
       scrollTrigger: {
         trigger: panelsContainer.current,
-        markers: true,
+        markers: false,
         pin: true,
         scrub: 1,
         

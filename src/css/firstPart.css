@@ -96,13 +96,18 @@ h2 {
   padding: 0;
   display: inline-flex;
   font-size: 24px;
+  margin-left: 10px;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
   color: #1B3B6F;
-  
+  background-color: white;
+  border-radius: 5px;
+ 
 }
+
 .heure {
+  padding: 5px 0px;
   font-size: 24px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -111,6 +116,9 @@ h2 {
   right: 0;
   z-index: 5;
   color: #1B3B6F;
+  background-color: white;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .dote{

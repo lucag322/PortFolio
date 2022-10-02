@@ -18,7 +18,7 @@ function secondPart() {
         x: 0,
         transition: {
           type: "spring",
-          duration: 2,
+          duration: 1,
           bounce: 0.3,
         },
       });
@@ -26,7 +26,7 @@ function secondPart() {
         x: 0,
         transition: {
           type: "spring",
-          duration: 3,
+          duration: 2,
           bounce: 0.3,
         },
       });
