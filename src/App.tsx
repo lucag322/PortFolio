@@ -55,7 +55,7 @@ function App() {
       <div>
         <Row className="footer">
           <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
-            <span className="px-5">2022 / 2023</span>
+            <span className="px-5">2023</span>
           </Col>
           <Col lg={6} sm={6} xs={6} className="fotterRight text-end">
             <span className="px-5">Grousset Luca</span>

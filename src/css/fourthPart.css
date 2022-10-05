@@ -60,9 +60,6 @@
   animation: defilement 20s infinite linear;
   font-size: 7rem;
   font-family: "aeonik, arial, sans-serif";
-  font-weight: 500;
-  -webkit-text-stroke: 2px #1b3b6f;
-  color: transparent;
 }
 
 .messagedefilant div:after {
@@ -73,9 +70,6 @@
   animation: defilement2 20s infinite linear;
   font-size: 7rem;
   font-family: "aeonik, arial, sans-serif";
-  font-weight: 500;
-  -webkit-text-stroke: 2px #1b3b6f;
-  color: transparent;
 }
 
 @keyframes defilement {
