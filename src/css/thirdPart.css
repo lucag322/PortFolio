@@ -68,6 +68,6 @@
   padding: 0px 0px 0px 10px;
   transition: padding-left 0.5s;
 }
-a:hover .btn-arrow {
+.card:hover .btn-arrow {
   padding-left: 80%;
 }
