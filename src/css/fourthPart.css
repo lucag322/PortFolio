@@ -4,7 +4,7 @@
   min-height: 70vh;
   z-index: 1;
   position: relative;
-  color: #1B3B6F;
+  color: #1b3b6f;
 }
 .monsteraIMG {
   width: 400px;
@@ -17,4 +17,81 @@
 
 .aboutText {
   font-size: 24px;
+}
+.rrr {
+  width: 300px;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* Texte défilant */
+.messagedefilant {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.messagedefilant div {
+  position: absolute;
+  min-width: 100%; /* au minimum la largeur du conteneur */
+  font-family: "Times New Roman", Times, serif;
+}
+
+.messagedefilant div span,
+.messagedefilant div:after {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  white-space: nowrap;
+  top: 0;
+}
+
+.messagedefilant div span {
+  animation: defilement 20s infinite linear;
+  font-size: 7rem;
+  font-family: "aeonik, arial, sans-serif";
+  font-weight: 500;
+  -webkit-text-stroke: 2px #1b3b6f;
+  color: transparent;
+}
+
+.messagedefilant div:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(data-text);
+  animation: defilement2 20s infinite linear;
+  font-size: 7rem;
+  font-family: "aeonik, arial, sans-serif";
+  font-weight: 500;
+  -webkit-text-stroke: 2px #1b3b6f;
+  color: transparent;
+}
+
+@keyframes defilement {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+
+@keyframes defilement2 {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0%;
+  }
 }

@@ -1,15 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Yrsa:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-.app{
-    color: #1B3B6F;
-    overflow-x: hidden;
+html {
+  overflow-x: hidden;
 }
-.pin-spacer{
-  background-image: url(img/frontend.png) ;
+.app {
+  color: #1b3b6f;
+  overflow-x: hidden;
+}
+.pin-spacer {
+  background-image: url(img/frontend.png);
   background-repeat: no-repeat;
   background-position: 50% 90%;
 }
-.pin-spacer > div{
-  border: 10px solid #1B3B6F;
-  max-height: 98vh!important;
+.pin-spacer > div {
+  border: 10px solid #1b3b6f;
+  max-height: 98vh !important;
+}
+
+.footer {
+  color: #1b3b6f;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
 }
