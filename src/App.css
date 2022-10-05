@@ -14,7 +14,7 @@ html {
 }
 .pin-spacer > div {
   border: 10px solid #1b3b6f;
-  max-height: 98vh !important;
+  max-height: 100vh !important;
 }
 
 .footer {
