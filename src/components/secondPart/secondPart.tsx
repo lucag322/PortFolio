@@ -5,9 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-
 function secondPart() {
-  
   const { ref, inView } = useInView();
   const animation1 = useAnimation();
   const animation2 = useAnimation();
@@ -37,16 +35,22 @@ function secondPart() {
     }
   }, [inView]);
 
-
   return (
     <div className="secondPart skillsTitle pb-5">
-      <Container >
+      <Container>
         <Row className="pb-5" ref={ref}>
           <Col lg={9} sm={9} xs={9}>
-
-
-            <motion.h2 animate={animation1} className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky"> Skills</motion.h2>
-            <motion.p animate={animation2} className="yrsa position-relative zindex-sticky">
+            <motion.h2
+              animate={animation1}
+              className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky"
+            >
+              {" "}
+              Skills
+            </motion.h2>
+            <motion.p
+              animate={animation2}
+              className="yrsa position-relative zindex-sticky"
+            >
               Lorem ipsum dolor sit amet.Sed beatae quas sit fugit fugiat sit
               placeat doloribus ut eius atque est odio voluptates. Ut possimus
               veritatis eum libero deleniti ab illo optio Lorem ipsum dolor sit
@@ -55,12 +59,15 @@ function secondPart() {
               deleniti ab illo optio
             </motion.p>
           </Col>
-          <Col lg={3} sm={3} xs={3}>
-           
-          </Col>
+          <Col lg={3} sm={3} xs={3}></Col>
         </Row>
-        <Row className="d-flex justify-content-between position-relative zindex " id="drag">
-          <Slider/>
+      </Container>
+      <Container className="carrousel">
+        <Row
+          className="d-flex justify-content-between position-relative zindex "
+          id="drag"
+        >
+          <Slider />
         </Row>
       </Container>
     </div>
