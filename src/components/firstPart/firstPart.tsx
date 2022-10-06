@@ -5,10 +5,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
 
-
 function FirstPart() {
-
-
   gsap.to(".b", {
     x: 400,
     rotation: 360,
@@ -18,34 +15,32 @@ function FirstPart() {
       end: "top 100px",
       scrub: true,
       markers: false,
-    }
+    },
   });
 
   gsap.to(".title", {
     x: 400,
-   
+
     scrollTrigger: {
       trigger: ".start",
       start: "top 600px",
       end: "top 100",
       scrub: true,
-      markers: true,
-    }
+      markers: false,
+    },
   });
   gsap.to(".title2", {
     x: -400,
-   
+
     scrollTrigger: {
       trigger: ".start",
       start: "top 600px",
       end: "top 100",
       scrub: true,
-      markers: true,
-    }
+      markers: false,
+    },
   });
 
-
-  
   const { ref, inView } = useInView();
   const animation1 = useAnimation();
   const animation2 = useAnimation();
@@ -75,37 +70,34 @@ function FirstPart() {
     }
   }, [inView]);
 
- 
-
-
-
   return (
     <div className="firstPart">
-        <Container>
-          <Row ref={ref} className="firstRow">
-            <Col>
-              <div className="namePart noSelect">
-                <h2  className="title m-0 fw-light">Luca Grousset</h2>
-              </div>
-              <div className="favorite noSelect">
-                <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
-              </div>
-              <div className="frontend noSelect">
-                <h2 className="title m-0 fw-light">FrontEnd</h2>
-              </div>
-              <div className="favorite noSelect">
-                <h2 className="title2 start m-0 fw-light fst-italic">Developer</h2>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <div className="arrow bounce noSelect"></div>
-            </Col>
-          </Row>
-        </Container>
-      
-      </div>
+      <Container>
+        <Row ref={ref} className="firstRow">
+          <Col>
+            <div className="namePart noSelect">
+              <h2 className="title m-0 fw-light">Luca Grousset</h2>
+            </div>
+            <div className="favorite noSelect">
+              <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
+            </div>
+            <div className="frontend noSelect">
+              <h2 className="title m-0 fw-light">FrontEnd</h2>
+            </div>
+            <div className="favorite noSelect">
+              <h2 className="title2 start m-0 fw-light fst-italic">
+                Developer
+              </h2>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className="arrow bounce noSelect"></div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
