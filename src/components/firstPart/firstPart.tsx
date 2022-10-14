@@ -7,35 +7,41 @@ import { gsap } from "gsap";
 
 function FirstPart() {
 
+  useEffect(() => {
 
-  gsap.to(".title", {
-    x: 400,
+    gsap.to(".title", {
+      x: 2000,
+  
+      scrollTrigger: {
+        trigger: ".start",
+        start: "top 600px",
+        end: "top 100",
+        scrub: true,
+        markers: false,
+      },
+    });
+    gsap.to(".title2", {
+      x: -2000,
+  
+      scrollTrigger: {
+        trigger: ".start",
+        start: "top 600px",
+        end: "top 100",
+        scrub: true,
+        markers: false,
+      },
+    });
+    
+  }, []);
 
-    scrollTrigger: {
-      trigger: ".start",
-      start: "top 600px",
-      end: "top 100",
-      scrub: true,
-      markers: true,
-    },
-  });
-  gsap.to(".title2", {
-    x: -400,
-
-    scrollTrigger: {
-      trigger: ".start",
-      start: "top 600px",
-      end: "top 100",
-      scrub: true,
-      markers: false,
-    },
-  });
+  
 
   const { ref, inView } = useInView();
   const animation1 = useAnimation();
   const animation2 = useAnimation();
 
   useEffect(() => {
+
     if (inView) {
       animation1.start({
         x: 0,

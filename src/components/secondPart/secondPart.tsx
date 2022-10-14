@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+
 function secondPart() {
   const { ref, inView } = useInView();
   const animation1 = useAnimation();

@@ -7,6 +7,7 @@ import ContacteForm from "./ContacteForm";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+
 function FifthPart() {
   const { ref, inView } = useInView();
   const animation1 = useAnimation();

@@ -7,6 +7,7 @@ import Img4 from "./../../img/capture4.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 
+
 function thirdPart() {
   const ref: any = useRef();
 

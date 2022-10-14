@@ -6,6 +6,7 @@ import blob2 from "./../../img/blob2.svg";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+
 function fourthPart() {
   const { ref, inView } = useInView();
   const animation1 = useAnimation();
