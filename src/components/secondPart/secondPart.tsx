@@ -30,17 +30,18 @@ function secondPart() {
       });
     }
     if (!inView) {
-      animation1.start({ x: "-100vw" });
-      animation2.start({ x: "-200vw" });
+      animation1.start({ x: "-50vw" });
+      animation2.start({ x: "-100vw" });
     }
   }, [inView]);
 
   return (
     <div className="secondPart skillsTitle pb-5">
       <Container>
-        <Row className="pb-5" ref={ref}>
+        <Row className="pb-5" >
           <Col lg={9} sm={9} xs={9}>
-            <motion.h2
+            <motion.h2 
+             
               animate={animation1}
               className="partName  fw-light fst-italic pt-3 position-relative zindex-sticky"
             >
@@ -62,7 +63,7 @@ function secondPart() {
           <Col lg={3} sm={3} xs={3}></Col>
         </Row>
       </Container>
-      <Container className="carrousel">
+      <Container className="carrousel" ref={ref}>
         <Row
           className="d-flex justify-content-between position-relative zindex "
           id="drag"

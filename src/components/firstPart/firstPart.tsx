@@ -6,17 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
 
 function FirstPart() {
-  gsap.to(".b", {
-    x: 400,
-    rotation: 360,
-    scrollTrigger: {
-      trigger: ".b",
-      start: "top center",
-      end: "top 100px",
-      scrub: true,
-      markers: false,
-    },
-  });
+
 
   gsap.to(".title", {
     x: 400,
@@ -26,7 +16,7 @@ function FirstPart() {
       start: "top 600px",
       end: "top 100",
       scrub: true,
-      markers: false,
+      markers: true,
     },
   });
   gsap.to(".title2", {
@@ -85,7 +75,7 @@ function FirstPart() {
               <h2 className="title m-0 fw-light">FrontEnd</h2>
             </div>
             <div className="favorite noSelect">
-              <h2 className="title2 start m-0 fw-light fst-italic">
+              <h2 className="title2 m-0 fw-light fst-italic start">
                 Developer
               </h2>
             </div>

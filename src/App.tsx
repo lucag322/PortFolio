@@ -15,8 +15,9 @@ import { Col, Row } from "react-bootstrap";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+
   const panels: any = useRef([]);
-  const panelsContainer: any = useRef();
+  const panelsContainer: any = useRef([]);
 
   const createPanelsRefs = (panel: HTMLDivElement | null, index: number) => {
     panels.current[index] = panel;
@@ -43,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <Hours />
-      <FirstPart />
+      <FirstPart/>
       <SecondPart />
       <div ref={panelsContainer}>
         <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
