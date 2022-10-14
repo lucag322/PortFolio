@@ -10,23 +10,23 @@ function FirstPart() {
   useEffect(() => {
 
     gsap.to(".title", {
-      x: 2000,
+      x: 300,
   
       scrollTrigger: {
         trigger: ".start",
-        start: "top 600px",
-        end: "top 100",
+        start: "top 800px",
+        end: "top",
         scrub: true,
         markers: false,
       },
     });
     gsap.to(".title2", {
-      x: -2000,
+      x: -300,
   
       scrollTrigger: {
         trigger: ".start",
-        start: "top 600px",
-        end: "top 100",
+        start: "top 800px",
+        end: "top",
         scrub: true,
         markers: false,
       },
@@ -81,7 +81,7 @@ function FirstPart() {
               <h2 className="title m-0 fw-light">FrontEnd</h2>
             </div>
             <div className="favorite noSelect">
-              <h2 className="title2 m-0 fw-light fst-italic start">
+              <h2 className="title2 m-0 fw-light fst-italic ">
                 Developer
               </h2>
             </div>
@@ -89,7 +89,7 @@ function FirstPart() {
         </Row>
         <Row>
           <Col>
-            <div className="arrow bounce noSelect"></div>
+            <div className="arrow bounce noSelect start"></div>
           </Col>
         </Row>
       </Container>
