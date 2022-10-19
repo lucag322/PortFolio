@@ -22,6 +22,7 @@ function FirstPart() {
     });
     gsap.to(".title2", {
       x: -300,
+
   
       scrollTrigger: {
         trigger: ".start",
