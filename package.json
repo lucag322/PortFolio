@@ -25,7 +25,8 @@
     "react-intersection-observer": "^9.4.0",
     "react-router-dom": "^6.3.0",
     "react-scrollmagic": "^2.3.0",
-    "scrollmagic-plugin-gsap": "^1.0.4"
+    "scrollmagic-plugin-gsap": "^1.0.4",
+    "vite-plugin-svg-react": "^1.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

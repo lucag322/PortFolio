@@ -4,13 +4,14 @@ import "./../../css/secondPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Typescript from "./Logo/Typescript";
-import ReactLOGO from "./../../img/react.svg";
-import typescript from "./../../img/typescript.svg";
-import html from "./../../img/html5.svg";
-import css from "./../../img/css.svg";
-import scss from "./../../img/sass.svg";
-import svelte from "./../../img/svelte.svg";
+
+
+import Css from "./../../img/css";
+import Html5 from "./../../img/html5";
+import ReactLOGO from "./../../img/React";
+import Typescript from "./../../img/Typescript";
+import Scss from "./../../img/sass";
+import Svelte from "./../../img/Svelte";
 
 
 function secondPart() {
@@ -77,31 +78,29 @@ function secondPart() {
           <Col lg={12} sm={12} xs={12} >
             <motion.div className="containerDrag" ref={constraintsRef}>
 
-            <motion.img src={typescript} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag typescipt"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag typescipt" drag dragConstraints={constraintsRef}>
+                  <Typescript />
+                </motion.div>
             
-                 <motion.img src={svelte} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag svelte"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
-                <motion.img src={css} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag css"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
-                <motion.img src={html} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag html5"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
-                <motion.img src={ReactLOGO} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag react"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
-                <motion.img src={scss} className="itemDrag scss"
-                  drag
-                  dragConstraints={constraintsRef}
-                />
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag svelte" drag dragConstraints={constraintsRef}> 
+                 <Svelte />
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag css"drag dragConstraints={constraintsRef}>
+                  <Css />
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag html5" drag dragConstraints={constraintsRef}>
+                  <Html5 />
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag react" drag dragConstraints={constraintsRef}>
+                  <ReactLOGO /> 
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag scss" drag dragConstraints={constraintsRef} >
+                  <Scss />
+                </motion.div>
                
             </motion.div>
           </Col>

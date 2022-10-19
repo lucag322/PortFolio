@@ -67,8 +67,7 @@
   width: 100%;
   height: 100%;
   place-content: center;
-  place-items: top;
-  background: rgba(230, 7, 7, 0.2);
+  display: -webkit-box;
 }
 
 .itemDrag {
@@ -106,4 +105,28 @@
   position: relative;
     left: 300px;
     top: 150px;
+}
+.Typesvg:hover > .color007acc{
+  fill: #007acb;
+
+}
+.sveltesvg:hover > .colorff3e00{
+  fill: #ff3e00;
+
+}
+.sasssvg:hover > .colorCF649A{
+  fill: #cd679b;
+
+}
+.reactsvg:hover > .color61dafb{
+  fill: #61dafb;
+
+}
+.html5svg:hover > .color000{
+  fill: #eb4e18;
+
+}
+.csssvg:hover > .color000{
+  fill: #0272b7!important;
+
 }
