@@ -78,31 +78,37 @@
 
 .typescipt{
   position: relative;
+  display: inherit;
     left: 50px;
     top: 150px;
 }
 .svelte{
   position: relative;
+  display: inherit;
     left: 100px;
     top: 150px;
 }
 .css{
   position: relative;
+  display: inherit;
     left: 150px;
     top: 150px;
 }
 .html5{
   position: relative;
+  display: inherit;
     left: 200px;
     top: 150px;
 }
 .react{
   position: relative;
+  display: inherit;
     left: 250px;
     top: 150px;
 }
 .scss{
   position: relative;
+  display: inherit;
     left: 300px;
     top: 150px;
 }
@@ -129,4 +135,67 @@
 .csssvg:hover > .color000{
   fill: #0272b7!important;
 
+}
+
+
+.scss:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.scss:active > .SkillsDesc{
+display: block;
+
+}
+
+.SkillsDesc{
+  border: 1px solid;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 10px 10px 2px 1px #4b6b7d;
+  display: none;
+
+}
+.react:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.react:active > .SkillsDesc{
+display: block;
+}
+.svelte:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.svelte:active > .SkillsDesc{
+display: block;
+}
+
+.typescipt:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.typescipt:active > .SkillsDesc{
+display: block;
+}
+
+.css:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.css:active > .SkillsDesc{
+display: block;
+}
+
+.html5:active{
+  cursor: grabbing;
+  z-index: 2;
+}
+
+.html5:active > .SkillsDesc{
+display: block;
 }

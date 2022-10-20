@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+import Grab from "./Grab";
 
 import Css from "./../../img/css";
 import Html5 from "./../../img/html5";
@@ -73,39 +74,7 @@ function secondPart() {
           <Col lg={3} sm={3} xs={3}></Col>
         </Row>
       </Container>
-      <Container  ref={ref}>
-        <Row className="drag">
-          <Col lg={12} sm={12} xs={12} >
-            <motion.div className="containerDrag" ref={constraintsRef}>
-
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag typescipt" drag dragConstraints={constraintsRef}>
-                  <Typescript />
-                </motion.div>
-            
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag svelte" drag dragConstraints={constraintsRef}> 
-                 <Svelte />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag css"drag dragConstraints={constraintsRef}>
-                  <Css />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag html5" drag dragConstraints={constraintsRef}>
-                  <Html5 />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag react" drag dragConstraints={constraintsRef}>
-                  <ReactLOGO /> 
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="itemDrag scss" drag dragConstraints={constraintsRef} >
-                  <Scss />
-                </motion.div>
-               
-            </motion.div>
-          </Col>
-        </Row>
-      </Container>
+     
     </div>
   );
 }
