@@ -6,7 +6,6 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import Grab from "./Grab";
-
 import Css from "./../../img/css";
 import Html5 from "./../../img/html5";
 import ReactLOGO from "./../../img/React";
@@ -74,7 +73,8 @@ function secondPart() {
           <Col lg={3} sm={3} xs={3}></Col>
         </Row>
       </Container>
-     
+      <div ref={ref}></div>
+     <Grab  />
     </div>
   );
 }

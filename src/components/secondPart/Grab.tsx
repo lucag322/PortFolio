@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+
 
 import Css from "./../../img/css";
 import Html5 from "./../../img/html5";
@@ -13,11 +13,11 @@ import Svelte from "./../../img/Svelte";
 function Grab() {
 
   const constraintsRef = useRef(null)
-  const { ref, inView } = useInView();
+
 
   return(
     <>
-    <Container  ref={ref}>
+    <Container >
     <Row className="drag">
       <Col lg={12} sm={12} xs={12} >
         <h5 className="text-end">Grab, Read and Throw</h5>
