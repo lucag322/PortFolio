@@ -1,20 +1,32 @@
 import "./App.css";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
 import ThirdPart from "./components/thirdPart/thirdPart";
 import FourthPart from "./components/fourthPart/fourthPart";
 import FifthPart from "./components/fifthPart/fifthPart";
 import Hours from "./components/firstPart/Hours";
+import Menu from "./components/firstPart/menu";
 import Test from "./components/test/test";
 import "./css/firstPart.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 function App() {
+
+  
+
+  const [isOpen, setIsOpen] = useState(false);
+
 
   const panels: any = useRef([]);
   const panelsContainer: any = useRef([]);
@@ -44,6 +56,10 @@ function App() {
   return (
     <div className="App">
       <Hours />
+      <span className="btnOpen" onClick={() => setIsOpen(true)}>
+      <FontAwesomeIcon icon={ faBars } />
+      </span>
+      <Menu  isOpen={isOpen} onChange={setIsOpen}></Menu>
       <FirstPart/>
       <SecondPart />
       <div ref={panelsContainer}>
