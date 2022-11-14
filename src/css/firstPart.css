@@ -132,7 +132,6 @@ h2 {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 1;
   background: #1b3b6f;
   transform: translate(-100%);
   transition: all .45s;
@@ -152,7 +151,7 @@ h2 {
   color: #ffffff;
 }
 .btnOpen {
-  z-index: 5;
+  z-index: 4;
   font-size: 30px;
   position: fixed;
   left: 15px;
