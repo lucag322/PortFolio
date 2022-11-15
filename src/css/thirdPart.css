@@ -71,3 +71,8 @@
 .card:hover .btn-arrow {
   padding-left: 80%;
 }
+
+.pin-spacer > div{
+  border-left: 50px;
+}
+

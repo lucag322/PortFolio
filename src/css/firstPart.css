@@ -132,7 +132,6 @@ h2 {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 1;
   background: #1b3b6f;
   transform: translate(-100%);
   transition: all .45s;
@@ -143,7 +142,7 @@ h2 {
 }
 
 .Menu > .btnClose {
-  z-index: 3;
+  z-index: 5;
   font-size: 30px;
   position: fixed;
   left: 15px;
@@ -152,14 +151,13 @@ h2 {
   color: #ffffff;
 }
 .btnOpen {
-  z-index: 5;
+  z-index: 4;
   font-size: 30px;
   position: fixed;
   left: 15px;
   top: 41%;
   cursor: pointer;
   color: #1b3b6f;
-  background-color: #ffffff;
 
 }
 
@@ -174,6 +172,7 @@ h2 {
   font-size: 32px;
   text-decoration: none;
   position: relative;
+  font-family: "aeonik, arial, sans-serif";
 }
 
 

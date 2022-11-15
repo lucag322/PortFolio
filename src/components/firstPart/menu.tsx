@@ -3,6 +3,7 @@ import { items } from "./menuItems";
 import "./../../css/FifthPart.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
 function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
@@ -16,9 +17,11 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
       </span>
       <div className="Menu-items">
         {items.map((item, index) => (
-          <a href={item.itemLink} key={index}>
+          <Link activeClass="active" className=" noSelect" to={item.itemLink} spy={true} smooth={true} duration={500} offset={0} onClick={() => onChange(false)}>
+          
             {item.itemText}
-          </a>
+        </Link>
+          
         ))}
       </div>
     </div>

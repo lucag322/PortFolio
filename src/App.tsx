@@ -2,7 +2,7 @@ import "./App.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-
+import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
-  
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,19 +56,29 @@ function App() {
   return (
     <div className="App">
       <Hours />
-      <span className="btnOpen" onClick={() => setIsOpen(true)}>
+      <span className="btnOpen changeStyle " onClick={() => setIsOpen(true)}>
       <FontAwesomeIcon icon={ faBars } />
       </span>
       <Menu  isOpen={isOpen} onChange={setIsOpen}></Menu>
-      <FirstPart/>
-      <SecondPart />
-      <div ref={panelsContainer}>
-        <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
-          <ThirdPart />
+      <Row name="top">
+        <FirstPart/>
+      </Row>
+      <Row name="skills">
+        <SecondPart/>
+      </Row>
+      <Row name="project" className="start2">
+        <div ref={panelsContainer}>
+          <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
+              <ThirdPart/>
+          </div>
         </div>
-      </div>
-      <FourthPart />
-      <FifthPart />
+      </Row>
+      <Row name="about" className=" start3">
+        <FourthPart/>
+      </Row>
+      <Row name="contacte">
+        <FifthPart />
+      </Row>
       <div>
         <Row className="footer">
           <Col lg={6} sm={6} xs={6} className="footerLeft text-left">

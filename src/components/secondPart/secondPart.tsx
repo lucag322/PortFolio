@@ -46,7 +46,7 @@ function secondPart() {
   }, [inView]);
 
   return (
-    <div className="secondPart skillsTitle pb-5">
+    <div className="secondPart skillsTitle pb-5" >
       <Container>
         <Row className="pb-5" >
           <Col lg={9} sm={9} xs={9}>
