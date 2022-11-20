@@ -68,7 +68,7 @@ function FirstPart() {
   }, [inView]);
 
   return (
-    <div className="firstPart">
+    <section className="firstPart">
       <Container>
         <Row ref={ref} className="firstRow">
           <Col>
@@ -94,7 +94,7 @@ function FirstPart() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 }
 

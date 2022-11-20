@@ -12,13 +12,34 @@ html {
   background-repeat: no-repeat;
   background-position: 50% 90%;
 }
-.pin-spacer > div {
-  border: 10px solid #1b3b6f;
-  max-height: 100vh !important;
-}
+
 
 .footer {
   color: #1b3b6f;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.5rem;
+}
+
+.borderWhite {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    border-left: 56px solid white;
+    border-right: 56px solid white;
+    z-index: 10;
+}
+.bluemode{
+  background-color: #1b3b6f!important;
+  color: white!important;
+}
+.bluemodemenue{
+  color: white!important;
+}
+.bluemodename{
+  -webkit-text-stroke: 0px !important;
+  color: white!important;
+}
+body{
+  transition: background-color 0.5s ease;
+  color: #1b3b6f!important;
 }

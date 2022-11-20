@@ -46,7 +46,7 @@ function secondPart() {
   }, [inView]);
 
   return (
-    <div className="secondPart skillsTitle pb-5" >
+    <section className="secondPart skillsTitle pb-5 " >
       <Container>
         <Row className="pb-5" >
           <Col lg={9} sm={9} xs={9}>
@@ -75,7 +75,7 @@ function secondPart() {
       </Container>
       <div ref={ref}></div>
      <Grab  />
-    </div>
+    </section>
   );
 }
 

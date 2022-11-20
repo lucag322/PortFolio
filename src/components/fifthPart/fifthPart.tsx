@@ -30,7 +30,7 @@ function FifthPart() {
  
 
   return (
-    <div className="FifthPart start1">
+    <section className="FifthPart start1">
       <Container className="contact">
         <Row className="pb-5">
           <Col lg={12} sm={12} xs={12}>
@@ -44,7 +44,7 @@ function FifthPart() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 }
 

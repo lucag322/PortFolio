@@ -38,12 +38,13 @@ function fourthPart() {
   }, [inView]);
 
   return (
-    <div className="fourthPart">
+    <section className="fourthPart ">
       <Container className="py-5">
         <Row className="buble3" ref={ref}>
           <motion.h2
             animate={animation1}
             className="partName  fw-light fst-italic pt-2 position-relative text-end"
+            id="Titre"
           >
             about
           </motion.h2>
@@ -79,7 +80,7 @@ function fourthPart() {
           </div>
         </Col>
       </Row>
-    </div>
+    </section>
   );
 }
 

@@ -12,47 +12,15 @@ import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 function thirdPart() {
 
 
-  
-  useEffect(() => {
-
-    gsap.to(".changeStyle", {
-     color: "white",
-
-
-  
-      scrollTrigger: {
-        trigger: ".start2",
-        start: "top center",
-        end: "center",
-        scrub: true,
-        markers: false,
-      },
-    });
-    gsap.to(".changeStyle", {
-      color: "#1b3b6f",
-      immediateRender: false,
-
- 
-   
-       scrollTrigger: {
-         trigger: ".start3 ",
-         start: "bottom -85",
-         end: "bottom ",
-         scrub: true,
-         markers: false,
-       },
-     });
-    
-  }, []);
 
   const ref: any = useRef();
 
   return (
   <>
-    <div className="cache"></div>
+  <section>
     <div className="thirdPart " id="drag">
       <div className="card yrsa first">
-        <div className="img-box">
+        <div className="img-box ratio-4x3">
           <img src={Img1} className="card-img-top" alt="..." />
         </div>
         <div className="card-body">
@@ -64,7 +32,7 @@ function thirdPart() {
         </div>
       </div>
       <div className="card yrsa">
-        <div className="img-box">
+        <div className="img-box ratio-4x3">
           <img src={Img2} className="card-img-top" alt="..." />
         </div>
         <div className="card-body">
@@ -76,7 +44,7 @@ function thirdPart() {
         </div>
       </div>
       <div className="card yrsa">
-        <div className="img-box">
+        <div className="img-box ratio-4x3">
           <img src={Img3} className="card-img-top" alt="..." />
         </div>
         <div className="card-body">
@@ -88,7 +56,7 @@ function thirdPart() {
         </div>
       </div>
       <div className="card yrsa">
-        <div className="img-box">
+        <div className="img-box ratio-4x3">
           <img src={Img4} className="card-img-top" alt="..." />
         </div>
         <div className="card-body">
@@ -100,7 +68,7 @@ function thirdPart() {
         </div>
       </div>
       <div className="card yrsa">
-        <div className="img-box">
+        <div className="img-box ratio-4x3">
           <img src={Img2} className="card-img-top" alt="..." />
         </div>
         <div className="card-body">
@@ -112,6 +80,7 @@ function thirdPart() {
         </div>
       </div>
     </div>
+    </section>
     </>
   );
 }

@@ -1,8 +1,6 @@
 .secondPart {
-  background-color: white;
   overflow: hidden;
   min-height: 100vh;
-  color: #1B3B6F;
 }
 .test {
   border: solid 1px black;
@@ -136,7 +134,6 @@
   fill: #0272b7!important;
 
 }
-
 
 .scss:active{
   cursor: grabbing;

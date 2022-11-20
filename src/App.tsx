@@ -51,32 +51,75 @@ function App() {
         end: () => "+=" + panelsContainer.current.offsetWidth,
       },
     });
+
+
+ function blue() {
+    const body:any = document.querySelector('body');
+    const menu:any = document.querySelector('.btnOpen');
+    const partname:any = document.querySelector('#Titre');
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.target.classList.contains('blueswitch')) {
+                console.log('blue');
+                body.classList.add('bluemode');
+                menu.classList.add('bluemodemenue');
+                partname.classList.add('bluemodename');
+                }
+                else if (entry.isIntersecting && entry.target.classList.contains('whiteswitch')) {
+                console.log('white')
+                body.classList.remove('bluemode');
+                menu.classList.remove('bluemodemenue');   
+                partname.classList.remove('bluemodename');
+                }
+            });
+
+        }, {
+            rootMargin: '-47% 0px -47% 0px'
+    });
+    
+    
+    let target = '.swictch';
+    document.querySelectorAll(target).forEach((i) => {
+
+    if (i) {
+        observer.observe(i);
+        }
+    })
+};
+ 
+blue();
+
   }, []);
+
+ 
 
   return (
     <div className="App">
+      
       <Hours />
-      <span className="btnOpen changeStyle " onClick={() => setIsOpen(true)}>
+      <span className="btnOpen" onClick={() => setIsOpen(true)}>
       <FontAwesomeIcon icon={ faBars } />
       </span>
       <Menu  isOpen={isOpen} onChange={setIsOpen}></Menu>
-      <Row name="top">
+      <Row name="top" className="swictch whiteswitch">
         <FirstPart/>
       </Row>
-      <Row name="skills">
+      <Row name="skills" className="swictch whiteswitch">
         <SecondPart/>
       </Row>
-      <Row name="project" className="start2">
+      <div className="borderWhite"></div>
+      <Row name="project" className="swictch blueswitch">
         <div ref={panelsContainer}>
           <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
               <ThirdPart/>
           </div>
         </div>
       </Row>
-      <Row name="about" className=" start3">
+      
+      <Row name="about" className="swictch whiteswitch">
         <FourthPart/>
       </Row>
-      <Row name="contacte">
+      <Row name="contacte swictch whiteswitch">
         <FifthPart />
       </Row>
       <div>
