@@ -1,4 +1,4 @@
-import react, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
@@ -66,6 +66,7 @@ function FirstPart() {
       animation2.start({ x: "50vw" });
     }
   }, [inView]);
+ 
 
   return (
     <section className="firstPart">

@@ -2,13 +2,7 @@ import "./App.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import {
-  Link,
-  animateScroll,
-  Element as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { motion } from "framer-motion";
 
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
@@ -104,8 +98,31 @@ function App() {
     blue();
   }, []);
 
+const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+const [cursorVariant, setCursorVariant] = useState("default");
+useEffect(() => {
+  const mouseMove = e => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+
+  }
+  window.addEventListener("mousemove", mouseMove);
+
+  return () => {
+    window.removeEventListener("mousemove", mouseMove);
+  }
+}, []);
+
+const variants= {
+  default: {
+    x: mousePosition.x -16,
+    y: mousePosition.y - 16
+  }
+
+}
+
   return (
     <div className="App">
+      <motion.div variants={variants} animate={cursorVariant} className="cursor noSelect"></motion.div>
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
