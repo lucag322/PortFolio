@@ -58,30 +58,19 @@ const Form = () => {
           onSubmit={onSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <div>
-            <div>
+          <Row>
+            <div className="col-12 col-md-6">
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Name*"
                 onChange={handleChange}
                 className="inputForm m-2"
                 required
               />
             </div>
-            <div>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleChange}
-                className="inputForm m-2"
-                required
-              />
-            </div>
-            <div>
+            <div className="col-12 col-md-6">
               <input
                 type="text"
                 id="number"
@@ -91,12 +80,23 @@ const Form = () => {
                 className="inputForm m-2"
               />
             </div>
-          </div>
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email*"
+                onChange={handleChange}
+                className="inputForm m-2"
+                required
+              />
+            </div>
+          </Row>
           <div>
             <textarea
               name="message"
               id="message"
-              placeholder="Message"
+              placeholder="Message*"
               onChange={handleChange2}
               className="inputForm m-2"
               required

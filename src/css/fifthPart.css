@@ -1,67 +1,56 @@
-.FifthPart{
-    background-color: white;
-    overflow: hidden;
-    min-height: 100vh;
-    color: #1B3B6F;
-    overflow-x: hidden;
-
+.FifthPart {
+  background-color: white;
+  overflow: hidden;
+  min-height: 100vh;
+  color: #1b3b6f;
+  overflow-x: hidden;
 }
 
-
-.contacteForm{
-    width: 100%;
-    height: 500px;
-    border: solid 1px;
-    margin: 0 auto;
-    background-color: #FFF;
-    box-shadow: 20px 20px 2px 1px #4b6b7d;
-    padding: 20px;
-    text-align: center;
+.contacteForm {
+  padding: 20px;
+  text-align: center;
 }
 
-.inputForm{
-  border-bottom: 3px solid #1B3B6F !important;
+.inputForm {
+  border-bottom: 2px solid #1b3b6f !important;
   border: none;
-  width: 80%;
+  width: 100%;
   font-size: 24px;
-  font-family: 'Yrsa', serif;
+  font-family: "Yrsa", serif;
 }
-.inputForm:focus-visible{
-  border-bottom: 3px solid #1B3B6F !important;
+.inputForm:focus-visible {
+  border-bottom: 2px solid #1b3b6f !important;
   border: none;
-  width: 80%;
+  width: 100%;
   font-size: 24px;
-  outline:none;
+  outline: none;
 }
 
-textarea[name="message"]{
+textarea[name="message"] {
   resize: none;
-  height: 200px;  
+  height: 200px;
 }
-.submitBox{
-  width:80%;
-}
-.submit{
+
+.submit {
   background-color: transparent;
-    padding: 5px 20px;
-    font-size: 20px;
-    font-family: 'yrsa';
-    border: 3px solid #1B3B6F;
-    border-radius: 5px;
-    color: #1B3B6F;
-    box-shadow: 10px 9px 2px 1px #1B3B6F;
-    transition: all 0.1s;
-    -webkit-transition: all 0.1s;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-family: "yrsa";
+  border: 2px solid #1b3b6f;
+  border-radius: 5px;
+  color: #1b3b6f;
+  transition: all 0.1s;
+  width: 200px;
+  -webkit-transition: all 0.1s;
 }
 .submit:hover {
-  transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
   border-bottom: 1px solid;
 }
-.submitCheck{
-  font-family: 'yrsa';
-    font-size: 30px;
-    padding-top: 15%;
-    color: #1B3B6F;
+.submitCheck {
+  font-family: "yrsa";
+  font-size: 30px;
+  padding-top: 15%;
+  color: #1b3b6f;
 }
-
