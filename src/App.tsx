@@ -1,8 +1,14 @@
 import "./App.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  Link,
+  animateScroll,
+  Element as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
@@ -20,13 +26,8 @@ import { Col, Row } from "react-bootstrap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 function App() {
-
-
-
   const [isOpen, setIsOpen] = useState(false);
-
 
   const panels: any = useRef([]);
   const panelsContainer: any = useRef([]);
@@ -52,86 +53,93 @@ function App() {
       },
     });
 
-
- function blue() {
-    const body:any = document.querySelector('body');
-    const menu:any = document.querySelector('.btnOpen');
-    const partname:any = document.querySelector('#Titre');
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.target.classList.contains('blueswitch')) {
-                console.log('blue');
-                body.classList.add('bluemode');
-                menu.classList.add('bluemodemenue');
-                partname.classList.add('bluemodename');
-                }
-                else if (entry.isIntersecting && entry.target.classList.contains('whiteswitch')) {
-                console.log('white')
-                body.classList.remove('bluemode');
-                menu.classList.remove('bluemodemenue');   
-                partname.classList.remove('bluemodename');
-                }
-            });
-
-        }, {
-            rootMargin: '-47% 0px -47% 0px'
-    });
-    
-    
-    let target = '.swictch';
-    document.querySelectorAll(target).forEach((i) => {
-
-    if (i) {
-        observer.observe(i);
+    function blue() {
+      const body: any = document.querySelector("body");
+      const menu: any = document.querySelector(".btnOpen");
+      const partname: any = document.querySelector("#Titre");
+      const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
+      const hiddebartime: any = document.querySelector(".hiddebartime");
+      const heure: any = document.querySelector(".heure");
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (
+              entry.isIntersecting &&
+              entry.target.classList.contains("blueswitch")
+            ) {
+              console.log("blue");
+              body.classList.add("bluemode");
+              menu.classList.add("bluemodemenue");
+              partname.classList.add("bluemodename");
+              hiddebarmenu.classList.add("hidde");
+              hiddebartime.classList.add("hidde");
+              heure.classList.add("bluemodeheure");
+            } else if (
+              entry.isIntersecting &&
+              entry.target.classList.contains("whiteswitch")
+            ) {
+              console.log("white");
+              body.classList.remove("bluemode");
+              menu.classList.remove("bluemodemenue");
+              partname.classList.remove("bluemodename");
+              hiddebarmenu.classList.remove("hidde");
+              hiddebartime.classList.remove("hidde");
+              heure.classList.remove("bluemodeheure");
+            }
+          });
+        },
+        {
+          rootMargin: "-47% 0px -47% 0px",
         }
-    })
-};
- 
-blue();
+      );
 
+      let target = ".swictch";
+      document.querySelectorAll(target).forEach((i) => {
+        if (i) {
+          observer.observe(i);
+        }
+      });
+    }
+
+    blue();
   }, []);
-
- 
 
   return (
     <div className="App">
-      
       <Hours />
+      <div className="hiddebarmenu "></div>
+      <div className="hiddebartime"></div>
       <span className="btnOpen" onClick={() => setIsOpen(true)}>
-      <FontAwesomeIcon icon={ faBars } />
+        <FontAwesomeIcon icon={faBars} />
       </span>
-      <Menu  isOpen={isOpen} onChange={setIsOpen}></Menu>
+      <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
       <Row name="top" className="swictch whiteswitch">
-        <FirstPart/>
+        <FirstPart />
       </Row>
       <Row name="skills" className="swictch whiteswitch">
-        <SecondPart/>
+        <SecondPart />
       </Row>
       <div className="borderWhite"></div>
       <Row name="project" className="swictch blueswitch">
         <div ref={panelsContainer}>
           <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
-              <ThirdPart/>
+            <ThirdPart />
           </div>
         </div>
       </Row>
-      
+
       <Row name="about" className="swictch whiteswitch">
-        <FourthPart/>
+        <FourthPart />
       </Row>
-      <Row name="contacte swictch whiteswitch">
+      <Row name="contact swictch whiteswitch">
         <FifthPart />
+        <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
+          <span className="px-5">2023</span>
+        </Col>
+        <Col lg={6} sm={6} xs={6} className="fotterRight text-end">
+          <span className="px-5">Grousset Luca</span>
+        </Col>
       </Row>
-      <div>
-        <Row className="footer">
-          <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
-            <span className="px-5">2023</span>
-          </Col>
-          <Col lg={6} sm={6} xs={6} className="fotterRight text-end">
-            <span className="px-5">Grousset Luca</span>
-          </Col>
-        </Row>
-      </div>
     </div>
   );
 }

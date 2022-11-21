@@ -7,13 +7,10 @@ import ContacteForm from "./ContacteForm";
 import { useAnimation, motion } from "framer-motion";
 import { gsap } from "gsap";
 
-
 function FifthPart() {
-
   useEffect(() => {
-    gsap.set(".contact", {scale: 0});
+    gsap.set(".contact", { scale: 0 });
     gsap.to(".contact", {
-      
       scale: 1,
       scrollTrigger: {
         trigger: ".start1",
@@ -23,19 +20,14 @@ function FifthPart() {
         markers: false,
       },
     });
-    
   }, []);
 
-
- 
-
   return (
-    <section className="FifthPart start1">
+    <section className="FifthPart d-flex align-items-center">
       <Container className="contact">
         <Row className="pb-5">
           <Col lg={12} sm={12} xs={12}>
-            <h2
-              className="partName  fw-light fst-italic pt-2 position-relative zindex-sticky">
+            <h2 className="partName  fw-light fst-italic pt-2 position-relative zindex-sticky">
               Contact
             </h2>
             <div className="contacteForm mt-3">

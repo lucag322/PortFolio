@@ -1,6 +1,6 @@
 .fourthPart {
   overflow: hidden;
-  min-height: 70vh;
+  min-height: 100vh;
   z-index: 1;
   position: relative;
 }
