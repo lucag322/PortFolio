@@ -152,8 +152,8 @@ function App() {
         </Col>
       </Row>
       <HiddenEasterEgg code={['b', 'l', 's', 't', 'r']} resetEggMs={100} cb={() => playAudio()}>
-        {}
-            wow !
+      </HiddenEasterEgg>
+       <HiddenEasterEgg code={['1', '2','1']} resetEggMs={100} codeMode="MOBILE_CLICK" cb={() => playAudio()}>
           </HiddenEasterEgg>
     </div>
   );
