@@ -3,7 +3,9 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import cullote from "./img/cullote.mp3";
 
+import { HiddenEasterEgg } from "react-hidden-easter-egg";
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
 import ThirdPart from "./components/thirdPart/thirdPart";
@@ -18,9 +20,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
 function App() {
+  var audio = new Audio(cullote);
+  function playAudio() {
+    if (audio) {
+      audio.play();
+    }
+  }
+
+
   const [isOpen, setIsOpen] = useState(false);
 
   const panels: any = useRef([]);
@@ -98,31 +112,11 @@ function App() {
     blue();
   }, []);
 
-const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-const [cursorVariant, setCursorVariant] = useState("default");
-useEffect(() => {
-  const mouseMove = e => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
 
-  }
-  window.addEventListener("mousemove", mouseMove);
-
-  return () => {
-    window.removeEventListener("mousemove", mouseMove);
-  }
-}, []);
-
-const variants= {
-  default: {
-    x: mousePosition.x -16,
-    y: mousePosition.y - 16
-  }
-
-}
 
   return (
+  
     <div className="App">
-      <motion.div variants={variants} animate={cursorVariant} className="cursor noSelect"></motion.div>
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
@@ -157,6 +151,10 @@ const variants= {
           <span className="px-5">Grousset Luca</span>
         </Col>
       </Row>
+      <HiddenEasterEgg code={['b', 'l', 's', 't', 'r']} resetEggMs={100} cb={() => playAudio()}>
+        {}
+            wow !
+          </HiddenEasterEgg>
     </div>
   );
 }
