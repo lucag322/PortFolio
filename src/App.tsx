@@ -3,7 +3,9 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import cullote from "./img/cullote.mp3";
 
+import { HiddenEasterEgg } from "react-hidden-easter-egg";
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";
 import ThirdPart from "./components/thirdPart/thirdPart";
@@ -18,9 +20,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
 function App() {
+  var audio = new Audio(cullote);
+  function playAudio() {
+    if (audio) {
+      audio.play();
+    }
+  }
+
+
   const [isOpen, setIsOpen] = useState(false);
 
   const panels: any = useRef([]);
@@ -107,6 +121,7 @@ function App() {
   }
 
   return (
+  
     <div className="App">
       <Hours />
       <div className="hiddebarmenu "></div>
@@ -138,6 +153,10 @@ function App() {
           <span className="px-5">Grousset Luca</span>
         </Col>
       </Row>
+      <HiddenEasterEgg code={['b', 'l', 's', 't', 'r']} resetEggMs={100} cb={() => playAudio()}>
+      </HiddenEasterEgg>
+       <HiddenEasterEgg code={['1', '2','1']} resetEggMs={100} codeMode="MOBILE_CLICK" cb={() => playAudio()}>
+          </HiddenEasterEgg>
     </div>
   );
 }
