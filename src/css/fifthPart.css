@@ -4,6 +4,9 @@
   min-height: 100vh;
   color: #1b3b6f;
   overflow-x: hidden;
+  width: 90% !important;
+  border-radius: 50px;
+  margin: 0 auto;
 }
 
 .contacteForm {

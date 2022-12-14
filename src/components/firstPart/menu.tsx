@@ -7,11 +7,20 @@ import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'rea
 
 
 function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
+  
+  function scrollBack(){
+    var Html = document.querySelector('.html')
+    if (Html != null) {
+    Html.classList.remove("noscroll");
+    }
+    onChange(false)
+  }
+
   return (
     <div className={`Menu ${isOpen && "open"}`}>
       <span
         className=" btnClose"
-        onClick={() => onChange(false)}
+        onClick={scrollBack}
       >
         <FontAwesomeIcon icon={ faXmark }className="dote" />
       </span>

@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import Slider from "./slider";
 import "./../../css/secondPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Grab from "./Grab";
-import Css from "./../../img/css";
-import Html5 from "./../../img/html5";
-import ReactLOGO from "./../../img/React";
-import Typescript from "./../../img/Typescript";
-import Scss from "./../../img/sass";
-import Svelte from "./../../img/Svelte";
+
 
 
 function secondPart() {
@@ -74,7 +67,6 @@ function secondPart() {
         </Row>
       </Container>
       <div ref={ref}></div>
-     <Grab  />
     </section>
   );
 }

@@ -98,35 +98,20 @@ function App() {
     blue();
   }, []);
 
-const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-const [cursorVariant, setCursorVariant] = useState("default");
-useEffect(() => {
-  const mouseMove = e => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-
+  function noscroll(){
+    var Html = document.querySelector('.html')
+    if (Html != null) {
+    Html.classList.add("noscroll");
+    }
+    setIsOpen(true)
   }
-  window.addEventListener("mousemove", mouseMove);
-
-  return () => {
-    window.removeEventListener("mousemove", mouseMove);
-  }
-}, []);
-
-const variants= {
-  default: {
-    x: mousePosition.x -16,
-    y: mousePosition.y - 16
-  }
-
-}
 
   return (
     <div className="App">
-      <motion.div variants={variants} animate={cursorVariant} className="cursor noSelect"></motion.div>
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
-      <span className="btnOpen" onClick={() => setIsOpen(true)}>
+      <span className="btnOpen" onClick={noscroll}>
         <FontAwesomeIcon icon={faBars} />
       </span>
       <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
@@ -134,7 +119,7 @@ const variants= {
         <FirstPart />
       </Row>
       <Row name="skills" className="swictch whiteswitch">
-        <SecondPart />
+      <FourthPart />
       </Row>
       <div className="borderWhite"></div>
       <Row name="project" className="swictch blueswitch">
@@ -143,10 +128,6 @@ const variants= {
             <ThirdPart />
           </div>
         </div>
-      </Row>
-
-      <Row name="about" className="swictch whiteswitch">
-        <FourthPart />
       </Row>
       <Row name="contact swictch whiteswitch">
         <FifthPart />
