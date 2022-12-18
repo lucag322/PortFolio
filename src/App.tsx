@@ -14,29 +14,15 @@ import FifthPart from "./components/fifthPart/fifthPart";
 import Hours from "./components/firstPart/Hours";
 import Menu from "./components/firstPart/menu";
 import Test from "./components/test/test";
-import "./css/firstPart.css";
+import "./css/thirdPart.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-
 function App() {
-  var audio = new Audio(cullote);
-  function playAudio() {
-    if (audio) {
-      audio.play();
-    }
-  }
-
-
-  const [isOpen, setIsOpen] = useState(false);
-
   const panels: any = useRef([]);
   const panelsContainer: any = useRef([]);
 
@@ -48,8 +34,9 @@ function App() {
     const totalPanels = panels.current.length;
 
     gsap.to(panels.current, {
-      xPercent: -250 * (totalPanels - 1),
+      xPercent: -650 * (totalPanels - 1),
       ease: "none",
+
       scrollTrigger: {
         trigger: panelsContainer.current,
         markers: false,
@@ -60,7 +47,18 @@ function App() {
         end: () => "+=" + panelsContainer.current.offsetWidth,
       },
     });
+  }, []);
 
+  var audio = new Audio(cullote);
+  function playAudio() {
+    if (audio) {
+      audio.play();
+    }
+  }
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
     function blue() {
       const body: any = document.querySelector("body");
       const menu: any = document.querySelector(".btnOpen");
@@ -112,16 +110,15 @@ function App() {
     blue();
   }, []);
 
-  function noscroll(){
-    var Html = document.querySelector('.html')
+  function noscroll() {
+    var Html = document.querySelector(".html");
     if (Html != null) {
-    Html.classList.add("noscroll");
+      Html.classList.add("noscroll");
     }
-    setIsOpen(true)
+    setIsOpen(true);
   }
 
   return (
-  
     <div className="App">
       <Hours />
       <div className="hiddebarmenu "></div>
@@ -134,7 +131,7 @@ function App() {
         <FirstPart />
       </Row>
       <Row name="skills" className="swictch whiteswitch">
-      <FourthPart />
+        <FourthPart />
       </Row>
       <div className="borderWhite"></div>
       <Row name="project" className="swictch blueswitch">
@@ -153,10 +150,6 @@ function App() {
           <span className="px-5">Grousset Luca</span>
         </Col>
       </Row>
-      <HiddenEasterEgg code={['b', 'l', 's', 't', 'r']} resetEggMs={100} cb={() => playAudio()}>
-      </HiddenEasterEgg>
-       <HiddenEasterEgg code={['1', '2','1']} resetEggMs={100} codeMode="MOBILE_CLICK" cb={() => playAudio()}>
-          </HiddenEasterEgg>
     </div>
   );
 }
