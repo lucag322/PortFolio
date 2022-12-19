@@ -3,6 +3,12 @@
   src: local('Recoleta'), url(./../fonts/Recoleta-Regular.ttf) format('truetype');
 }
 
+.noSelect {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .fourthPart {
   overflow: hidden;
@@ -63,6 +69,10 @@ h2{
   font-size: 2rem;
   white-space: nowrap;
   top: 0;
+  -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .messagedefilant div span {

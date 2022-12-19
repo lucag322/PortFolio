@@ -63,8 +63,8 @@ function fourthPart() {
       <Row className="pb-5">
         <Col lg={12} sm={12} xs={12} className=" p-0">
           <div className="messagedefilant">
-            <div data-text="Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---">
-              <span>
+            <div className="noSelect" data-text="Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---">
+              <span className="noSelect">
                 Voici un texte qui doit défiler horizontalement. Il peut etre
                 encore plus long !---
               </span>
