@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./../../css/thirdPart.css";
-import Img1 from "./../../img/thalamus74.png";
+import Img1 from "./../../img/thalamus742.png";
 import Img2 from "./../../img/capture2.png";
 import Img3 from "./../../img/capture3.png";
 import Img4 from "./../../img/capture4.png";
