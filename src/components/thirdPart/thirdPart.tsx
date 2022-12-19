@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./../../css/firstpart.css";
+import "./../../css/thirdPart.css";
 import Img1 from "./../../img/thalamus74.png";
 import Img2 from "./../../img/capture2.png";
 import Img3 from "./../../img/capture3.png";
