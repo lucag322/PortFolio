@@ -104,15 +104,15 @@ function App() {
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />
       </Row>
-      <Row name="skills" className="swictch whiteswitch">
+      <Row name="about" className="swictch whiteswitch">
         <FourthPart />
       </Row>
       <div className="borderWhite"></div>
-      <div className="swictch blueswitch">
+      <Col name="project" className="swictch blueswitch">
         
             <ThirdPart />
           
-      </div>
+      </Col>
       <Row name="contact" className=" swictch whiteswitch">
         <FifthPart />
         <Col lg={6} sm={6} xs={6} className="footerLeft text-left">

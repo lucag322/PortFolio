@@ -28,7 +28,10 @@ if(contai !== null){
       pin: contai,
       markers: false ,
       scrub: 1,
-      snap: 1 / (compo.length - 1),
+      snap:{
+        snapTo: 1 / (compo.length - 1),
+
+      },
       end: () => "+=" + contai.offsetWidth,
     },
   });

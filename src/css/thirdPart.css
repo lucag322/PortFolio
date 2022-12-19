@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Aventine';
+  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+}
+
 .thirdPart {
   height: 100vh;
 
@@ -59,7 +64,7 @@
   width: 400px;
   text-align: center;
   color: #1b3b6f !important;
-  font-family: "aeonik, arial, sans-serif" !important;
+font-family: 'Aventine'!important;
   font-weight: bold;
   font-size: 5rem;
   opacity: 0;

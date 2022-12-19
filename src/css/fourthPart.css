@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta'), url(./../fonts/Recoleta-Regular.ttf) format('truetype');
+}
+
+
 .fourthPart {
   overflow: hidden;
   min-height: 100vh;
@@ -18,6 +24,7 @@ h2{
 
 .aboutText {
   font-size: 24px;
+  font-family: 'Recoleta';
 }
 .rrr {
   width: 300px;
@@ -40,12 +47,13 @@ h2{
   position: relative;
   width: 100%;
   height: 150px;
+  font-family: 'Recoleta';
 }
 
 .messagedefilant div {
   position: absolute;
   min-width: 100%; /* au minimum la largeur du conteneur */
-  font-family: "Times New Roman", Times, serif;
+
 }
 
 .messagedefilant div span,
@@ -60,7 +68,7 @@ h2{
 .messagedefilant div span {
   animation: defilement 20s infinite linear;
   font-size: 7rem;
-  font-family: "aeonik, arial, sans-serif";
+    font-family: 'Recoleta' !important;
 }
 
 .messagedefilant div:after {
@@ -70,7 +78,7 @@ h2{
   content: attr(data-text);
   animation: defilement2 20s infinite linear;
   font-size: 7rem;
-  font-family: "aeonik, arial, sans-serif";
+    font-family: 'Recoleta' !important;
 }
 
 @keyframes defilement {
