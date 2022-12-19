@@ -16,6 +16,10 @@ body::-webkit-scrollbar-thumb {
   background-color: #3069C5;    /* color of the scroll thumb */      /* roundness of the scroll thumb */
 
 }
+.thirdPart {
+  display: flex;
+  width: 600vw!important;
+}
 
 
 .noscroll{
@@ -80,6 +84,7 @@ body {
   transition: background-color 0.5s ease;
   color: #1b3b6f !important;
 }
+
 
 
 @media only screen and (max-width: 1600px) {

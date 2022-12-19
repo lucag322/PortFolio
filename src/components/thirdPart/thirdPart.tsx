@@ -5,14 +5,38 @@ import Img2 from "./../../img/capture2.png";
 import Img3 from "./../../img/capture3.png";
 import Img4 from "./../../img/capture4.png";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 
 function thirdPart() {
+    
+   
+ gsap.registerPlugin(ScrollTrigger);
+
+  
+  useEffect(() => {
+    const compo = document.querySelectorAll(".projectcontainer");
+  const contai: HTMLElement | null = document.querySelector(".thirdPart");
+if(contai !== null){
+  gsap.to(compo, {
+    xPercent: -100 * (compo.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: contai,
+      pin: contai,
+      markers: false ,
+      scrub: 1,
+      snap: 1 / (compo.length - 1),
+      end: () => "+=" + contai.offsetWidth,
+    },
+  });
+}
+}, []);
   return (
     <>
-      <section>
-        <div className="thirdPart " id="drag">
+  
+         <div className="thirdPart " id="drag">
           <div className="projectcontainer first panel">
             <div className="projet yrsa  position-relative">
               <div className="img-box position-absolute">
@@ -55,7 +79,7 @@ function thirdPart() {
             </div>
           </div>
         </div>
-      </section>
+
     </>
   );
 }

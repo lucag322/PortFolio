@@ -8,6 +8,17 @@
   position: relative;
   border: none;
 }
+.compo {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+.container1 {
+  display: flex;
+  width: 600vw;
+}
 
 .card-body {
   padding: 1rem 0px !important;

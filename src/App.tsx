@@ -23,31 +23,6 @@ import { Col, Row } from "react-bootstrap";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const panels: any = useRef([]);
-  const panelsContainer: any = useRef([]);
-
-  const createPanelsRefs = (panel: HTMLDivElement | null, index: number) => {
-    panels.current[index] = panel;
-  };
-
-  useEffect(() => {
-    const totalPanels = panels.current.length;
-
-    gsap.to(panels.current, {
-      xPercent: -650 * (totalPanels - 1),
-      ease: "none",
-
-      scrollTrigger: {
-        trigger: panelsContainer.current,
-        markers: false,
-        pin: true,
-        scrub: 1,
-
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: () => "+=" + panelsContainer.current.offsetWidth,
-      },
-    });
-  }, []);
 
   var audio = new Audio(cullote);
   function playAudio() {
@@ -134,14 +109,12 @@ function App() {
         <FourthPart />
       </Row>
       <div className="borderWhite"></div>
-      <Row name="project" className="swictch blueswitch">
-        <div ref={panelsContainer}>
-          <div className="panel" ref={(e) => createPanelsRefs(e, 1)}>
+      <div className="swictch blueswitch">
+        
             <ThirdPart />
-          </div>
-        </div>
-      </Row>
-      <Row name="contact swictch whiteswitch">
+          
+      </div>
+      <Row name="contact" className=" swictch whiteswitch">
         <FifthPart />
         <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
           <span className="px-5">2023</span>
