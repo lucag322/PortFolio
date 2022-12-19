@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Controller, Scene } from "react-scrollmagic";
 import ContacteForm from "./ContacteForm";
 import { useAnimation, motion } from "framer-motion";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 function FifthPart() {
   useEffect(() => {
@@ -26,14 +26,17 @@ function FifthPart() {
     <section className="FifthPart d-flex align-items-center">
       <Container className="contact">
         <Row className="pb-5">
-          <Col lg={12} sm={12} xs={12}>
-            <h2 className="partName  fw-light fst-italic pt-2 position-relative zindex-sticky">
-              Contact
-            </h2>
-            <div className="contacteForm mt-3">
+          <Col lg={6} sm={6} xs={6}>
+         <h2 className="namePart contact-title"> You have a project ? contact me</h2>
+          </Col>
+          <Col lg={6} sm={6} xs={6}>
+            <div className="contacteForm">
               <ContacteForm />
             </div>
           </Col>
+        </Row>
+        <Row>
+          <a className="mail" href="mailto:luca.grousset@gmail.com">luca.grousset@gmail.com</a>
         </Row>
       </Container>
     </section>

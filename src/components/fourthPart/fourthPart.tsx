@@ -8,9 +8,6 @@ import { useInView } from "react-intersection-observer";
 
 
 function fourthPart() {
-  const { ref, inView } = useInView();
-  const animation1 = useAnimation();
-  const animation2 = useAnimation();
 
   const cardVariants: Variants = {
     offscreen: {

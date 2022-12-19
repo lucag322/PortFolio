@@ -66,7 +66,7 @@ const Form = () => {
                 name="name"
                 placeholder="Name*"
                 onChange={handleChange}
-                className="inputForm m-2"
+                className="inputForm"
                 required
               />
             </div>
@@ -77,7 +77,7 @@ const Form = () => {
                 name="number"
                 placeholder="number"
                 onChange={handleChange}
-                className="inputForm m-2"
+                className="inputForm"
               />
             </div>
             <div>
@@ -87,7 +87,7 @@ const Form = () => {
                 name="email"
                 placeholder="Email*"
                 onChange={handleChange}
-                className="inputForm m-2"
+                className="inputForm"
                 required
               />
             </div>
@@ -98,12 +98,12 @@ const Form = () => {
               id="message"
               placeholder="Message*"
               onChange={handleChange2}
-              className="inputForm m-2"
+              className="inputForm"
               required
             />
           </div>
           <div className="submitBox text-end">
-            <button type="submit" className="submit m-2">
+            <button type="submit" className="submit">
               Send
             </button>
           </div>
