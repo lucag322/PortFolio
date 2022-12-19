@@ -15,6 +15,7 @@ function thirdPart() {
  gsap.registerPlugin(ScrollTrigger);
 
   
+  
   useEffect(() => {
     const compo = document.querySelectorAll(".projectcontainer");
   const contai: HTMLElement | null = document.querySelector(".thirdPart");
