@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Aventine';
+  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+}
 .noSelect {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+h2{
+  font-family: 'Aventine'!important;
+    font-weight: 500;
+    font-size: 13em !important;
+      line-height: 11rem !important;
 }
 
 .firstPart {
@@ -10,13 +20,7 @@
   height: 100vh;
   color: #1b3b6f;
 }
-
-.thrn {
-  font-family: Arial, Helvetica, sans-serif;
-}
 .namePart {
-  font-family: "aeonik, arial, sans-serif";
-  font-weight: 500;
   padding: 5rem 0px 0px 0px;
   -webkit-text-stroke: 2px #1b3b6f;
   color: transparent;
@@ -24,24 +28,14 @@
 .favorite {
   text-align: end;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
   font-style: italic;
   padding: 0px 0px 0px 0px;
   color: #1b3b6f;
 }
 .frontend {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 500;
-
   padding: 0px 0px 0px 0px;
   -webkit-text-stroke: 2px #1b3b6f;
   color: transparent;
-}
-
-h2 {
-  font-size: 13em !important;
-  line-height: 11rem !important;
 }
 .firstRow {
   height: 95vh;
@@ -113,6 +107,7 @@ h2 {
   color: #1b3b6f;
   border-radius: 5px;
   margin-right: 10px;
+  font-family: 'Aventine'!important;
 }
 
 .bluemodeheure {
@@ -164,10 +159,10 @@ h2 {
 
 .Menu > .Menu-items > a {
   color: #ffffff;
-  font-size: 32px;
+  font-size: 5rem!important;
   text-decoration: none;
   position: relative;
-  font-family: "aeonik, arial, sans-serif";
+  font-family: 'Aventine'!important;
 }
 
 .Menu > .Menu-items > a::after {

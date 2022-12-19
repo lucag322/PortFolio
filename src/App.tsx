@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import cullote from "./img/cullote.mp3";
-
 import { HiddenEasterEgg } from "react-hidden-easter-egg";
 import FirstPart from "./components/firstPart/firstPart";
 import SecondPart from "./components/secondPart/secondPart";

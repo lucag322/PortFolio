@@ -17,6 +17,7 @@ function secondPart() {
     if (inView) {
       animation1.start({
         x: 0,
+        opacity: 1,
         transition: {
           type: "spring",
           duration: 1,
@@ -25,6 +26,7 @@ function secondPart() {
       });
       animation2.start({
         x: 0,
+        opacity: 1,
         transition: {
           type: "spring",
           duration: 2,
@@ -33,8 +35,8 @@ function secondPart() {
       });
     }
     if (!inView) {
-      animation1.start({ x: "-50vw" });
-      animation2.start({ x: "-100vw" });
+      animation1.start({ x: "-50vw", opacity: 0 });
+      animation2.start({ x: "-100vw", opacity: 0 });
     }
   }, [inView]);
 

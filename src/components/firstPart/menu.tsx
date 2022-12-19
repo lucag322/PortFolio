@@ -16,6 +16,7 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
     onChange(false)
   }
 
+
   return (
     <div className={`Menu ${isOpen && "open"}`}>
       <span
@@ -26,7 +27,7 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
       </span>
       <div className="Menu-items">
         {items.map((item, index) => (
-          <Link activeClass="active" className=" noSelect" to={item.itemLink} spy={true} smooth={false} duration={500}  offset={0} onClick={() => onChange(false)}>
+          <Link activeClass="active" className=" noSelect" to={item.itemLink} spy={true} smooth={false} duration={500}  offset={0} onClick={scrollBack}>
           
             {item.itemText}
         </Link>

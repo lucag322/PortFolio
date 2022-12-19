@@ -5,6 +5,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
 
+
 function FirstPart() {
 
   useEffect(() => {
@@ -73,10 +74,10 @@ function FirstPart() {
       <Container>
         <Row ref={ref} className="firstRow">
           <Col>
-            <div className="namePart noSelect">
+            <div className="namePart tryguy noSelect">
               <h2 className="title m-0 fw-light">Luca Grousset</h2>
             </div>
-            <div className="favorite noSelect">
+            <div className="favorite tryguy noSelect">
               <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
             </div>
             <div className="frontend noSelect">
