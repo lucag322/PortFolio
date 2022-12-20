@@ -11,41 +11,41 @@ import capture3 from '../../img/thalamus74Iphone3.png';
 
 function Project() {
 
-  // useEffect(() => {
-  //   function blue() {
+  useEffect(() => {
+    function blue() {
       
-  //     let observer = new IntersectionObserver(
-  //       (entries) => {
-  //         entries.forEach((entry) => {
-  //           if (
-  //             entry.isIntersecting &&
-  //             entry.target.classList.contains("blueswitch")
-  //           ) {
-  //             console.log("blue");
-  //           } else if (
-  //             entry.isIntersecting &&
-  //             entry.target.classList.contains("whiteswitch")
-  //           ) {
-  //             console.log("white");
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (
+              entry.isIntersecting &&
+              entry.target.classList.contains("blueswitch")
+            ) {
+              console.log("blue");
+            } else if (
+              entry.isIntersecting &&
+              entry.target.classList.contains("whiteswitch")
+            ) {
+              console.log("white");
               
-  //           }
-  //         });
-  //       },
-  //       {
-  //         rootMargin: "-47% 0px -47% 0px",
-  //       }
-  //     );
+            }
+          });
+        },
+        {
+          rootMargin: "-47% 0px -47% 0px",
+        }
+      );
 
-  //     let target = ".swictch";
-  //     document.querySelectorAll(target).forEach((i) => {
-  //       if (i) {
-  //         observer.observe(i);
-  //       }
-  //     });
-  //   }
+      let target = ".swictch";
+      document.querySelectorAll(target).forEach((i) => {
+        if (i) {
+          observer.observe(i);
+        }
+      });
+    }
 
-  //   blue();
-  // }, []);
+    blue();
+  }, []);
 
  const cardVariants: Variants = {
     offscreen: {
@@ -69,20 +69,20 @@ function Project() {
            <h3>Thalamus 74</h3>
           </Col>
         </Row>
-        <Row className='swictch blueswitch'>
+        <Row className='swictch blueswitch pb-3'>
           <Col>
             <span>Design by</span>
             <span> TRYTRYTRY</span>
           </Col>
         </Row>
-        <Row className='swictch blueswitch'>
+        <Row className='swictch blueswitch py-3'>
           <Col className='text-center'>
             <video autoPlay loop muted id='video' className='ratio ratio-16x9'>
               <source src={backgroundVideo} type='video/mp4' />
             </video>
           </Col>
         </Row>
-        <Row className='switch whiteswitch'>
+        <Row className='switch whiteswitch py-5'>
           <Col className='text-center'>
             <img src={thalagif} />
           </Col>
@@ -103,7 +103,7 @@ function Project() {
             </p>
             </Col>
         </Row>
-        <Row>
+        <Row className='py-3'>
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.4 }}  className='col text-center'>
             <motion.img variants={cardVariants} src={capture1} className="telcapture"/>
           </motion.div>

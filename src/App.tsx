@@ -7,7 +7,7 @@ import Menu from "./components/home/firstPart/menu";
 import Home from "./components/home/Home";
 import Project from "./components/Project/Project";
 import Test from "./components/test/test";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route} from  "react-router-dom";
 import "./css/thirdPart.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
