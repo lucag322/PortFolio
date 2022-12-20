@@ -1,0 +1,106 @@
+html {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #1b3b6f;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3069C5;
+  /* color of the scroll thumb */
+  /* roundness of the scroll thumb */
+
+}
+
+.thirdPart {
+  display: flex;
+  width: 600vw !important;
+}
+
+
+.noscroll {
+  overflow: hidden;
+}
+
+.app {
+  color: #1b3b6f;
+  overflow-x: hidden;
+}
+
+.footer {
+  color: #1b3b6f;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+}
+
+.footerLeft,
+.footerRight {
+  z-index: 3;
+}
+
+.borderWhite {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  border-left: 56px solid white;
+  border-right: 56px solid white;
+  z-index: 10;
+}
+
+.bluemode {
+  background-color: #1b3b6f !important;
+  color: white !important;
+}
+
+.bluemodemenue {
+  color: white !important;
+}
+
+.bluemodename {
+  -webkit-text-stroke: 0px !important;
+  color: white !important;
+}
+
+.bluemodedrag {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 12px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hidde {
+  background-color: #1b3b6f;
+  position: fixed;
+  width: 60px;
+  height: 100vh;
+  z-index: 2;
+  transition: background-color 0s ease 0.4s;
+}
+
+.hiddebartime {
+  right: 0;
+  transition: background-color 0s ease 0.4s;
+}
+
+body {
+  transition: background-color 0.5s ease;
+  color: #1b3b6f !important;
+}
+
+
+
+@media only screen and (max-width: 1600px) {
+  h2 {
+    font-size: 12em !important;
+    line-height: 10rem !important;
+  }
+}

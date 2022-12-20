@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5173/ -->
+<html lang="en" class="html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="./Luca Grousset_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:5173/src/img/monstera.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Grousset</title>
+    <meta property="og:title" content="Luca Grousset Portfolio">
+    <meta property="og:site_name" content="Luca Grousset">
+    <meta property="og:url" content="https://lucagrousset.netlify.app/">
+    <meta property="og:description" content="Portfolio de Luca grousset">
+    <meta property="og:image" content="./src/img/CaptureSite.png">
+  <style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style></head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./Luca Grousset_files/main.tsx"></script>
+  
+  
+  <form name="contact" netlify="" netlify-honeypot="bot-field" hidden="">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <textarea name="message"></textarea>
+  </form>
+
+<vite-error-overlay></vite-error-overlay><script>
+		var returnedSuggestion = ''
+		let editor, doc, cursor, line, pos
+		document.addEventListener("keydown", (event) => {
+		setTimeout(()=>{
+			editor = event.target.closest('.CodeMirror');
+			if (editor){
+				doc = editor.CodeMirror.getDoc()
+				cursor = doc.getCursor()
+				line = doc.getLine(cursor.line)
+				pos = {line: cursor.line, ch: line.length}
+				if (event.key == "Enter"){
+					var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: 0 })
+					window.postMessage({source: 'getSuggestion', payload: { data: query } } )
+					//displayGrey(query)
+				}
+				else if (event.key == "ArrowRight"){
+					acceptTab(returnedSuggestion)
+				}
+			}
+		}, 0)
+		})
+
+		function acceptTab(text){
+		if (suggestionDisplayed){
+			doc.replaceRange(text, pos)
+			suggestionDisplayed = false
+		}
+		}
+		function displayGrey(text){
+		var element = document.createElement('span')
+		element.innerText = text
+		element.style = 'color:grey'
+		var lineIndex = pos.line;
+		editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(element)
+		suggestionDisplayed = true
+		}
+		window.addEventListener('message', (event)=>{
+		if (event.source !== window ) return
+		if (event.data.source == 'return'){
+			returnedSuggestion = event.data.payload.data
+			displayGrey(event.data.payload.data)
+		}
+		})
+	</script></body><!-- A little help for the Netlify post-processing bots --></html>

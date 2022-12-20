@@ -2,33 +2,21 @@ import "./App.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
-import cullote from "./img/cullote.mp3";
-import { HiddenEasterEgg } from "react-hidden-easter-egg";
-import FirstPart from "./components/firstPart/firstPart";
-import SecondPart from "./components/secondPart/secondPart";
-import ThirdPart from "./components/thirdPart/thirdPart";
-import FourthPart from "./components/fourthPart/fourthPart";
-import FifthPart from "./components/fifthPart/fifthPart";
-import Hours from "./components/firstPart/Hours";
-import Menu from "./components/firstPart/menu";
+import Hours from "./components/home/firstPart/Hours";
+import Menu from "./components/home/firstPart/menu";
+import Home from "./components/home/Home";
+import Project from "./components/Project/Project";
 import Test from "./components/test/test";
+import {Routes, Route} from "react-router-dom";
 import "./css/thirdPart.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-
-  var audio = new Audio(cullote);
-  function playAudio() {
-    if (audio) {
-      audio.play();
-    }
-  }
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -101,20 +89,12 @@ function App() {
         <FontAwesomeIcon icon={faBars} />
       </span>
       <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
-      <Row name="top" className="swictch whiteswitch">
-        <FirstPart />
-      </Row>
-      <Row name="about" className="swictch whiteswitch">
-        <FourthPart />
-      </Row>
-      <div className="borderWhite"></div>
-      <Col name="project" className="swictch blueswitch">
-        
-            <ThirdPart />
-          
-      </Col>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/test" element={<Test />} />
+        </Routes>
       <Row name="contact" className=" swictch whiteswitch">
-        <FifthPart />
         <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
           <span className="px-5">2023</span>
         </Col>
