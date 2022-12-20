@@ -20,3 +20,21 @@ h3{
   font-family: 'Recoleta';
   font-size: 1.3rem;
 }
+#video{
+  border-radius: 10px;
+}
+
+.firstProject{
+  width: 100%;
+  height: 90vh;
+}
+
+.role{
+  font-family: 'Recoleta';
+  font-size: 1.3rem;
+  color: rgb(175, 175, 175);
+}
+.roleName{
+  font-family: 'Recoleta';
+  font-size: 1.3rem;
+}

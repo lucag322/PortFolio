@@ -7,9 +7,10 @@ import Menu from "./components/home/firstPart/menu";
 import Home from "./components/home/Home";
 import Project from "./components/Project/Project";
 import Test from "./components/test/test";
-import {Routes, Route} from  "react-router-dom";
+import ScrollTop from "./components/scrolltop/scrolltop";
+import {Routes, Route, ScrollRestoration} from  "react-router-dom";
 import "./css/thirdPart.css";
-import { gsap } from "gsap";
+import  gsap  from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
@@ -81,7 +82,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
+      <div className="App">
+                  <ScrollTop />
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
@@ -93,16 +96,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Project />} />
           <Route path="/test" element={<Test />} />
-        </Routes>
-      <Row name="contact" className=" swictch whiteswitch">
-        <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
-          <span className="px-5">2023</span>
-        </Col>
-        <Col lg={6} sm={6} xs={6} className="fotterRight text-end">
-          <span className="px-5">Grousset Luca</span>
-        </Col>
-      </Row>
+      </Routes>
     </div>
+      </>
   );
 }
 

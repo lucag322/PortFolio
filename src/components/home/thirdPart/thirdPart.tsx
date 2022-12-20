@@ -8,11 +8,11 @@ import gsap  from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
-import { useAnimation, motion,Variants  } from "framer-motion";
+import { useAnimation, motion, Variants } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function thirdPart() {
-    
-   
+ const navigate = useNavigate();
  gsap.registerPlugin(ScrollTrigger);
 
  const cardVariants: Variants = {
@@ -54,8 +54,8 @@ if(contai !== null){
     <>
   
          <div className="thirdPart " id="drag">
-          <div className="projectcontainer first panel">
-            <div className="projet yrsa  position-relative">
+          <div className="projectcontainer first panel" onClick={()=>navigate('project')}>
+            <div className="projet yrsa  position-relative" >
               <motion.div  initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} className="img-box position-absolute">
                 <motion.img variants={cardVariants} src={Img1} className="card-img-top" alt="..." />
               </motion.div>
