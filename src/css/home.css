@@ -104,3 +104,7 @@ body {
     line-height: 10rem !important;
   }
 }
+
+#error-page {
+height: 100vh;
+};  

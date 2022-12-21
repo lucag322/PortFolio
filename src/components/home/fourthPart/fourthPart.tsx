@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../../css/fourthPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import star from "../../../img/rrr.svg";
-import blob2 from "./../../img/blob2.svg";
 import { useAnimation, motion,Variants  } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 

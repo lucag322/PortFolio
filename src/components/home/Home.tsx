@@ -8,8 +8,11 @@ import SecondPart from "./secondPart/secondPart";
 import ThirdPart from "./thirdPart/thirdPart";
 import FourthPart from "./fourthPart/fourthPart";
 import FifthPart from "./fifthPart/fifthPart";
+import Hours from "./firstPart/Hours";
+import Menu from "./firstPart/menu";
 import "./../../css/thirdPart.css";
-import { gsap } from "gsap";
+import gsap from "gsap";
+import ScrollTop from "../Scrolltop/Scrolltop";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -81,7 +84,15 @@ function Home() {
   }
 
   return (
-<>
+    <>
+      <ScrollTop />
+      <Hours />
+      <div className="hiddebarmenu "></div>
+      <div className="hiddebartime"></div>
+      <span className="btnOpen" onClick={noscroll}>
+        <FontAwesomeIcon icon={faBars} />
+      </span>
+      <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />
       </Row>

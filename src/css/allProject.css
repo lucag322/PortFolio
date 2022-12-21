@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Aventine';
+  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+}
+.allproject {
+  font-family: 'Aventine'!important;
+  width: 100%;
+  max-width: 100%!important;
+  height: 100%;
+  background-color: #1b3b6f;
+  color: white;
+}
+.titleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.rowProject{
+  height: 15vh;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #FFF;
+    font-size: 3rem;
+}
+.last{
+  border-bottom: 1px solid #FFF;
+}

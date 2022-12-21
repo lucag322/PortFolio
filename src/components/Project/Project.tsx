@@ -1,20 +1,30 @@
 import React from 'react';
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import'../../css/project.css';
 import { Container, Col, Row } from "react-bootstrap";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useAnimation, motion,Variants  } from "framer-motion";
+import { useAnimation, motion, Variants } from "framer-motion";
+import Hours from "../home/firstPart/Hours";
+import Menu from "../home/firstPart/menu";
 import backgroundVideo from '../../img/Thalamus74.mp4';
 import thalagif from '../../img/thalagif.gif';
 import capture1 from '../../img/thalamus74Iphone1.png';
 import capture2 from '../../img/thalamus74Iphone2.png';
 import capture3 from '../../img/thalamus74Iphone3.png';
+import ScrollTop from "../Scrolltop/Scrolltop";
 
 
 function Project() {
-
+  
+    const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
+
+
+
+    
 gsap.registerPlugin(ScrollTrigger);    
 gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
   ScrollTrigger.create({
@@ -33,7 +43,6 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
       const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
       const hiddebartime: any = document.querySelector(".hiddebartime");
       const heure: any = document.querySelector(".heure");
-      
       let observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -43,10 +52,10 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
             ) {
               console.log("blue");
               body.classList.add("bluemode");
-              menu.classList.add("bluemodemenue");
               partname.classList.add("bluemodename");
               hiddebarmenu.classList.add("hidde");
               hiddebartime.classList.add("hidde");
+               menu.classList.add("bluemodemenue");
               heure.classList.add("bluemodeheure");
             } else if (
               entry.isIntersecting &&
@@ -54,12 +63,11 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
             ) {
               console.log("white");
               body.classList.remove("bluemode");
-              menu.classList.remove("bluemodemenue");
               partname.classList.remove("bluemodename");
               hiddebarmenu.classList.remove("hidde");
               hiddebartime.classList.remove("hidde");
               heure.classList.remove("bluemodeheure");
-              
+              menu.classList.remove("bluemodemenue");
             }
           });
         },
@@ -78,6 +86,14 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
 
     blue();
   }, []);
+
+  function noscroll() {
+    var Html = document.querySelector(".html");
+    if (Html != null) {
+      Html.classList.add("noscroll");
+    }
+    setIsOpen(true);
+  }
 
  const cardVariants: Variants = {
     offscreen: {
@@ -108,7 +124,15 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
   };
   
   return (
-    <>
+    <div>
+      <ScrollTop />
+      <Hours />
+      <div className="hiddebarmenu "></div>
+      <div className="hiddebartime"></div>
+      <span className="btnOpen" onClick={noscroll}>
+        <FontAwesomeIcon icon={faBars} />
+      </span>
+      <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
 
       <Container className='py-5 d-flex align-items-center firstProject panel switch blueswitch'>
         <Row>
@@ -172,9 +196,7 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
           </motion.div>
         </Row>
       </Container>
-      
-     
-    </>
+    </div>
   );
 }
 
