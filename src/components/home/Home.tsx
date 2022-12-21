@@ -16,10 +16,17 @@ import ScrollTop from "../Scrolltop/Scrolltop";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -85,7 +92,6 @@ function Home() {
 
   return (
     <>
-      <ScrollTop />
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
