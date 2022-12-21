@@ -12,7 +12,6 @@ import Hours from "./firstPart/Hours";
 import Menu from "./firstPart/menu";
 import "./../../css/thirdPart.css";
 import gsap from "gsap";
-import ScrollTop from "../Scrolltop/Scrolltop";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";

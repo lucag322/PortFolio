@@ -6,8 +6,7 @@ import Hours from "./components/home/firstPart/Hours";
 import Menu from "./components/home/firstPart/menu";
 import Home from "./components/home/Home";
 import Project from "./components/Project/Project";
-import Test from "./components/test/test";
-
+import Test from "./components/test/test";         
 import {Routes, Route, ScrollRestoration} from  "react-router-dom";
 import "./css/thirdPart.css";
 

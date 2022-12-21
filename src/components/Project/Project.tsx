@@ -14,10 +14,16 @@ import thalagif from '../../img/thalagif.gif';
 import capture1 from '../../img/thalamus74Iphone1.png';
 import capture2 from '../../img/thalamus74Iphone2.png';
 import capture3 from '../../img/thalamus74Iphone3.png';
-import ScrollTop from "../Scrolltop/Scrolltop";
+import { useLocation } from "react-router-dom";
 
 
 function Project() {
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   
     const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -125,7 +131,6 @@ gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
   
   return (
     <div>
-      <ScrollTop />
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
