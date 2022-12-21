@@ -7,7 +7,7 @@ import Menu from "./components/home/firstPart/menu";
 import Home from "./components/home/Home";
 import Project from "./components/Project/Project";
 import Test from "./components/test/test";
-import ScrollToTop from "./components/Scrolltop/Scrolltop";
+import ScrollTop from "./components/Scrolltop/Scrolltop";
 import {Routes, Route, ScrollRestoration} from  "react-router-dom";
 import "./css/thirdPart.css";
 
@@ -17,7 +17,7 @@ function App() {
 
   return (
       <div className="App">
-        <ScrollToTop />
+        <ScrollTop />
         <Home />
     </div>
   );
