@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAnimation, motion, Variants } from "framer-motion";
 import Hours from "../home/firstPart/Hours";
 import Menu from "../home/firstPart/menu";
-import backgroundVideo from '../../img/Thalamus74.mp4';
+import backgroundVideo from '../../img/thalamus74.mp4';
 import thalagif from '../../img/thalagif.gif';
 import capture1 from '../../img/thalamus74Iphone1.png';
 import capture2 from '../../img/thalamus74Iphone2.png';
