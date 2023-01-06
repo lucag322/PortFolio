@@ -38,10 +38,10 @@ axios.get('http://localhost:1337/api/tests', config)
   
       scrollTrigger: {
         trigger: ".start",
-        start: "top 800px",
+        start: "top 90%",
         end: "top",
         scrub: true,
-        markers: false,
+        markers: true,
       },
     });
     gsap.to(".title2", {
@@ -50,7 +50,7 @@ axios.get('http://localhost:1337/api/tests', config)
   
       scrollTrigger: {
         trigger: ".start",
-        start: "top 800px",
+        start: "top 90%",
         end: "top",
         scrub: true,
         markers: false,
@@ -75,6 +75,7 @@ axios.get('http://localhost:1337/api/tests', config)
           duration: 2,
           bounce: 0.3,
         },
+        
       });
       animation2.start({
         x: 0,
@@ -94,11 +95,11 @@ axios.get('http://localhost:1337/api/tests', config)
 
   return (
     <section className="firstPart">
-      <Container>
-        <Row ref={ref} className="firstRow">
-          <Col>
+      <Container ref={ref}>
+        <Row className="firstRow d-flex align-items-center">
+          <Col className="name--col">
             <div className="namePart tryguy noSelect">
-            {isLoading ? 'loading' : homes.map((item: any) => <h2 key={item.attributes.title}>{item.attributes.title}</h2>)}
+            {isLoading ? 'loading' : homes.map((item: any) => <h2 className="title" key={item.attributes.title}>{item.attributes.title}</h2>)}
             </div>
             <div className="favorite tryguy noSelect">
               <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>

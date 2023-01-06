@@ -98,13 +98,6 @@ body {
 
 
 
-@media only screen and (max-width: 1600px) {
-  h2 {
-    font-size: 12em !important;
-    line-height: 10rem !important;
-  }
-}
-
 #error-page {
 height: 100vh;
 };  

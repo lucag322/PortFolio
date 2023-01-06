@@ -61,18 +61,6 @@ console.log(res.data);
 
 
   useEffect(() => {
-
-gsap.registerPlugin(ScrollTrigger);    
-// gsap.utils.toArray<HTMLElement>('.panel').forEach((panel, i) => {
-//   ScrollTrigger.create({
-//     trigger: panel,
-//     start: "top top", 
-//     pin: true, 
-//     markers: false,
-//     end: () => "+=" + panel.offsetWidth/4
-//   });
-// });
-
     function blue() {
        const body: any = document.querySelector("body");
       const menu: any = document.querySelector(".btnOpen");
@@ -164,7 +152,7 @@ gsap.registerPlugin(ScrollTrigger);
         <FontAwesomeIcon icon={faBars} />
       </span>
     
-      <Container className='py-5 d-flex align-items-center firstProject panel switch blueswitch'>
+      <Container className='py-5 d-flex align-items-center firstProject panel1 switch blueswitch'>
       {isLoading ? 'loading' : projet.slice(1, 2).map((item: any) =>
         <Row className='test'> 
           <Col lg={12}>
@@ -187,9 +175,9 @@ gsap.registerPlugin(ScrollTrigger);
         </Row>
         )}
       </Container>
-      <Container className='py-5 secondProject panel'>
+      <Container className='py-5 secondProject pane2'>
         <Row className='switch blueswitch py-3'>
-          <Col className='text-center'>
+          <Col className='text-center'> 
           {isLoading ? 'loading' : projet.slice(1, 2).map((item: any) =>{
             if(item.presentation.data.attributes.url !== null){
               return <video autoPlay loop muted id='video' className='ratio ratio-16x9'>

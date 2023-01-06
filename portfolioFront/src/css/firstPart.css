@@ -11,8 +11,8 @@
 h2{
   font-family: 'Aventine'!important;
     font-weight: 500;
-    font-size: 13em !important;
-      line-height: 11rem !important;
+    font-size: 15em !important;
+      line-height: 13rem !important;
 }
 
 .firstPart {
@@ -214,3 +214,33 @@ h2{
     transform: translateY(0);
   }
 }
+
+@media (max-width: 1200px) {
+  h2{
+    font-size: 11em !important;
+      line-height: 9rem !important;
+  }
+}
+@media (max-width: 992px) {
+  h2 {
+      font-size: 9em !important;
+      line-height: 7rem !important;
+    }
+}
+@media (max-width: 768px) {
+  h2 {
+      font-size: 7em !important;
+      line-height: 6rem !important;
+    }
+    .name--col{
+      padding-right: 25px;
+        padding-left: 25px; 
+    }
+}
+@media (max-width: 576px) {
+  h2 {
+    font-size: 5em !important;
+    line-height: 4rem !important;
+  }}
+
+

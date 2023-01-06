@@ -1,3 +1,7 @@
 pour start le back tapez :
 
 yarn strapi develop
+
+pour start le front tapez : 
+
+npm run dev 

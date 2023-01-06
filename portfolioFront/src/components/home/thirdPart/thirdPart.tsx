@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "../../../css/thirdPart.css";
 import Img1 from "../../../img/thalamus742.png"; 
 import Img2 from "./../../img/capture2.png";
@@ -9,12 +9,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAnimation, motion, Variants } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 function thirdPart() {
 
+    const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
+  gsap.registerPlugin(ScrollTrigger);
   const [isLoading, setIsLoading] = useState(true);
   const [projet, setProjet] = useState<any>([null]);
   var config = {
@@ -37,14 +44,10 @@ console.log('projet :', res.data.data);
   console.log(error);
 });
 }, [])
-
-
-
-
-
-
+  
+  
  const navigate = useNavigate();
- gsap.registerPlugin(ScrollTrigger);
+
 
  const cardVariants: Variants = {
   offscreen: {
@@ -58,38 +61,43 @@ console.log('projet :', res.data.data);
       duration: 1
     }
   }
-};
+ };
+  const container: any = useRef(null);
+  const panels: any = useRef([]);
+  const comp = useRef();
+
+  const createPanelsRefs = (panel: any, index: string | number) => {
+    panels.current[index] = panel;
+  };
+useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const totalPanels = panels.current.length;
+        
+        gsap.to(panels.current, {
+          xPercent: -100 * (totalPanels - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: container.current,
+            pin: true,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+            scrub: 1.23,
+            markers: true,
+            end: () => "+=" + container.current.offsetWidth
+          }
+        });
+    }, comp);
+    return () => ctx.revert(); // cleanup
+}, [projet]);
+ 
   
-//   useEffect(() => {
-//     const compo = document.querySelectorAll(".projectcontainer");
-//   const contai: HTMLElement | null = document.querySelector(".thirdPart");
-// if(contai !== null){
-//   gsap.to(compo, {
-//     xPercent: -100 * (compo.length - 1),
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: contai,
-//       pin: contai,
-//       markers: true ,
-//       scrub: 1,
-//       snap:{
-//         snapTo: 1 / (compo.length - 1),
-//         delay: 0.1,
-//       },
-//       end: () => "+=" + contai.offsetWidth,
-//     },
-//   });
-// }
-// }, []);
+
   return (
     <>
   
-         <div className="thirdPart " id="drag">
-
-
-         {isLoading ? 'loading' : projet.map((item: any) =>
-
-          <div className="projectcontainer first panel" key={item.id} onClick={()=>navigate(`project/${item.id}`)}>
+         <div className="thirdPart " id="thirdPart" ref={container}>
+          {isLoading ? 'loading' : projet.map((item: any, i:any) =>
+         <div className="projectcontainer panel" ref={(e) => createPanelsRefs(e, i)} key={item.id} id={i} onClick={()=>navigate(`project/${item.id}`)}>
             <div className="projet yrsa  position-relative" >
               <motion.div  initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} className="img-box position-absolute">
                 <motion.img key={item.attributes.miniature.data.attributes.url} variants={cardVariants} src={`http://localhost:1337${item.attributes.miniature.data.attributes.url}`} className="card-img-top" alt="..." />
@@ -99,10 +107,8 @@ console.log('projet :', res.data.data);
               </div>
             </div>
           </div>
-
           )}
-        </div>
-
+      </div>
     </>
   );
 }

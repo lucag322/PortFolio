@@ -8,6 +8,7 @@ import {
 import Project from './components/Project/Project'
 import Home from './components/home/Home'
 import AllProject from './components/allProject/allProject'
+import Test from './components/test/test'
 import ErrorPage from './components/Error/Error';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
     {
         element: <AllProject />,
         path: "/allProject",
-    }
+  },
+  {
+    element: <Test />,
+    path: "/test",
+  }
+
 ]);
 
 
