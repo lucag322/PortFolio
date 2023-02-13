@@ -1,0 +1,218 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::projet.projet",
+  "value": {
+    "uid": "api::projet.projet",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "title",
+      "defaultSortBy": "title",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "title": {
+        "edit": {
+          "label": "title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "miniature": {
+        "edit": {
+          "label": "miniature",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "miniature",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "presentation": {
+        "edit": {
+          "label": "presentation",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "presentation",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "sideImage": {
+        "edit": {
+          "label": "sideImage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "sideImage",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "projectDescription": {
+        "edit": {
+          "label": "projectDescription",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "projectDescription",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "firstmobileimage": {
+        "edit": {
+          "label": "firstmobileimage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "firstmobileimage",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "secondmobileimage": {
+        "edit": {
+          "label": "secondmobileimage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "secondmobileimage",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "thirdmobileimage": {
+        "edit": {
+          "label": "thirdmobileimage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "thirdmobileimage",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "title",
+            "size": 6
+          },
+          {
+            "name": "miniature",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "presentation",
+            "size": 6
+          },
+          {
+            "name": "sideImage",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "projectDescription",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "firstmobileimage",
+            "size": 4
+          },
+          {
+            "name": "secondmobileimage",
+            "size": 4
+          },
+          {
+            "name": "thirdmobileimage",
+            "size": 4
+          }
+        ]
+      ],
+      "list": [
+        "id",
+        "title",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

@@ -4,38 +4,37 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
-import axios from 'axios';
+import axios from "axios";
 //const axios = require('axios'); // legacy way
 
 function FirstPart() {
-
   const [isLoading, setIsLoading] = useState(true);
   const [homes, setHomes] = useState<any>([null]);
   var config = {
-  
     headers: {
-      'Accept': 'application/json',
-     }
+      Accept: "application/json",
+    },
   };
 
-useEffect(() => {
-  // Make a request for a user with a given ID
-axios.get('http://localhost:1337/api/tests', config)
-.then((res) => { setHomes(Object.values(res.data.data)); 
-  setIsLoading(false);
-})
+  useEffect(() => {
+    // Make a request for a user with a given ID
+    axios
+      .get("https://back.lucagrousset.eu/api/tests", config)
+      .then((res) => {
+        setHomes(Object.values(res.data.data));
+        setIsLoading(false);
+      })
 
-.catch(function (error) {
-  // handle error
-  console.log(error);
-});
-}, []);
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }, []);
 
   useEffect(() => {
-
     gsap.to(".title", {
       x: 300,
-  
+
       scrollTrigger: {
         trigger: ".start",
         start: "top 90%",
@@ -47,7 +46,6 @@ axios.get('http://localhost:1337/api/tests', config)
     gsap.to(".title2", {
       x: -300,
 
-  
       scrollTrigger: {
         trigger: ".start",
         start: "top 90%",
@@ -56,17 +54,13 @@ axios.get('http://localhost:1337/api/tests', config)
         markers: false,
       },
     });
-    
   }, []);
-
-  
 
   const { ref, inView } = useInView();
   const animation1 = useAnimation();
   const animation2 = useAnimation();
 
   useEffect(() => {
-
     if (inView) {
       animation1.start({
         x: 0,
@@ -75,7 +69,6 @@ axios.get('http://localhost:1337/api/tests', config)
           duration: 2,
           bounce: 0.3,
         },
-        
       });
       animation2.start({
         x: 0,
@@ -91,7 +84,6 @@ axios.get('http://localhost:1337/api/tests', config)
       animation2.start({ x: "50vw" });
     }
   }, [inView]);
- 
 
   return (
     <section className="firstPart">
@@ -99,7 +91,13 @@ axios.get('http://localhost:1337/api/tests', config)
         <Row className="firstRow d-flex align-items-center">
           <Col className="name--col">
             <div className="namePart tryguy noSelect">
-            {isLoading ? 'loading' : homes.map((item: any) => <h2 className="title" key={item.attributes.title}>{item.attributes.title}</h2>)}
+              {isLoading
+                ? "loading"
+                : homes.map((item: any) => (
+                    <h2 className="title" key={item.attributes.title}>
+                      {item.attributes.title}
+                    </h2>
+                  ))}
             </div>
             <div className="favorite tryguy noSelect">
               <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
@@ -108,9 +106,7 @@ axios.get('http://localhost:1337/api/tests', config)
               <h2 className="title m-0 fw-light">FrontEnd</h2>
             </div>
             <div className="favorite noSelect">
-              <h2 className="title2 m-0 fw-light fst-italic ">
-                Developer
-              </h2>
+              <h2 className="title2 m-0 fw-light fst-italic ">Developer</h2>
             </div>
           </Col>
         </Row>
