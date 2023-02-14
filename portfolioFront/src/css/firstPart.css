@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Aventine';
-  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+  font-family: "Aventine";
+  src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
 }
 .noSelect {
   -moz-user-select: none;
@@ -8,11 +8,11 @@
   -ms-user-select: none;
   user-select: none;
 }
-h2{
-  font-family: 'Aventine'!important;
-    font-weight: 500;
-    font-size: 15em !important;
-      line-height: 13rem !important;
+h2 {
+  font-family: "Aventine" !important;
+  font-weight: 500;
+  font-size: 12em !important;
+  line-height: 9rem !important;
 }
 
 .firstPart {
@@ -106,7 +106,7 @@ h2{
   z-index: 5;
   border-radius: 5px;
   margin-right: 10px;
-  font-family: 'Aventine'!important;
+  font-family: "Aventine" !important;
 }
 
 .bluemodeheure {
@@ -157,10 +157,10 @@ h2{
 
 .Menu > .Menu-items > a {
   color: #ffffff;
-  font-size: 5rem!important;
+  font-size: 5rem !important;
   text-decoration: none;
   position: relative;
-  font-family: 'Aventine'!important;
+  font-family: "Aventine" !important;
 }
 
 .Menu > .Menu-items > a::after {
@@ -216,31 +216,30 @@ h2{
 }
 
 @media (max-width: 1200px) {
-  h2{
+  h2 {
     font-size: 11em !important;
-      line-height: 9rem !important;
+    line-height: 9rem !important;
   }
 }
 @media (max-width: 992px) {
   h2 {
-      font-size: 9em !important;
-      line-height: 7rem !important;
-    }
+    font-size: 9em !important;
+    line-height: 7rem !important;
+  }
 }
 @media (max-width: 768px) {
   h2 {
-      font-size: 7em !important;
-      line-height: 6rem !important;
-    }
-    .name--col{
-      padding-right: 25px;
-        padding-left: 25px; 
-    }
+    font-size: 7em !important;
+    line-height: 6rem !important;
+  }
+  .name--col {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
 }
 @media (max-width: 576px) {
   h2 {
     font-size: 5em !important;
     line-height: 4rem !important;
-  }}
-
-
+  }
+}
