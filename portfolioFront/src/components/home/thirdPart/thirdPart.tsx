@@ -48,10 +48,10 @@ function thirdPart() {
 
   const cardVariants: Variants = {
     offscreen: {
-      y: 600,
+      opacity:0
     },
     onscreen: {
-      y: 0,
+      opacity : 1 ,
       transition: {
         type: "spring",
         bounce: 0.4,
@@ -109,7 +109,7 @@ function thirdPart() {
                   <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.8 }}
+                    viewport={{ amount: 0.8 }}
                     className="img-box position-absolute"
                   >
                     <motion.img

@@ -47,35 +47,17 @@ function fourthPart() {
   return (
     <section className="fourthPart ">
       <Container className="py-5">
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          className="row"
-        >
-          <Col lg={4} sm={4} xs={4} className=" p-0">
-            <img src={star} alt="" className="rrr" />
-          </Col>
+        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}className="row">
           <Col lg={8} sm={8} xs={8} className="">
-            <motion.h2
-              variants={cardVariants}
-              className="partName  fw-light fst-italic pt-2 position-relative text-end"
-              id="Titre"
-            >
+            <motion.h2 variants={cardVariants}className="partName  fw-light fst-italic pt-2" id="Titre">
               about me
             </motion.h2>
-            {isLoading
-              ? "loading"
-              : homes.map((item: any) => (
-                  <motion.p
-                    variants={cardVariants}
-                    className="yrsa position-relative zindex-sticky aboutText"
-                    key={item.attributes.about}
-                  >
-                    {" "}
-                    {item.attributes.about}
-                  </motion.p>
+            {isLoading ? "loading" : homes.map((item: any) => (
+                  <motion.p variants={cardVariants}className="yrsa position-relative zindex-sticky aboutText" key={item.attributes.about}>{item.attributes.about}</motion.p>
                 ))}
+          </Col>
+          <Col lg={4} sm={4} xs={4} className=" p-0">
+            <img src={star} alt="" className="rrr" />
           </Col>
         </motion.div>
       </Container>

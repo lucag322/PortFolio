@@ -28,10 +28,11 @@
   width: 100vw;
   display: flex;
 }
-.projectcontainer:hover .img-box {
+ .img-box:hover {
   filter: blur(6px);
+
 }
-.projectcontainer:hover .card-title {
+.projet:hover .card-title {
   opacity: 1;
 }
 .img-box {
