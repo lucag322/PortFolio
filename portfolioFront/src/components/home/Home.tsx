@@ -1,7 +1,4 @@
 import "./../../css/home.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import FirstPart from "./firstPart/firstPart";
 import SecondPart from "./secondPart/secondPart";
@@ -31,7 +28,7 @@ function Home() {
   //   window.scrollTo(0, 0);
   // }, [pathname]);
 
-  const [isOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     function blue() {
@@ -41,6 +38,8 @@ function Home() {
       const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
       const hiddebartime: any = document.querySelector(".hiddebartime");
       const heure: any = document.querySelector(".heure");
+      const navbar: any = document.querySelector(".navbarr")
+      const navName: any = document.querySelector(".nav-name")
       let observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -55,6 +54,8 @@ function Home() {
               hiddebarmenu.classList.add("hidde");
               hiddebartime.classList.add("hidde");
               heure.classList.add("bluemodeheure");
+              navbar.classList.add("bluemodenav")
+              navName.classList.add("bluemodename")
             } else if (
               entry.isIntersecting &&
               entry.target.classList.contains("whiteswitch")
@@ -66,6 +67,8 @@ function Home() {
               hiddebarmenu.classList.remove("hidde");
               hiddebartime.classList.remove("hidde");
               heure.classList.remove("bluemodeheure");
+              navbar.classList.remove("bluemodenav")
+              navName.classList.remove("bluemodename")
             }
           });
         },
@@ -85,23 +88,12 @@ function Home() {
     blue();
   }, []);
 
-  function noscroll() {
-    var Html = document.querySelector(".html");
-    if (Html != null) {
-      Html.classList.add("noscroll");
-    }
-    setIsOpen(true);
-  }
 
   return (
     <>
       <Hours />
       <div className="hiddebarmenu "></div>
       <div className="hiddebartime"></div>
-      <span className="btnOpen" onClick={noscroll}>
-        <FontAwesomeIcon icon={faBars} />
-      </span>
-      <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />
       </Row>

@@ -15,7 +15,15 @@
   display: flex;
   flex-wrap: nowrap;
 }
-
+.project-title{
+  position: absolute;
+  top: 10%;
+  left: 200px;
+  font-family: "Aventine";
+  font-size: 8rem!important;
+  font-style: italic;
+  
+}
 .card-body {
   padding: 1rem 0px !important;
 }
@@ -28,16 +36,18 @@
   width: 100vw;
   display: flex;
 }
- .img-box:hover {
-  filter: blur(6px);
 
+.projet:hover .img-box {
+  filter: blur(6px);
 }
 .projet:hover .card-title {
   opacity: 1;
 }
 .img-box {
-  height: 35rem;
-  width: 60rem;
+  aspect-ratio: 16/9;
+  -webkit-aspect-ratio: 16/9;
+  width: 55rem;
+  height: 30rem;
   overflow: hidden;
   left: 50%;
   top: 50%;

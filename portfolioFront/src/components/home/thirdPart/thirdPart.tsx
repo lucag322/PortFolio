@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "../../../css/thirdPart.css";
-import Img1 from "../../../img/thalamus742.png";
-import Img2 from "./../../img/capture2.png";
-import Img3 from "./../../img/capture3.png";
-import Img4 from "./../../img/capture4.png";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -85,7 +82,7 @@ function thirdPart() {
             delay: 0.01,
           },
           markers: false,
-          end: () => "+=" + (container.current.offsetWidth - 2000),
+          end: () => "+=" + (container.current.offsetWidth),
         },
       });
     }, comp);

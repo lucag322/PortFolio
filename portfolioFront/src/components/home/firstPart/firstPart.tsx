@@ -40,7 +40,7 @@ function FirstPart() {
         start: "top 90%",
         end: "top",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     gsap.to(".title2", {
@@ -54,7 +54,7 @@ function FirstPart() {
         markers: false,
       },
     });
-  }, []);
+  }, [isLoading]);
 
   const { ref, inView } = useInView();
   const animation1 = useAnimation();

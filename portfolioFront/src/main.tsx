@@ -1,10 +1,12 @@
 import React from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
     RouterProvider,
-  useLocation
+  useLocation,
+  Outlet
 } from "react-router-dom";
+import Navbar from './components/navbar/Navbar'
 import Project from './components/Project/Project'
 import Home from './components/home/Home'
 import AllProject from './components/allProject/allProject'
@@ -13,31 +15,42 @@ import ErrorPage from './components/Error/Error';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const AppLayout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
+};
 const router = createBrowserRouter([
   {
-    path: "/",
-        element: <Home />,
-    errorElement: <ErrorPage />,
-    },
-    {
-        path: "/project/:id",
-        element: <Project />,
-    },
-    {
-        element: <AllProject />,
-        path: "/allProject",
-  },
-  {
-    element: <Test />,
-    path: "/test",
+    element: <AppLayout/>,
+    children: [
+        {
+        path: "/",
+            element: <Home />,
+        errorElement: <ErrorPage />,
+        },
+        {
+            path: "/project/:id",
+            element: <Project />,
+        },
+        {
+            element: <AllProject />,
+            path: "/allProject",
+      },
+      {
+        element: <Test />,
+        path: "/test",
+      }
+    ]
   }
-
 ]);
 
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <React.StrictMode>
-            <RouterProvider router={router} />
-  </React.StrictMode>
-)
+const root = document.getElementById("root");
+if (root) {
+  createRoot(root).render(<RouterProvider router={router} />);
+}
 

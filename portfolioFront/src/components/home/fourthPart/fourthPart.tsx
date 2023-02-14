@@ -33,13 +33,34 @@ function fourthPart() {
   const cardVariants: Variants = {
     offscreen: {
       y: 100,
+      opacity: 0,
     },
-    onscreen: {
+    offscreen2: {
+      x: 500,
+    },
+    onscreen1: {
       y: 0,
+      opacity: 1,
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8,
+        duration: 1.5,
+      },
+    },
+    onscreen2: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 2,
+      },
+    },
+    onscreen3: {
+      x: 0,
+      transition: {
+        type: "spring",
+        duration: 1.5,
       },
     },
   };
@@ -47,23 +68,30 @@ function fourthPart() {
   return (
     <section className="fourthPart ">
       <Container className="py-5">
-        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}className="row">
+        <Row>
           <Col lg={8} sm={8} xs={8} className="">
-            <motion.h2 variants={cardVariants}className="partName  fw-light fst-italic pt-2" id="Titre">
-              about me
-            </motion.h2>
+            <motion.div initial="offscreen" whileInView={"onscreen1"} viewport={{ once: true, amount: 0.8 }}>
+              <motion.h2 variants={cardVariants} className="partName  fw-light fst-italic pt-2" id="Titre">
+                about me
+              </motion.h2>
+            </motion.div>
+            <motion.div initial="offscreen" whileInView={"onscreen1"} viewport={{ once: true, amount: 0.8 }}>
             {isLoading ? "loading" : homes.map((item: any) => (
-                  <motion.p variants={cardVariants}className="yrsa position-relative zindex-sticky aboutText" key={item.attributes.about}>{item.attributes.about}</motion.p>
+                  <motion.p variants={cardVariants} className="yrsa position-relative zindex-sticky aboutText" key={item.attributes.about}>{item.attributes.about}</motion.p>
                 ))}
+            </motion.div>
           </Col>
           <Col lg={4} sm={4} xs={4} className=" p-0">
-            <img src={star} alt="" className="rrr" />
+            <motion.div initial="offscreen" whileInView={"onscreen2"} viewport={{ once: true, amount: 0.8 }}>
+              <motion.img src={star} variants={cardVariants} className="rrr" animate={{ rotate: 360 }}transition={{duration: 2,repeat: Infinity,repeatType: "reverse", }}/>
+            </motion.div>
           </Col>
-        </motion.div>
+        </Row>
       </Container>
       <Row className="pb-5">
         <Col lg={12} sm={12} xs={12} className=" p-0">
-          <div className="messagedefilant">
+        <motion.div initial="offscreen2" whileInView={"onscreen3"} viewport={{ once: true, amount: 0.8 }}>
+          <motion.div variants={cardVariants} className="messagedefilant">
             {isLoading
               ? "loading"
               : homes.map((item: any) => (
@@ -78,7 +106,8 @@ function fourthPart() {
                     </span>
                   </div>
                 ))}
-          </div>
+          </motion.div>
+          </motion.div>
         </Col>
       </Row>
     </section>
