@@ -93,6 +93,7 @@ function FirstPart() {
 
   return (
     <section className="firstPart">
+<<<<<<< HEAD
       <BrowserView>
         <Container ref={ref}>
           <Row className="firstRow d-flex align-items-center">
@@ -157,6 +158,37 @@ function FirstPart() {
           </Row>
         </Container>
       </MobileView>
+=======
+      <Container ref={ref}>
+        <Row className="firstRow d-flex align-items-center">
+          <Col className="name--col">
+            <div className="namePart tryguy noSelect">
+              {isLoading
+                ? "loading"
+                : homes.map((item: any) => (
+                    <h2 className="title" key={item.attributes.title}>
+                      {item.attributes.title}
+                    </h2>
+                  ))}
+            </div>
+            <div className="favorite tryguy noSelect">
+              <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
+            </div>
+            <div className="frontend noSelect">
+              <h2 className="title m-0 fw-light">FrontEnd</h2>
+            </div>
+            <div className="favorite noSelect">
+              <h2 className="title2 m-0 fw-light fst-italic ">Developer</h2>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className="arrow bounce noSelect start"></div>
+          </Col>
+        </Row>
+      </Container>
+>>>>>>> parent of aea9ebf (add)
     </section>
   );
 }
