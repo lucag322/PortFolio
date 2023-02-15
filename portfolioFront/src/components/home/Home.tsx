@@ -11,6 +11,7 @@ import "./../../css/thirdPart.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
+import { BrowserView, MobileView } from "react-device-detect";
 import { Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
@@ -83,9 +84,11 @@ function Home() {
 
   return (
     <>
-      <Hours />
-      <div className="hiddebarmenu "></div>
-      <div className="hiddebartime"></div>
+      <BrowserView>
+        <Hours />
+        <div className="hiddebarmenu "></div>
+        <div className="hiddebartime"></div>
+      </BrowserView>
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />
       </Row>

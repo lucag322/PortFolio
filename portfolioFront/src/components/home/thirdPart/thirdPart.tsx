@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "../../../css/thirdPart.css";
 import gsap from "gsap";
+import Slider1 from "./MobilSlider/Slider";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { BrowserView, MobileView } from "react-device-detect";
 
 function thirdPart() {
   const { pathname } = useLocation();
@@ -44,10 +46,10 @@ function thirdPart() {
 
   const cardVariants: Variants = {
     offscreen: {
-      opacity:0
+      opacity: 0,
     },
     onscreen: {
-      opacity : 1 ,
+      opacity: 1,
       transition: {
         type: "spring",
         bounce: 0.4,
@@ -80,51 +82,59 @@ function thirdPart() {
             duration: { min: 0.2, max: 0.3 },
             delay: 0.01,
           },
+          end: () => "+=" + container.current.offsetWidth * (totalPanels - 1),
           markers: false,
-          end: () => "+=" + (container.current.offsetWidth),
         },
       });
     }, comp);
     return () => ctx.revert(); // cleanup
-  }, [projet]);
+  }, [isLoading && []]);
 
   return (
     <>
-      <div className="thirdPart " id="thirdPart" ref={container}>
-        {isLoading
-          ? "loading"
-          : projet.map((item: any, i: any) => (
-              <div
-                className="projectcontainer panel"
-                ref={(e) => createPanelsRefs(e, i)}
-                key={item.id}
-                id={i}
-                onClick={() => navigate(`project/${item.id}`)}
-              >
-                <div className="projet yrsa  position-relative">
-                  <motion.div
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ amount: 0.8 }}
-                    className="img-box position-absolute"
-                  >
-                    <motion.img
-                      key={item.attributes.miniature.data.attributes.url}
-                      variants={cardVariants}
-                      src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
-                      className="card-img-top"
-                      alt="..."
-                    />
-                  </motion.div>
-                  <div className="card-body">
-                    <h3 className="card-title yrsa" key={item.attributes.title}>
-                      {item.attributes.title}
-                    </h3>
+      <BrowserView>
+        <div className="thirdPart " id="thirdPart" ref={container}>
+          {isLoading
+            ? "loading"
+            : projet.map((item: any, i: any) => (
+                <div
+                  className="projectcontainer panel"
+                  ref={(e) => createPanelsRefs(e, i)}
+                  key={item.id}
+                  id={i}
+                  onClick={() => navigate(`project/${item.id}`)}
+                >
+                  <div className="projet yrsa  position-relative">
+                    <motion.div
+                      initial="offscreen"
+                      whileInView="onscreen"
+                      viewport={{ amount: 0.8 }}
+                      className="img-box position-absolute"
+                    >
+                      <motion.img
+                        key={item.attributes.miniature.data.attributes.url}
+                        variants={cardVariants}
+                        src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                    </motion.div>
+                    <div className="card-body">
+                      <h3
+                        className="card-title yrsa"
+                        key={item.attributes.title}
+                      >
+                        {item.attributes.title}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-      </div>
+              ))}
+        </div>
+      </BrowserView>
+      <MobileView>
+        <h2>TEST</h2>
+      </MobileView>
     </>
   );
 }

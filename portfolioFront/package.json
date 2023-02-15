@@ -16,6 +16,7 @@
     "@splinetool/react-spline": "^2.2.2",
     "@splinetool/runtime": "^0.9.106",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-slick": "^0.23.10",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.0",
     "esbuild": "^0.16.10",
@@ -32,7 +33,9 @@
     "react-router-dom": "^6.5.0",
     "react-scroll": "^1.8.8",
     "react-scrollmagic": "^2.3.0",
+    "react-slick": "^0.29.0",
     "scrollmagic-plugin-gsap": "^1.0.4",
+    "slick-carousel": "^1.8.1",
     "vite-plugin-svg-react": "^1.0.3"
   },
   "devDependencies": {
