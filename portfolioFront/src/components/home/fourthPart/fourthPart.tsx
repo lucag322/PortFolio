@@ -69,44 +69,82 @@ function fourthPart() {
     <section className="fourthPart ">
       <Container className="py-5">
         <Row>
-          <Col lg={8} sm={8} xs={8} className="">
-            <motion.div initial="offscreen" whileInView={"onscreen1"} viewport={{ once: true, amount: 0.8 }}>
-              <motion.h2 variants={cardVariants} className="partName  fw-light fst-italic pt-2" id="Titre">
+          <Col md={8} className="">
+            <motion.div
+              initial="offscreen"
+              whileInView={"onscreen1"}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <motion.h2
+                variants={cardVariants}
+                className="partName  fw-light fst-italic pt-2"
+                id="Titre"
+              >
                 about me
               </motion.h2>
             </motion.div>
-            <motion.div initial="offscreen" whileInView={"onscreen1"} viewport={{ once: true, amount: 0.8 }}>
-            {isLoading ? "loading" : homes.map((item: any) => (
-                  <motion.p variants={cardVariants} className="yrsa position-relative zindex-sticky aboutText" key={item.attributes.about}>{item.attributes.about}</motion.p>
-                ))}
+            <motion.div
+              initial="offscreen"
+              whileInView={"onscreen1"}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              {isLoading
+                ? "loading"
+                : homes.map((item: any) => (
+                    <motion.p
+                      variants={cardVariants}
+                      className="yrsa position-relative zindex-sticky aboutText"
+                      key={item.attributes.about}
+                    >
+                      {item.attributes.about}
+                    </motion.p>
+                  ))}
             </motion.div>
           </Col>
-          <Col lg={4} sm={4} xs={4} className=" p-0">
-            <motion.div initial="offscreen" whileInView={"onscreen2"} viewport={{ once: true, amount: 0.8 }}>
-              <motion.img src={star} variants={cardVariants} className="rrr" animate={{ rotate: 360 }}transition={{duration: 2,repeat: Infinity,repeatType: "reverse", }}/>
+          <Col lg={4} sm={4} xs={4} className=" p-0 d-none d-md-block">
+            <motion.div
+              initial="offscreen"
+              whileInView={"onscreen2"}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <motion.img
+                src={star}
+                variants={cardVariants}
+                className="rrr"
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
             </motion.div>
           </Col>
         </Row>
       </Container>
       <Row className="pb-5">
         <Col lg={12} sm={12} xs={12} className=" p-0">
-        <motion.div initial="offscreen2" whileInView={"onscreen3"} viewport={{ once: true, amount: 0.8 }}>
-          <motion.div variants={cardVariants} className="messagedefilant">
-            {isLoading
-              ? "loading"
-              : homes.map((item: any) => (
-                  <div
-                    className="noSelect"
-                    key={item.attributes.texteDefile}
-                    data-text={item.attributes.texteDefile}
-                  >
-                    <span className="noSelect">
-                      {" "}
-                      {item.attributes.texteDefile}{" "}
-                    </span>
-                  </div>
-                ))}
-          </motion.div>
+          <motion.div
+            initial="offscreen2"
+            whileInView={"onscreen3"}
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            <motion.div variants={cardVariants} className="messagedefilant">
+              {isLoading
+                ? "loading"
+                : homes.map((item: any) => (
+                    <div
+                      className="noSelect"
+                      key={item.attributes.texteDefile}
+                      data-text={item.attributes.texteDefile}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {item.attributes.texteDefile}{" "}
+                      </span>
+                    </div>
+                  ))}
+            </motion.div>
           </motion.div>
         </Col>
       </Row>

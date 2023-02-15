@@ -14,21 +14,14 @@ import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
-
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
-
-
   // const { pathname } = useLocation();
 
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, [pathname]);
-
-
 
   useEffect(() => {
     function blue() {
@@ -38,8 +31,8 @@ function Home() {
       const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
       const hiddebartime: any = document.querySelector(".hiddebartime");
       const heure: any = document.querySelector(".heure");
-      const navbar: any = document.querySelector(".navbarr")
-      const navName: any = document.querySelector(".nav-name")
+      const navbar: any = document.querySelector(".navbarr");
+      const navName: any = document.querySelector(".nav-name");
       let observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -54,8 +47,8 @@ function Home() {
               hiddebarmenu.classList.add("hidde");
               hiddebartime.classList.add("hidde");
               heure.classList.add("bluemodeheure");
-              navbar.classList.add("bluemodenav")
-              navName.classList.add("bluemodename")
+              navbar.classList.add("bluemodenav");
+              navName.classList.add("bluemodename");
             } else if (
               entry.isIntersecting &&
               entry.target.classList.contains("whiteswitch")
@@ -67,8 +60,8 @@ function Home() {
               hiddebarmenu.classList.remove("hidde");
               hiddebartime.classList.remove("hidde");
               heure.classList.remove("bluemodeheure");
-              navbar.classList.remove("bluemodenav")
-              navName.classList.remove("bluemodename")
+              navbar.classList.remove("bluemodenav");
+              navName.classList.remove("bluemodename");
             }
           });
         },
@@ -88,7 +81,6 @@ function Home() {
     blue();
   }, []);
 
-
   return (
     <>
       <Hours />
@@ -106,7 +98,7 @@ function Home() {
       <Row name="contact" className=" swictch whiteswitch">
         <FifthPart />
       </Row>
-       <Row name="contact" className=" swictch whiteswitch">
+      <Row name="contact" className=" swictch whiteswitch">
         <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
           <span className="px-5">2023</span>
         </Col>

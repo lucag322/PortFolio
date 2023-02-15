@@ -3,6 +3,12 @@ import "../../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 import gsap from "gsap";
 import axios from "axios";
 //const axios = require('axios'); // legacy way
@@ -109,35 +115,70 @@ function FirstPart() {
 
   return (
     <section className="firstPart">
-      <Container ref={ref}>
-        <Row className="firstRow d-flex align-items-center">
-          <Col className="name--col">
-            <div className="namePart tryguy noSelect">
-              {isLoading
-                ? "loading"
-                : homes.map((item: any) => (
-                    <h2 className="title" key={item.attributes.title}>
-                      {item.attributes.title}
-                    </h2>
-                  ))}
-            </div>
-            <div className="favorite tryguy noSelect">
-              <h2 className="title3 m-0 fw-light fst-italic">Your Favorite</h2>
-            </div>
-            <div className="frontend noSelect">
-              <h2 className="title2 m-0 fw-light">FrontEnd</h2>
-            </div>
-            <div className="favorite noSelect">
-              <h2 className="title4 m-0 fw-light fst-italic ">Developer</h2>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div className="arrow bounce noSelect start"></div>
-          </Col>
-        </Row>
-      </Container>
+      <BrowserView>
+        <Container ref={ref}>
+          <Row className="firstRow d-flex align-items-center">
+            <Col className="name--col">
+              <div className="namePart tryguy noSelect">
+                {isLoading
+                  ? "loading"
+                  : homes.map((item: any) => (
+                      <h2 className="title" key={item.attributes.title}>
+                        {item.attributes.title}
+                      </h2>
+                    ))}
+              </div>
+              <div className="favorite tryguy noSelect">
+                <h2 className="title3 m-0 fw-light fst-italic">
+                  Your Favorite
+                </h2>
+              </div>
+              <div className="frontend noSelect">
+                <h2 className="title2 m-0 fw-light">FrontEnd</h2>
+              </div>
+              <div className="favorite noSelect">
+                <h2 className="title4 m-0 fw-light fst-italic ">Developer</h2>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="arrow bounce noSelect start"></div>
+            </Col>
+          </Row>
+        </Container>
+      </BrowserView>
+      <MobileView>
+        <Container>
+          <Row className="firstRow d-flex align-items-center">
+            <Col className="name--col">
+              <div className="namePart tryguy noSelect">
+                {isLoading
+                  ? "loading"
+                  : homes.map((item: any) => (
+                      <h2 className="" key={item.attributes.title}>
+                        {item.attributes.title}
+                      </h2>
+                    ))}
+              </div>
+              <div className="favorite tryguy noSelect">
+                <h2 className=" m-0 fw-light fst-italic">Your Favorite</h2>
+              </div>
+              <div className="frontend noSelect">
+                <h2 className=" m-0 fw-light">FrontEnd</h2>
+              </div>
+              <div className="favorite noSelect">
+                <h2 className=" m-0 fw-light fst-italic ">Developer</h2>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="arrow bounce noSelect start"></div>
+            </Col>
+          </Row>
+        </Container>
+      </MobileView>
     </section>
   );
 }
