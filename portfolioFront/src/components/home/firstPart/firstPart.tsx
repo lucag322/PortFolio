@@ -50,29 +50,7 @@ function FirstPart() {
       },
     });
     gsap.to(".title2", {
-      x: 600,
-
-      scrollTrigger: {
-        trigger: ".start",
-        start: "top 90%",
-        end: "top",
-        scrub: true,
-        markers: false,
-      },
-    });
-    gsap.to(".title3", {
       x: -300,
-
-      scrollTrigger: {
-        trigger: ".start",
-        start: "top 90%",
-        end: "top",
-        scrub: true,
-        markers: false,
-      },
-    });
-    gsap.to(".title4", {
-      x: -600,
 
       scrollTrigger: {
         trigger: ".start",
