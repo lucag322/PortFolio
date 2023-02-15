@@ -45,10 +45,10 @@ function thirdPart() {
 
   const cardVariants: Variants = {
     offscreen: {
-      opacity:0
+      opacity: 0,
     },
     onscreen: {
-      opacity : 1 ,
+      opacity: 1,
       transition: {
         type: "spring",
         bounce: 0.4,
@@ -81,8 +81,8 @@ function thirdPart() {
             duration: { min: 0.2, max: 0.3 },
             delay: 0.01,
           },
-          markers: false,
-          end: () => "+=" + (container.current.offsetWidth),
+          markers: true,
+          end: () => "+=" + (container.current.offsetWidth - window.innerWidth),
         },
       });
     }, comp);

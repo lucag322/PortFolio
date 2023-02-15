@@ -44,7 +44,29 @@ function FirstPart() {
       },
     });
     gsap.to(".title2", {
+      x: 600,
+
+      scrollTrigger: {
+        trigger: ".start",
+        start: "top 90%",
+        end: "top",
+        scrub: true,
+        markers: false,
+      },
+    });
+    gsap.to(".title3", {
       x: -300,
+
+      scrollTrigger: {
+        trigger: ".start",
+        start: "top 90%",
+        end: "top",
+        scrub: true,
+        markers: false,
+      },
+    });
+    gsap.to(".title4", {
+      x: -600,
 
       scrollTrigger: {
         trigger: ".start",
@@ -100,13 +122,13 @@ function FirstPart() {
                   ))}
             </div>
             <div className="favorite tryguy noSelect">
-              <h2 className="title2 m-0 fw-light fst-italic">Your Favorite</h2>
+              <h2 className="title3 m-0 fw-light fst-italic">Your Favorite</h2>
             </div>
             <div className="frontend noSelect">
-              <h2 className="title m-0 fw-light">FrontEnd</h2>
+              <h2 className="title2 m-0 fw-light">FrontEnd</h2>
             </div>
             <div className="favorite noSelect">
-              <h2 className="title2 m-0 fw-light fst-italic ">Developer</h2>
+              <h2 className="title4 m-0 fw-light fst-italic ">Developer</h2>
             </div>
           </Col>
         </Row>
