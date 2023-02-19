@@ -94,3 +94,9 @@ h2{
     margin-left: 0%;
   }
 }
+@media (max-width: 768px) {
+  .aboutText {
+    font-size: 1.5rem;
+    font-family: 'Recoleta';
+  }
+}

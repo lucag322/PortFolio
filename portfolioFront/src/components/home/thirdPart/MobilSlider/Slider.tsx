@@ -42,49 +42,37 @@ function Slider1() {
   const navigate = useNavigate();
 
   const settings = {
-    dots: false,
-    infinite: false,
-    arrows: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: false,
-          centerMode: true,
-          centerPadding: "10%",
-        },
-      },
-    ],
+    slidesToShow: 1,
+    arrows: false,
+    slidesToScroll: 1,
+    infinite: true,
+    dots: true,
+    centerMode: true,
+    centerPadding: "10%",
   };
 
   if (isLoading === false) {
     return (
       <>
+      <div className="pt-5 pb-5">
         {
           <Slider {...settings}>
             {isLoading
               ? "loading"
               : projet.map((item: any) => (
-                  <div className="card">{item.attributes.title}</div>
+                  <div>
+                    <img
+                        key={item.attributes.miniature.data.attributes.url}
+                        src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
+                        className="card-img-top p-2"
+                        alt="..."
+                      />
+                    {item.attributes.title}
+                  </div>
                 ))}
           </Slider>
-        }{" "}
+        }
+        </div>
       </>
     );
   } else {

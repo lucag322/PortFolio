@@ -236,7 +236,7 @@ h2 {
 }
 @media (max-width: 576px) {
   h2 {
-    font-size: 5em !important;
+    font-size: 4em !important;
     line-height: 4rem !important;
   }
 }

@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import star from "../../../img/rrr.svg";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 import axios from "axios";
 
 function fourthPart() {
@@ -122,6 +123,7 @@ function fourthPart() {
           </Col>
         </Row>
       </Container>
+      <BrowserView>
       <Row className="pb-5">
         <Col lg={12} sm={12} xs={12} className=" p-0">
           <motion.div
@@ -148,6 +150,7 @@ function fourthPart() {
           </motion.div>
         </Col>
       </Row>
+      </BrowserView>
     </section>
   );
 }

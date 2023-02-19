@@ -113,3 +113,28 @@
 .first {
   margin-left: 150px;
 }
+.thirdPartMobile{
+  width: 95%;
+  margin: 0 auto;
+}
+.thirdPartMobile div:last-child {
+  border-bottom: 1px #1b3b6f  solid;
+}
+.mobile-project{
+  cursor: pointer;
+  padding: 0.5rem 0px;
+  border-top: 1px #1b3b6f solid;
+}
+.bluemodeborder{
+  border-color: white!important;
+}
+.mobile-projet-title{
+  padding: 0px 1rem;
+  font-family: 'Aventine'!important;
+  font-size: 2.5rem!important;
+  line-height: unset!important;
+  margin: 0!important;
+}
+.mobil-projet-titlebox{
+font-style: italic;
+}

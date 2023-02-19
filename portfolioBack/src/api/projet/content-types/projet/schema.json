@@ -35,7 +35,7 @@
         "audios"
       ]
     },
-    "sideImage": {
+    "leftimage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -49,35 +49,30 @@
     "projectDescription": {
       "type": "richtext"
     },
-    "firstmobileimage": {
+    "rightimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "secondmobileimage": {
+    "lastimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "thirdmobileimage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "designby": {
+      "type": "string"
     }
   }
 }

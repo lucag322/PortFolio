@@ -8,16 +8,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAnimation, motion, Variants } from "framer-motion";
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 import Hours from "../home/firstPart/Hours";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+
 function Project() {
+
+
   const navigate = useNavigate();
-
-  const id = useParams();
-
+  const {id} = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [projet, setProjet] = useState<any>([null]);
   var config = {
@@ -30,7 +33,7 @@ function Project() {
     // Make a request for a user with a given ID
     axios
       .get(
-        `https://back.lucagrousset.eu/api/projets/${id.id}?populate=*`,
+        `https://back.lucagrousset.eu/api/projets/${id}?populate=*`,
         config
       )
       .then((res) => {
@@ -45,277 +48,164 @@ function Project() {
       });
   }, []);
 
+console.log('propro',projet);
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    function blue() {
-      const body: any = document.querySelector("body");
-      const menu: any = document.querySelector(".btnOpen");
-      const partname: any = document.querySelector("#Titre");
-      const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
-      const hiddebartime: any = document.querySelector(".hiddebartime");
-      const heure: any = document.querySelector(".heure");
-      let observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (
-              entry.isIntersecting &&
-              entry.target.classList.contains("blueswitch")
-            ) {
-              console.log("blue");
-              body.classList.add("bluemode");
-              partname.classList.add("bluemodename");
-              hiddebarmenu.classList.add("hidde");
-              hiddebartime.classList.add("hidde");
-              menu.classList.add("bluemodemenue");
-              heure.classList.add("bluemodeheure");
-            } else if (
-              entry.isIntersecting &&
-              entry.target.classList.contains("whiteswitch")
-            ) {
-              console.log("white");
-              body.classList.remove("bluemode");
-              partname.classList.remove("bluemodename");
-              hiddebarmenu.classList.remove("hidde");
-              hiddebartime.classList.remove("hidde");
-              heure.classList.remove("bluemodeheure");
-              menu.classList.remove("bluemodemenue");
-            }
-          });
-        },
-        {
-          rootMargin: "-47% 0px -47% 0px",
-        }
-      );
 
-      let target = ".switch";
-      document.querySelectorAll(target).forEach((i) => {
-        if (i) {
-          observer.observe(i);
-        }
-      });
-    }
 
-    blue();
-  }, []);
-
-  const cardVariants: Variants = {
-    offscreen: {
-      y: 600,
-    },
-    onscreen: {
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      },
-    },
-  };
 
   const rowVariants: Variants = {
-    offscreen: {
-      x: -1600,
+    offscreen1: {
+      opacity: 0,
+      x: -300,
+    },
+    offscreen2:{
+      opacity: 0,
+      y: 300,
+    },
+    offscreen3: {
+      opacity: 0,
+      x: 300,
     },
     onscreen: {
       x: 0,
+      y: 0,
+      opacity: 1,
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8,
+        duration: 1.5,
       },
     },
   };
 
-  return (
-    <div>
-      <Hours />
-      <div className="hiddebarmenu "></div>
-      <div className="hiddebartime"></div>
-      <span className="btnOpen" onClick={() => navigate(`/`)}>
-        <FontAwesomeIcon icon={faBars} />
-      </span>
+if(!isLoading) return (
 
-      <Container className="py-5 d-flex align-items-center firstProject panel1 switch blueswitch">
-        {isLoading
-          ? "loading"
-          : projet.slice(1, 2).map((item: any) => (
-              <Row className="test">
-                <Col lg={12}>
-                  <Row>
-                    <Col>
-                      <h3 key={item.title}>{item.title}---</h3>
-                    </Col>
-                  </Row>
-                  <Row className="switch blueswitch">
-                    <Col xs={3} className="d-grid text-center">
-                      <span className="role">Design by</span>
-                      <span className="roleName"> TRYTRYTRY</span>
-                    </Col>
-                    <Col xs={3} className="d-grid text-center">
-                      <span className="role">Design by</span>
-                      <span className="roleName"> TRYTRYTRY</span>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            ))}
-      </Container>
-      <Container className="py-5 secondProject pane2">
+    <div className="Projet-page">
+      <BrowserView>
+        <Hours />
+      </BrowserView>
+      <div className="container pt-3">
         <Row className="switch blueswitch py-3">
-          <Col className="text-center">
+          <Col className="text-center mt-5">
             {isLoading
               ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (item.presentation.data.attributes.url !== null) {
-                    return (
+              : (
                       <video
                         autoPlay
                         loop
                         muted
                         id="video"
-                        className="ratio ratio-16x9"
+                        className="ratio-16x9 w-100"
                       >
                         <source
-                          key={item.presentation.data.attributes.url}
-                          src={`https://back.lucagrousset.eu${item.presentation.data.attributes.url}`}
+                          key={projet[1].presentation.data.attributes.url}
+                          src={`https://back.lucagrousset.eu${projet[1].presentation.data.attributes.url}`}
                           type="video/mp4"
                         />
                       </video>
-                    );
-                  }
-                  return null;
-                })}
+                    )
+                }
           </Col>
         </Row>
-        <Row className=" switch whiteswitch py-3">
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.8 }}
-            className="col text-center"
-          >
-            {isLoading
-              ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (item.sideImage.data.attributes.url !== null) {
-                    return (
-                      <motion.img
-                        key={item.sideImage.data.attributes.url}
-                        variants={rowVariants}
-                        src={`https://back.lucagrousset.eu${item.sideImage.data.attributes.url}`}
-                      />
-                    );
-                  }
-                  return null;
-                })}
-          </motion.div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.4 }}
-            className="col d-flex align-items-center"
-          >
-            {isLoading
-              ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (item.projectDescription !== null) {
-                    return (
-                      <motion.p
-                        variants={rowVariants}
-                        className="descProject"
-                        key={item.projectDescription}
-                      >
-                        {item.projectDescription}
-                      </motion.p>
-                    );
-                  }
-                  return null;
-                })}
-          </motion.div>
+      </div>
+      <Container className="panel1 ">
+        {isLoading
+          ? "loading"
+          : (
+              <Row className=" mt-5">
+                <Col md={6}>
+                  <Row>
+                    <Col className="text-center">
+                      <h3 key={projet[1].title} className="page-title">{projet[1].title}</h3>
+                    </Col>
+                  </Row>
+                  <Row className="switch blueswitch">
+                    <Col className="d-grid text-center">
+                      <span className="role">Design by</span>
+                      {isLoading? "loading": (
+                     <span key={projet[1].designby} className="roleName">{projet[1].designby}</span>
+                      )}
+                     
+                    </Col>
+                    <Col className="d-grid text-center">
+                    <span className="role">Année</span>
+                    <span className="roleName">2023</span>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col md={6}>
+                <motion.div
+                  initial="offscreen3"
+                  whileInView="onscreen"
+                  viewport={{ once: true, amount: 1 }}
+                  className="col d-flex align-items-center">
+                  {isLoading? "loading": (
+                    <motion.p variants={rowVariants} className="descProject"  key={projet[1].projectDescription}>
+                      {projet[1].projectDescription}
+                    </motion.p>
+                      )}
+                  </motion.div>
+                </Col>
+              </Row>
+            )}
+      </Container>
+        <Container className="py-3 secondProject pane2">
+        <Row className=" switch whiteswitch py-3 ">
+          <Col md={6}>
+          <motion.div className="text-align-center mt-5" initial="offscreen1" whileInView="onscreen" viewport={{ once: true, amount: 1 }} >
+              {isLoading? "loading": (
+                  <motion.img className="w-100" key={projet[1].leftimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].leftimage.data.attributes.url}`}/>
+              )}
+            </motion.div>
+          </Col>
+          <Col md={6}>
+            <motion.div className="mt-5" initial="offscreen3" whileInView="onscreen" viewport={{ once: true, amount: 1 }} >
+              {isLoading? "loading": (
+                  <motion.img className="w-100" key={projet[1].rightimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].rightimage.data.attributes.url}`}/>
+              )}
+            </motion.div>
+          </Col>
         </Row>
         <Row className="py-5 switch whiteswitch">
           <motion.div
-            initial="offscreen"
+            initial="offscreen2"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.4 }}
             className="col text-center"
           >
             {isLoading
               ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (
-                    item.firstmobileimage.data.attributes.url !== null &&
-                    typeof item.firstmobileimage.data.attributes.url !==
-                      "undefined"
-                  ) {
-                    return (
+              : (
+                 
                       <motion.img
-                        key={item.firstmobileimage.data.attributes.url}
-                        variants={cardVariants}
-                        src={`https://back.lucagrousset.eu${item.firstmobileimage.data.attributes.url}`}
-                        className="telcapture"
+                        key={projet[1].lastimage.data.attributes.url}
+                        variants={rowVariants}
+                        src={`https://back.lucagrousset.eu${projet[1].lastimage.data.attributes.url}`}
+                        className="w-100"
                       />
-                    );
-                  } else {
-                    console.log("cest chaud");
-                  }
-                })}
+                    
+                )}
           </motion.div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.6 }}
-            className="col text-center"
-          >
-            {isLoading
-              ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (item.secondmobileimage.data.attributes.url !== null) {
-                    return (
-                      <motion.img
-                        key={item.secondmobileimage.data.attributes.url}
-                        variants={cardVariants}
-                        src={`https://back.lucagrousset.eu${item.secondmobileimage.data.attributes.url}`}
-                        className="telcapture"
-                      />
-                    );
-                  }
-                  return null;
-                })}
-          </motion.div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.8 }}
-            className="col text-center"
-          >
-            {isLoading
-              ? "loading"
-              : projet.slice(1, 2).map((item: any) => {
-                  if (item.thirdmobileimage.data.attributes.url !== null) {
-                    return (
-                      <motion.img
-                        key={item.thirdmobileimage.data.attributes.url}
-                        variants={cardVariants}
-                        src={`https://back.lucagrousset.eu${item.thirdmobileimage.data.attributes.url}`}
-                        className="telcapture"
-                      />
-                    );
-                  }
-                  return null;
-                })}
-          </motion.div>
+        </Row>
+        <Row>
+          <Col>
+          <Col>
+              <div className="w-100 nextproject-box text-end pb-3">
+
+              </div>
+          </Col>
+          </Col>
         </Row>
       </Container>
     </div>
-  );
+)
+else return <div>loading</div>
 }
 
 export default Project;

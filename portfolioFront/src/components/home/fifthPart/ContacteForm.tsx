@@ -104,7 +104,7 @@ const Form = () => {
               required
             />
           </div>
-          <div className="submitBox text-end">
+          <div className="submitBox text-center">
             <button type="submit" className="submit">
               Send
             </button>

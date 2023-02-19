@@ -8,7 +8,7 @@ import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 function thirdPart() {
   const { pathname } = useLocation();
@@ -57,6 +57,8 @@ function thirdPart() {
       },
     },
   };
+
+if(isBrowser){
   const container: any = useRef(null);
   const panels: any = useRef([]);
   const comp = useRef();
@@ -80,23 +82,22 @@ function thirdPart() {
           snap: {
             snapTo: 1 / (totalPanels - 1),
             duration: { min: 0.2, max: 0.3 },
-            delay: 0.01,
+            delay: 0.00001,
           },
-          end: () => "+=" + container.current.offsetWidth * (totalPanels - 1),
           markers: false,
+          end: () => "+=" + container.current.offsetWidth ,
         },
       });
     }, comp);
     return () => ctx.revert(); // cleanup
   }, [isLoading && []]);
-
   return (
     <>
       <BrowserView>
         <div className="thirdPart " id="thirdPart" ref={container}>
           {isLoading
             ? "loading"
-            : projet.map((item: any, i: any) => (
+            : projet.slice(-3).map((item: any, i: any) => (
                 <div
                   className="projectcontainer panel"
                   ref={(e) => createPanelsRefs(e, i)}
@@ -132,11 +133,28 @@ function thirdPart() {
               ))}
         </div>
       </BrowserView>
+      </>
+    )
+}else{
+  return (
+    <>
       <MobileView>
-        <h2>TEST</h2>
+      <div className="thirdPartMobile">
+        <h2 className="mobil-projet-titlebox">Projets</h2>
+          {isLoading
+            ? "loading"
+            : projet.slice(-3).map((item: any, i: any) => (
+              <div className="mobile-project" onClick={() => navigate(`project/${item.id}`)}>
+                 <h3 className="mobile-projet-title yrsa" key={item.attributes.title}>
+                        {item.attributes.title}
+                  </h3>
+              </div>
+            ))}
+        
+      </div>
       </MobileView>
     </>
   );
 }
-
+}
 export default thirdPart;

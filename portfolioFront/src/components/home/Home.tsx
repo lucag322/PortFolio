@@ -11,7 +11,7 @@ import "./../../css/thirdPart.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 import { Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
@@ -23,7 +23,7 @@ function Home() {
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, [pathname]);
-
+if(isBrowser){
   useEffect(() => {
     function blue() {
       const body: any = document.querySelector("body");
@@ -81,6 +81,7 @@ function Home() {
 
     blue();
   }, []);
+}
 
   return (
     <>
@@ -95,7 +96,7 @@ function Home() {
       <Row name="about" className="swictch whiteswitch">
         <FourthPart />
       </Row>
-      <Col name="project" className="swictch blueswitch">
+      <Col name="project" className="swictch blueswitch mb-5">
         <ThirdPart />
       </Col>
       <Row name="contact" className=" swictch whiteswitch">
@@ -105,8 +106,8 @@ function Home() {
         <Col lg={6} sm={6} xs={6} className="footerLeft text-left">
           <span className="px-5">2023</span>
         </Col>
-        <Col lg={6} sm={6} xs={6} className="fotterRight text-end">
-          <span className="px-5">Grousset Luca</span>
+        <Col lg={6} sm={6} xs={6} className="fotterRight text-md-end">
+          <span className="px-3 px-md-5 ">Grousset Luca</span>
         </Col>
       </Row>
     </>
