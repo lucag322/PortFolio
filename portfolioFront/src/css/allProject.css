@@ -1,28 +1,38 @@
 @font-face {
-  font-family: 'Aventine';
-  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+  font-family: "Aventine";
+  src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
 }
+
 .allproject {
-  font-family: 'Aventine'!important;
-  width: 100%;
-  max-width: 100%!important;
-  height: 100%;
-  background-color: #1b3b6f;
-  color: white;
+  font-family: "Aventine" !important;
 }
-.titleContainer{
+.titleContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30vh;
 }
-.rowProject{
-  height: 15vh;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #FFF;
-    font-size: 3rem;
+.Project-liste-item:last-child {
+  border-bottom: 1px solid #fff;
 }
-.last{
-  border-bottom: 1px solid #FFF;
+.Project-liste-item {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.Project-image-item {
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
+  margin-right: 2rem;
+  object-fit: contain;
+}
+.liste-box {
+  overflow-y: scroll;
+}
+
+.fade {
+  transition: opacity 1s ease-in-out;
 }
