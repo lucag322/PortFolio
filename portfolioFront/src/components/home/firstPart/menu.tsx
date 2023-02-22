@@ -3,7 +3,7 @@ import { items } from "./menuItems";
 import "../../../css/firstPart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
 
 function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
   function scrollBack() {
@@ -21,9 +21,10 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
       </span>
       <div className="Menu-items">
         {items.map((item, index) => (
-          <Link to={item.itemLink} key={index} onClick={scrollBack}>
+          <Link activeClass="active" className=" noSelect" to={item.itemLink} spy={true} smooth={true} duration={500} offset={0} onClick={() => scrollBack()}>
+
             {item.itemText}
-          </Link>
+        </Link>
         ))}
       </div>
     </div>

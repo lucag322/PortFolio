@@ -12,11 +12,8 @@
   transition: ease 0.4s;
   z-index: 5;
 }
-.main-tool-bar > .container {
-    border-bottom: #1b3b6f 2px solid;
-}
+
 .bluemodenav{
-    border-bottom: white 2px solid!important;
     color: white!important;
 }
 .btnOpen{
@@ -24,6 +21,8 @@
     z-index: 5;
 }
 
-h4{
-    font-family: "Aventine" !important;
+.nav-name{
+  color: #1b3b6f;
+  text-decoration: none;
+  font-family: "Aventine" !important;
 }

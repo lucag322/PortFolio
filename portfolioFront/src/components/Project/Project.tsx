@@ -78,7 +78,7 @@ console.log('propro',projet);
       opacity: 1,
       transition: {
         type: "spring",
-        bounce: 0.4,
+        bounce: 0.2,
         duration: 1.5,
       },
     },
@@ -165,7 +165,7 @@ if(!isLoading) return (
             </motion.div>
           </Col>
           <Col md={6}>
-            <motion.div className="mt-5" initial="offscreen3" whileInView="onscreen" viewport={{ once: true, amount: 1 }} >
+            <motion.div className="mt-5" initial="offscreen3" whileInView="onscreen" viewport={{ once: true, amount: 0.6 }} >
               {isLoading? "loading": (
                   <motion.img className="w-100" key={projet[1].rightimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].rightimage.data.attributes.url}`}/>
               )}

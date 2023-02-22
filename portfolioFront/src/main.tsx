@@ -9,7 +9,6 @@ import {
 import Navbar from "./components/navbar/Navbar";
 import Project from "./components/Project/Project";
 import Home from "./components/home/Home";
-import AllProject from "./components/allProject/allProject";
 import Test from "./components/test/test";
 import ErrorPage from "./components/Error/Error";
 import "./index.css";
@@ -40,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: "/project/:id",
         element: <Project />,
-      },
-      {
-        element: <AllProject />,
-        path: "/allProject",
       },
       {
         element: <Test />,

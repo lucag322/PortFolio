@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
-import { useAnimation, motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { BrowserView, MobileView } from "react-device-detect";
 import gsap from "gsap";
@@ -79,42 +79,31 @@ function FirstPart() {
     });
   }, [isLoading]);
 
-  const { ref, inView } = useInView();
-  const animation1 = useAnimation();
-  const animation2 = useAnimation();
+  const rowVariants: Variants = {
+    offscreen1: {
+      opacity: 0,
+      y: 100,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.3,
+        duration: 2,
+      },
+    },
+  };
 
-  useEffect(() => {
-    if (inView) {
-      animation1.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 2,
-          bounce: 0.3,
-        },
-      });
-      animation2.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 10,
-          bounce: 0.3,
-        },
-      });
-    }
-    if (!inView) {
-      animation1.start({ x: "-100vw" });
-      animation2.start({ x: "50vw" });
-    }
-  }, [inView]);
+
 
   return (
     <section className="firstPart">
       <BrowserView>
-        <Container ref={ref}>
+        <motion.div className="container" initial="offscreen1" whileInView="onscreen" viewport={{ once: true, amount: 1 }}>
           <Row className="firstRow d-flex align-items-center">
             <Col className="name--col">
-              <div className="namePart tryguy noSelect">
+              <motion.div variants={rowVariants} className="namePart tryguy noSelect">
                 {isLoading
                   ? "loading"
                   : homes.map((item: any) => (
@@ -122,18 +111,18 @@ function FirstPart() {
                         {item.attributes.title}
                       </h2>
                     ))}
-              </div>
-              <div className="favorite tryguy noSelect">
+              </motion.div>
+              <motion.div  variants={rowVariants} className="favorite tryguy noSelect">
                 <h2 className="title3 m-0 fw-light fst-italic">
                   Your Favorite
                 </h2>
-              </div>
-              <div className="frontend noSelect">
+              </motion.div>
+              <motion.div variants={rowVariants} className="frontend noSelect">
                 <h2 className="title2 m-0 fw-light">FrontEnd</h2>
-              </div>
-              <div className="favorite noSelect">
+              </motion.div>
+              <motion.div variants={rowVariants} className="favorite noSelect">
                 <h2 className="title4 m-0 fw-light fst-italic ">Developer</h2>
-              </div>
+              </motion.div>
             </Col>
           </Row>
           <Row>
@@ -141,7 +130,7 @@ function FirstPart() {
               <div className="arrow bounce noSelect start"></div>
             </Col>
           </Row>
-        </Container>
+        </motion.div>
       </BrowserView>
       <MobileView>
         <Container>
