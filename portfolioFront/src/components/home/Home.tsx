@@ -18,11 +18,7 @@ import { useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
-  // const { pathname } = useLocation();
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
+  const [opacity, setOpacity] = useState(0);
 if(isBrowser){
   useEffect(() => {
     function blue() {
@@ -34,6 +30,7 @@ if(isBrowser){
       const heure: any = document.querySelector(".heure");
       const navbar: any = document.querySelector(".navbarr");
       const navName: any = document.querySelector(".nav-name");
+
       let observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -41,7 +38,6 @@ if(isBrowser){
               entry.isIntersecting &&
               entry.target.classList.contains("blueswitch")
             ) {
-              console.log("blue");
               body.classList.add("bluemode");
               menu.classList.add("bluemodemenue");
               partname.classList.add("bluemodename");
@@ -50,11 +46,12 @@ if(isBrowser){
               heure.classList.add("bluemodeheure");
               navbar.classList.add("bluemodenav");
               navName.classList.add("bluemodename");
+              setOpacity(1);
             } else if (
               entry.isIntersecting &&
               entry.target.classList.contains("whiteswitch")
             ) {
-              console.log("white");
+              setOpacity(0);
               body.classList.remove("bluemode");
               menu.classList.remove("bluemodemenue");
               partname.classList.remove("bluemodename");
@@ -89,6 +86,11 @@ if(isBrowser){
         <Hours />
         <div className="hiddebarmenu "></div>
         <div className="hiddebartime"></div>
+        <div className="messagedefilant2" style={{opacity: opacity}}>
+            <div className="noSelect" data-text="scroll down to see more ﹀ scroll down to see more ﹀">
+              <span className="noSelect">scroll down to see more ﹀ scroll down to see more ﹀</span>
+              </div>
+            </div>
       </BrowserView>
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />

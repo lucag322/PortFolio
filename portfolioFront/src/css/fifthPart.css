@@ -4,14 +4,15 @@
     url(./../fonts/Recoleta-Regular.ttf) format("truetype");
 }
 .FifthPart {
-  background-color: white;
+  background-color:  #F7EBDE;
   overflow: hidden;
   min-height: 100vh;
-  color: #1b3b6f;
+  color:  #e9967a;
   overflow-x: hidden;
-  width: 90% !important;
+  width: 93% !important;
   border-radius: 10px;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .contacteForm {
@@ -26,14 +27,15 @@
 }
 
 .inputForm {
-  border-bottom: 1px solid #1b3b6f !important;
+  border-bottom: 1px solid  #e9967a !important;
+  background-color:  #F7EBDE;
   border: none;
   width: 100%;
   font-size: 24px;
   font-family: "Recoleta";
 }
 .inputForm:focus-visible {
-  border-bottom: 1px solid #1b3b6f !important;
+  border-bottom: 1px solid  #e9967a !important;
   border: none;
   width: 100%;
   font-size: 24px;
@@ -52,9 +54,9 @@ textarea[name="message"] {
   padding: 5px 20px;
   font-size: 20px;
   font-family: "yrsa";
-  border: 2px solid #1b3b6f;
+  border: 2px solid  #e9967a;
   border-radius: 5px;
-  color: #1b3b6f;
+  color:  #e9967a;
   transition: all 0.1s;
   width: 200px;
   -webkit-transition: all 0.1s;
@@ -68,13 +70,17 @@ textarea[name="message"] {
   font-family: "yrsa";
   font-size: 30px;
   padding-top: 15%;
-  color: #1b3b6f;
+  color:  #e9967a;
 }
 .mail {
   font-size: 24px;
-  color: #1b3b6f;
+  color:  #e9967a;
   font-family: "Recoleta";
   text-align: left;
+}
+.mail:hover {
+  color:  #862403;
+  text-decoration: none;
 }
 @media (max-width: 768px) {
   .contact-title {

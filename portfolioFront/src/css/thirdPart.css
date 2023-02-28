@@ -63,15 +63,14 @@
 .card-title {
   text-align: center;
   font-family: "Aventine" !important;
-  font-size: 15rem!important;
-  line-height: 15rem!important;
+  font-size: 25rem!important;
+  line-height: 20rem!important;
   transition: all 0.4s;
-  -webkit-text-stroke: 2px white;
-  color: #1b3b6f;
+ 
 }
 .title-box{
   cursor: pointer;
-  max-width: 80%;
+padding: 7rem;
 }
 
 .img-box img {
@@ -119,12 +118,12 @@
   margin: 0 auto;
 }
 .thirdPartMobile div:last-child {
-  border-bottom: 1px #1b3b6f  solid;
+  border-bottom: 1px  #e9967a  solid;
 }
 .mobile-project{
   cursor: pointer;
   padding: 0.5rem 0px;
-  border-top: 1px #1b3b6f solid;
+  border-top: 1px  #e9967a solid;
 }
 .bluemodeborder{
   border-color: white!important;
@@ -138,4 +137,9 @@
 }
 .mobil-projet-titlebox{
 font-style: italic;
+}
+
+#mouse-parallax-container{
+height: 100vh;
+display: contents;
 }

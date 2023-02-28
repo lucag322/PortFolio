@@ -21,6 +21,7 @@ function Project() {
 
   const navigate = useNavigate();
   const {id} = useParams();
+  const [projetUrl, setProjetUrl] = useState((null));
   const [isLoading, setIsLoading] = useState(true);
   const [projet, setProjet] = useState<any>([null]);
   var config = {
@@ -47,15 +48,21 @@ function Project() {
         console.log(error);
       });
   }, []);
-
-console.log('propro',projet);
-  const { pathname } = useLocation();
-
+  useEffect(() => {
+  if(!isLoading){
+    console.log('propro',projet[1].PojectBg);
+    const colorBG = (projet[1].PojectBg);
+    document.querySelector('.Projet-page')?.setAttribute('style', `background-color: ${colorBG}!important`);
+    setProjetUrl(projet[1].urlProjet);
+  }
+  }, [isLoading]);
+const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
 
+    
 
 
 
@@ -137,6 +144,14 @@ if(!isLoading) return (
                     <span className="role">Année</span>
                     <span className="roleName">2023</span>
                     </Col>
+                    {projet[1].urlProjet && (
+                      <>
+                        <Col className="d-grid text-center">
+                        <a className="link" target="_blank" key={projet[1].urlProjet} href={projet[1].urlProjet}><span className="role">Voir le site</span></a>
+                        </Col>
+                      </>
+                    )}
+                   
                   </Row>
                 </Col>
                 <Col md={6}>
@@ -158,21 +173,21 @@ if(!isLoading) return (
         <Container className="py-3 secondProject pane2">
         <Row className=" switch whiteswitch py-3 ">
           <Col md={6}>
-          <motion.div className="text-align-center mt-5" initial="offscreen1" whileInView="onscreen" viewport={{ once: true, amount: 1 }} >
+          <motion.div className="mt-5  d-flex justify-content-center" initial="offscreen1" whileInView="onscreen" viewport={{ once: true, amount: 1 }} >
               {isLoading? "loading": (
-                  <motion.img className="w-100" key={projet[1].leftimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].leftimage.data.attributes.url}`}/>
+                  <motion.img style={{maxWidth:"100%"}} className="" key={projet[1].leftimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].leftimage.data.attributes.url}`}/>
               )}
             </motion.div>
           </Col>
           <Col md={6}>
-            <motion.div className="mt-5" initial="offscreen3" whileInView="onscreen" viewport={{ once: true, amount: 0.6 }} >
+            <motion.div className="mt-5  d-flex justify-content-center" initial="offscreen3" whileInView="onscreen" viewport={{ once: true, amount: 0.6 }} >
               {isLoading? "loading": (
-                  <motion.img className="w-100" key={projet[1].rightimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].rightimage.data.attributes.url}`}/>
+                  <motion.img style={{maxWidth:"100%"}} className="" key={projet[1].rightimage.data.attributes.url}variants={rowVariants} src={`https://back.lucagrousset.eu${projet[1].rightimage.data.attributes.url}`}/>
               )}
             </motion.div>
           </Col>
         </Row>
-        <Row className="py-5 switch whiteswitch">
+        <Row className="py-5 d-flex justify-content-center">
           <motion.div
             initial="offscreen2"
             whileInView="onscreen"

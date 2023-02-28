@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import "../../../css/thirdPart.css";
 import gsap from "gsap";
-import Slider1 from "./MobilSlider/Slider";
+import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 function thirdPart() {
+  const [opacity, setOpacity] = useState(0);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -79,19 +78,23 @@ if(isBrowser){
           invalidateOnRefresh: true,
           anticipatePin: 1,
           scrub: 1,
-          snap: {
-            snapTo: 1 / (totalPanels - 1),
-            duration: { min: 0.1, max: 0.3 },
-            delay: 0.001,
-            ease: "power3.inOut",
-          },
+          // snap: {
+          //   snapTo: 1 / (totalPanels - 1),
+          //   duration: { min: 0.1, max: 0.3 },
+          //   delay: 0.001,
+          //   ease: "power3.inOut",
+          // },
           markers: false,
           end: () => "+=" + container.current.offsetWidth ,
         },
       });
-    }, comp);
+    }, comp,);
     return () => ctx.revert(); // cleanup
   }, [isLoading && []]);
+
+console.log("opa :", opacity);
+
+
 
 
   return (
@@ -101,37 +104,62 @@ if(isBrowser){
           {isLoading
             ? "loading"
             : projet.map((item: any, i: any) => {
-              const url = `https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`;
+              let positions: Array<any> = []; // Tableau pour stocker les positions occupées par les images
+
+              const getRandomPosition = () => {
+                // Fonction pour générer une position aléatoire non occupée
+                let randomX = Math.random() * (700 + 700) - 700;
+                let randomY = Math.random() * (250 + 250) - 250;
+        
+                while (positions.some((pos) => pos.x === randomX && pos.y === randomY)) {
+                  // Tant que la position aléatoire générée est déjà occupée, on en génère une nouvelle
+                  randomX = Math.random() * (700 + 700) - 700;
+                  randomY = Math.random() * (250 + 2500) - 250;
+                }
+        
+                positions.push({ x: randomX, y: randomY }); // On ajoute la position générée dans le tableau
+                return { x: randomX, y: randomY };
+              };
+
+              const url1 = `https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`;
+              const url2 = `https://back.lucagrousset.eu${item.attributes.leftimage.data.attributes.url}`;
+              const url3 = `https://back.lucagrousset.eu${item.attributes.rightimage.data.attributes.url}`;
               return (
               <>
-                <div
-                  className="projectcontainer panel"
-                  ref={(e) => createPanelsRefs(e, i)}
-                  key={item.id}
-                  id={i}
-                >
-                  <div className="projet yrsa  position-relative d-flex align-items-center justify-content-center">
-                    <div className="title-box" onClick={() => navigate(`project/${item.id}`)}>
-                      <h3 className="card-title yrsa noSelect" key={item.attributes.title}>
-                        {item.attributes.title}
-                      </h3>
+                <div className="projectcontainer panel"ref={(e) => createPanelsRefs(e, i)} key={item.id}id={i}>
+                    <div className="projet yrsa  position-relative d-flex align-items-center justify-content-center">
+                    <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
+                      <div className="title-box " data-speed="1" onClick={() => navigate(`project/${item.id}`)}>
+                        <MouseParallaxChild factorX={0.3} factorY={0.5} >
+                          <h3 className="card-title yrsa noSelect" key={item.attributes.title}>
+                            {item.attributes.title}
+                          </h3>
+                        </MouseParallaxChild>
+                      </div>
+                      </MouseParallaxContainer>
+                      <motion.div
+                        style={{backgroundSize: 'contain',backgroundRepeat: 'no-repeat',position: 'absolute',borderRadius: 5,cursor: "grab",
+                        ...getRandomPosition(), }} drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} dragElastic={0.5}
+                        whileTap={{ cursor: "grabbing" }}>
+                        <img src={url1} className="noselect" style={{maxWidth:'20rem'}}/>
+                        <div style={{width:'100%', height:'100%',position:'absolute',top:'0'}}></div>
+                      </motion.div>
+                      <motion.div
+                          style={{backgroundSize: 'contain',backgroundRepeat: 'no-repeat',position: 'absolute',borderRadius: 5,cursor: "grab",
+                          ...getRandomPosition(), }} drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} dragElastic={0.5}
+                          whileTap={{ cursor: "grabbing" }}>
+                        <img src={url2} className="noselect" style={{maxWidth:'20rem'}}/>
+                        <div style={{width:'100%', height:'100%',position:'absolute',top:'0'}}></div>
+                      </motion.div>
+                      <motion.div
+                        style={{backgroundSize: 'contain',backgroundRepeat: 'no-repeat',position: 'absolute',borderRadius: 5,cursor: "grab",
+                        ...getRandomPosition(), }} drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} dragElastic={0.5}
+                        whileTap={{ cursor: "grabbing" }}>
+                        <img src={url3} className="noselect" style={{maxWidth:'20rem'}}/>
+                        <div style={{width:'100%', height:'100%',position:'absolute',top:'0'}}></div>
+                      </motion.div>
+                    
                     </div>
-                    <motion.div
-                style={{
-                    width: '30rem',
-                    backgroundSize: 'cover',
-                    position: 'absolute',
-                    borderRadius: 30,
-                    backgroundImage: `url(${url})`,
-                    cursor: "grab",
-                }}
-                className="ratio ratio-16x9"
-                drag dragConstraints={{top: -300,right: 300,bottom: 300,left: -300,}}
-                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-                dragElastic={0.5}
-                whileTap={{ cursor: "grabbing" }}
-            > </motion.div>
-                  </div>
                 </div>
                 </>
               );
@@ -176,7 +204,7 @@ className="img-box position-absolute"
 <motion.img
   key={item.attributes.miniature.data.attributes.url}
   variants={cardVariants}
-  src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
+  src={`https://back.lucagrousset.eu.eu${item.attributes.miniature.data.attributes.url}`}
   className="card-img-top"
   alt="..."
 />

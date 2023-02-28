@@ -73,6 +73,12 @@
     },
     "designby": {
       "type": "string"
+    },
+    "PojectBg": {
+      "type": "string"
+    },
+    "urlProjet": {
+      "type": "string"
     }
   }
 }

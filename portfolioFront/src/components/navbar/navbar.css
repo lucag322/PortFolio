@@ -7,14 +7,16 @@
   height: 80px;
   display: flex;
   align-items: center;
-  color: #1b3b6f;
+  color:  #e9967a;
   position: fixed;
   transition: ease 0.4s;
   z-index: 5;
 }
 
+
 .bluemodenav{
     color: white!important;
+    border-bottom: 1px solid white;
 }
 .btnOpen{
     font-size: 1.5rem;
@@ -22,7 +24,15 @@
 }
 
 .nav-name{
-  color: #1b3b6f;
+  color:  #e9967a;
   text-decoration: none;
   font-family: "Aventine" !important;
+}
+
+.nav-name > h4 {
+  padding-left: 10%;
+}
+
+.navbtn{
+  padding-right: 10%;
 }

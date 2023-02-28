@@ -7,6 +7,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
+import { useLocation} from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,20 +37,29 @@ function Navbar() {
     });
   }, []);
 
+  const location = useLocation();
+  const isProjectPage = location.pathname.includes("/project/");
+
   return (
     <>
       <div className="main-tool-bar">
-        <div className="container-fluid navbarr mx-5">
+        <div className="container-fluid navbarr">
           <Row>
-            <Col className="p-0">
-              <Link className=" noSelect nav-name" to="top" spy={true} smooth={true} duration={500} offset={0}>
-              <h4 className="">Luca grousset</h4>
+            <Col className="">
+              <Link className=" noSelect nav-name" style={{color: isProjectPage ? 'white' : ' #e9967a' }} to="top" spy={true} smooth={true} duration={500} offset={0}>
+              <h4>Luca grousset</h4>
               </Link>
             </Col>
             <Col className="d-flex justify-content-end">
-              <span className="btnOpen" onClick={noscroll}>
-                <FontAwesomeIcon icon={faBars} />
-              </span>
+              <div className="navbtn">
+                {isProjectPage ? (
+                  <a href="/" className="nav-name px-2" style={{color: isProjectPage ? 'white' : ' #e9967a', fontSize: '1.5rem', textDecoration:'underline' }}>Home</a>
+                ) : (
+                  <span className="px-2 btnOpen" onClick={noscroll}>
+                    <FontAwesomeIcon icon={faBars} />
+                  </span>
+                  )}
+              </div>
             </Col>
           </Row>
         </div>

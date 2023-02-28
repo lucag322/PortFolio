@@ -7,7 +7,7 @@
   src: local('Recoleta'), url(./../fonts/Recoleta-Regular.ttf) format('truetype');
 }
 .Projet-page{
-  background-color: #1b3b6f;
+  background-color:  #e9967a;
   color: white;
 }
 h3{
@@ -32,7 +32,11 @@ h3{
 .role{
   font-family: 'Recoleta';
   font-size: 1.3rem;
-  color: rgb(175, 175, 175);
+  color:white;
+}
+.link{
+  text-decoration-color: white;
+  text-underline-offset: 5px;
 }
 .roleName{
   font-family: 'Recoleta';

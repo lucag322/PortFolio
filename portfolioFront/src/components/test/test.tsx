@@ -1,48 +1,96 @@
 import React, { useEffect } from "react";
-import { fadeInRight, easing } from "./varian";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { Container, Row, Col } from "react-bootstrap";
+import "./test.css";
 
-const MainVisual = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true
-  });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-      console.log("inView");
-    } else {
-      controls.start("hidden");
-      console.log("outView");
-    }
-  }, [controls, inView]);
-
+function MainVisual() {
+  
   return (
-    <div className="mainvisual" ref={ref}>
-      <motion.div
-        className="mainvisual__content"
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: {
-            transition: {
-              delayChildren: 0.5,
-              staggerChildren: 0.5,
-              easing
-            }
-          }
-        }}
-      >
-        <motion.p className="mainvisual__catch" variants={fadeInRight}>
-          サンプル企業理念
-        </motion.p>
-        <motion.p className="mainvisual__description" variants={fadeInRight}>
-          テキストテキストテキストテキストテキスト
-        </motion.p>
-      </motion.div>
-    </div>
+  <>
+    <Container>
+      <Row>
+        <Col className="mt-5 ">
+          <div className="mainVisual">
+          <div className="containerbackground">
+          <div className="messagedefilant2">
+             
+                    <div
+                      className="noSelect"
+                     
+                      data-text={'Texte de défilement'}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {'Texte de défilement'}{" "}
+                      </span>
+                    </div>
+                 
+            </div>
+            <div className="messagedefilant2">
+             
+                    <div
+                      className="noSelect"
+                     
+                      data-text={'Texte de défilement'}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {'Texte de défilement'}{" "}
+                      </span>
+                    </div>
+                 
+            </div>
+            <div className="messagedefilant2">
+             
+                    <div
+                      className="noSelect"
+                     
+                      data-text={'Texte de défilement'}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {'Texte de défilement'}{" "}
+                      </span>
+                    </div>
+                 
+            </div>
+            <div className="messagedefilant2">
+             
+                    <div
+                      className="noSelect"
+                     
+                      data-text={'Texte de défilement'}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {'Texte de défilement'}{" "}
+                      </span>
+                    </div>
+                 
+            </div>
+            <div className="messagedefilant2">
+             
+                    <div
+                      className="noSelect"
+                     
+                      data-text={'Texte de défilement'}
+                    >
+                      <span className="noSelect">
+                        {" "}
+                        {'Texte de défilement'}{" "}
+                      </span>
+                    </div>
+                 
+            </div>
+        </div>
+            <div className="mainVisual__content" style={{zIndex:"1"}}>
+              <h1 className="mainVisual__content__title noselect">Lucas Grousset</h1>
+              <h4 className="mainVisual__content__subtitle noselect">Développeur Web</h4>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </>
   );
 };
 
