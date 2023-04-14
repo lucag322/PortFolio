@@ -1,97 +1,56 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import "./test.css";
+import React, { useState, useEffect } from 'react';
+import './test.css';
 
-function MainVisual() {
-  
+const Countdown: React.FC = () => {
+  const [countdownDate, setCountdownDate] = useState<string | null>(
+    localStorage.getItem('countdownDate')
+  );
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (countdownDate) {
+      const intervalId = setInterval(() => {
+        const difference = new Date(countdownDate).getTime() - new Date().getTime();
+        if (difference <= 0) {
+          clearInterval(intervalId);
+          localStorage.removeItem('countdownDate');
+          setTimeLeft(null);
+        } else {
+          setTimeLeft(difference);
+        }
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [countdownDate]);
+
+  const handleStartCountdown = () => {
+    const now = new Date();
+    const countdownDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 28).toString();
+    localStorage.setItem('countdownDate', countdownDate);
+    setCountdownDate(countdownDate);
+  };
+
+  const formatTimeLeft = (time: number): { seconds: number; minutes: number; hours: number; days: number } => {
+    const seconds = Math.floor((time / 1000) % 60);
+    const minutes = Math.floor((time / 1000 / 60) % 60);
+    const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    return { seconds, minutes, hours, days };
+  };
+
   return (
-  <>
-    <Container>
-      <Row>
-        <Col className="mt-5 ">
-          <div className="mainVisual">
-          <div className="containerbackground">
-          <div className="messagedefilant2">
-             
-                    <div
-                      className="noSelect"
-                     
-                      data-text={'Texte de défilement'}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {'Texte de défilement'}{" "}
-                      </span>
-                    </div>
-                 
-            </div>
-            <div className="messagedefilant2">
-             
-                    <div
-                      className="noSelect"
-                     
-                      data-text={'Texte de défilement'}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {'Texte de défilement'}{" "}
-                      </span>
-                    </div>
-                 
-            </div>
-            <div className="messagedefilant2">
-             
-                    <div
-                      className="noSelect"
-                     
-                      data-text={'Texte de défilement'}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {'Texte de défilement'}{" "}
-                      </span>
-                    </div>
-                 
-            </div>
-            <div className="messagedefilant2">
-             
-                    <div
-                      className="noSelect"
-                     
-                      data-text={'Texte de défilement'}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {'Texte de défilement'}{" "}
-                      </span>
-                    </div>
-                 
-            </div>
-            <div className="messagedefilant2">
-             
-                    <div
-                      className="noSelect"
-                     
-                      data-text={'Texte de défilement'}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {'Texte de défilement'}{" "}
-                      </span>
-                    </div>
-                 
-            </div>
+    <div style={{width:'100vw', height:'100vh'}} className='d-flex justify-content-center align-items-center'>
+      {timeLeft ? (
+        <div className='text-center'>
+          <p className='CountDown'>{formatTimeLeft(timeLeft).days} : {formatTimeLeft(timeLeft).hours} : {formatTimeLeft(timeLeft).minutes} : {formatTimeLeft(timeLeft).seconds}</p>
+          <p className='para' style={{fontSize:'4rem'}}>Avant que Antoine puisse boire !</p>
         </div>
-            <div className="mainVisual__content" style={{zIndex:"1"}}>
-              <h1 className="mainVisual__content__title noselect">Lucas Grousset</h1>
-              <h4 className="mainVisual__content__subtitle noselect">Développeur Web</h4>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  </>
+      ) : (
+        <button className='Btnnn' onClick={handleStartCountdown}>Start countdown</button>
+      )}
+    </div>
   );
 };
 
-export default MainVisual;
+export default Countdown;

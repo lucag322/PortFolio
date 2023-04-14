@@ -1,77 +1,42 @@
-  .containerbackground {
-    color: white;
-      margin: 3rem;
-      position: absolute;
-      top: 5%;
-      left: 0;
-      bottom: 0;
-      z-index: 0;
-      transform: rotate(300deg);
-      -webkit-transform: rotate(319deg);
-  }
+@font-face {
+  font-family: "Aventine";
+  src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
+}
+.CountDown{
+  font-family: "Aventine" !important;
+  font-weight: 500;
+  font-size: 12em !important;
+  line-height: 10rem !important;
+}
 
-/* Texte défilant */
-.messagedefilant2 {
-    position: fixed;
-    bottom: 0;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    height: 10%;
-    font-family: 'Recoleta';
-    transition: all 0.5s ease;
-    z-index: 1;
+.Btnnn{
+  background-color: #e9967a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: 'Aventine';
+  font-weight: 500;
+  font-size: 5em !important;
+}
+.para{
+  font-family: 'Aventine';
+  font-weight: 500;
+  font-size: 5em !important;
+  line-height: 6rem !important;
+}
+
+@media (max-width: 768px) {
+  .CountDown{
+    font-size: 3em !important;
   }
-  
-  .messagedefilant2 div {
-    position: absolute;
-    min-width: 100%; /* au minimum la largeur du conteneur */
-  
+  .para {
+    font-size: 1.5em !important;
   }
-  
-  .messagedefilant2 div span,
-  .messagedefilant2 div:after {
-    position: relative;
-    display: inline-block;
-    font-size: 2rem;
-    white-space: nowrap;
-    top: 0;
-    -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-  }
-  
-  .messagedefilant2 div span {
-    animation: defilement 20s infinite linear;
-    font-size: 7rem;
-      font-family: 'Recoleta' !important;
-  }
-  
-  .messagedefilant2 div:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: attr(data-text);
-    animation: defilement2 20s infinite linear;
-    font-size: 7rem;
-      font-family: 'Recoleta' !important;
-  }
-  
-  @keyframes defilement {
-    0% {
-      margin-left: 0;
-    }
-    100% {
-      margin-left: -100%;
-    }
-  }
-  
-  @keyframes defilement2 {
-    0% {
-      margin-left: 100%;
-    }
-    100% {
-      margin-left: 0%;
-    }
-  }
+}

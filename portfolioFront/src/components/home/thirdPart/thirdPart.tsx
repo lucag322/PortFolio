@@ -28,7 +28,7 @@ function thirdPart() {
   useEffect(() => {
     // Make a request for a user with a given ID
     axios
-      .get("https://back.lucagrousset.eu/api/projets?populate=*", config)
+      .get("http://localhost:1337/api/projets?populate=*", config)
       .then((res) => {
         setProjet(Object.values(res.data.data));
         setIsLoading(false);
@@ -40,6 +40,13 @@ function thirdPart() {
         console.log(error);
       });
   }, []);
+
+
+projet.map((item: any) => {
+  console.log("item :", item.ImgHomePage);
+});
+
+   
 
   const navigate = useNavigate();
 
@@ -84,17 +91,14 @@ if(isBrowser){
           //   delay: 0.001,
           //   ease: "power3.inOut",
           // },
-          markers: false,
+          markers: true,
           end: () => "+=" + container.current.offsetWidth ,
         },
       });
     }, comp,);
+
     return () => ctx.revert(); // cleanup
   }, [isLoading && []]);
-
-console.log("opa :", opacity);
-
-
 
 
   return (
@@ -137,6 +141,8 @@ console.log("opa :", opacity);
                         </MouseParallaxChild>
                       </div>
                       </MouseParallaxContainer>
+
+                      {}
                       <motion.div
                         style={{backgroundSize: 'contain',backgroundRepeat: 'no-repeat',position: 'absolute',borderRadius: 5,cursor: "grab",
                         ...getRandomPosition(), }} drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} dragElastic={0.5}

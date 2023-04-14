@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         element: <Test />,
-        path: "/test",
+        path: "/antoineau",
       },
     ],
   },

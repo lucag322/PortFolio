@@ -79,6 +79,12 @@
     },
     "urlProjet": {
       "type": "string"
+    },
+    "ImgHomePage": {
+      "displayName": "imgHommePage",
+      "type": "component",
+      "repeatable": true,
+      "component": "imghomepage.img-homme-page"
     }
   }
 }
