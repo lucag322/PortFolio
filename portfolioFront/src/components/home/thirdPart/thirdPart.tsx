@@ -49,9 +49,7 @@ function thirdPart() {
       });
   }, []);
 
-  // .ImgHomePage.map((item: any) => {
-  //   console.log("ImgHomePage", item.id);
-  // });
+
 
   const navigate = useNavigate();
 
@@ -130,9 +128,7 @@ function thirdPart() {
                     return { x: randomX, y: randomY };
                   };
 
-                  const url1 = `https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`;
-                  const url2 = `https://back.lucagrousset.eu${item.attributes.leftimage.data.attributes.url}`;
-                  const url3 = `https://back.lucagrousset.eu${item.attributes.rightimage.data.attributes.url}`;
+          
                   return (
                     <>
                       <div
@@ -158,62 +154,19 @@ function thirdPart() {
                                 >
                                   {item.attributes.title}
                                 </h3>
+                                
                               </MouseParallaxChild>
                             </div>
                           </MouseParallaxContainer>
-
-                          {}
-
-                          {isLoading
-                            ? "loading"
-                            : projet.map((item: any) => {
-                                item.attributes.ImgHomePage?.map(
-                                  (item: any) => {
-                                    <motion.div
-                                      style={{
-                                        backgroundSize: "contain",
-                                        backgroundRepeat: "no-repeat",
-                                        position: "absolute",
-                                        borderRadius: 5,
-                                        cursor: "grab",
-                                        ...getRandomPosition(),
-                                      }}
-                                      drag
-                                      dragConstraints={{
-                                        top: -300,
-                                        right: 700,
-                                        bottom: 300,
-                                        left: -700,
-                                      }}
-                                      dragTransition={{
-                                        bounceStiffness: 600,
-                                        bounceDamping: 20,
-                                      }}
-                                      dragElastic={0.5}
-                                      whileTap={{ cursor: "grabbing" }}
-                                    >
-                                      <img
-                                        src={`http://localhost:5173/${item.imgProjectHome?.data?.attributes?.url}`}
-                                        className="noselect"
-                                        style={{ maxWidth: "20rem" }}
-                                      />
-                                      <div
-                                        style={{
-                                          width: "100%",
-                                          height: "100%",
-                                          position: "absolute",
-                                          top: "0",
-                                        }}
-                                      ></div>
-                                    </motion.div>;
-
-                                    console.log(
-                                      "ImgHomePage",
-                                      item.imgProjectHome?.data?.attributes?.url
-                                    );
-                                  }
-                                );
-                              })}
+                          { item.attributes.ImgHomePage?.map((item: any) => {
+                            return (
+                              <motion.div style={{backgroundSize: "contain",backgroundRepeat: "no-repeat",position: "absolute",borderRadius: 5,cursor: "grab",...getRandomPosition(),}}drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}}dragTransition={{bounceStiffness: 600,bounceDamping: 20,}}dragElastic={0.5}whileTap={{ cursor: "grabbing" }}>
+                                <img src={`http://localhost:1337${item.imgProjectHome?.data?.attributes?.url}`}className="noselect"style={{ maxWidth: "20rem" }}/>
+                                <div style={{width: "100%",height: "100%",position: "absolute",top: "0",}}></div>
+                              </motion.div>
+                               )
+                          }
+                          )}
                         </div>
                       </div>
                     </>
