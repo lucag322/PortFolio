@@ -36,11 +36,11 @@ function thirdPart() {
   useEffect(() => {
     // Make a request for a user with a given ID
     axios
-      .get("http://localhost:1337/api/projets?populate=deep", config)
+      .get("https://back.lucagrousset.eu/api/projets?populate=deep", config)
       .then((res) => {
         setProjet(Object.values(res.data.data));
         setIsLoading(false);
-        console.log("projet :", res.data.data);
+        console.log("projetTT :", res.data.data);
       })
 
       .catch(function (error) {
@@ -91,7 +91,7 @@ function thirdPart() {
             //   delay: 0.001,
             //   ease: "power3.inOut",
             // },
-            markers: true,
+            markers: false,
             end: () => "+=" + container.current.offsetWidth,
           },
         });
@@ -100,14 +100,7 @@ function thirdPart() {
       return () => ctx.revert(); // cleanup
     }, [isLoading && []]);
 
-    return (
-      <>
-        <BrowserView>
-          <div className="thirdPart " id="thirdPart" ref={container}>
-            {isLoading
-              ? "loading"
-              : projet.map((item: any, i: any) => {
-                  let positions: Array<any> = []; // Tableau pour stocker les positions occupées par les images
+    let positions: Array<any> = []; // Tableau pour stocker les positions occupées par les images
 
                   const getRandomPosition = () => {
                     // Fonction pour générer une position aléatoire non occupée
@@ -127,6 +120,20 @@ function thirdPart() {
                     positions.push({ x: randomX, y: randomY }); // On ajoute la position générée dans le tableau
                     return { x: randomX, y: randomY };
                   };
+
+    return (
+      <>
+        <BrowserView>
+          <div className="thirdPart " id="thirdPart" ref={container}>
+          <div className="scroll-downs">
+            <div className="mousey">
+              <div className="scroller"></div>
+            </div>
+          </div>
+            {isLoading
+              ? "loading"
+              : projet.map((item: any, i: any) => {
+                  
 
           
                   return (
@@ -160,8 +167,8 @@ function thirdPart() {
                           </MouseParallaxContainer>
                           { item.attributes.ImgHomePage?.map((item: any) => {
                             return (
-                              <motion.div style={{backgroundSize: "contain",backgroundRepeat: "no-repeat",position: "absolute",borderRadius: 5,cursor: "grab",...getRandomPosition(),}}drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}}dragTransition={{bounceStiffness: 600,bounceDamping: 20,}}dragElastic={0.5}whileTap={{ cursor: "grabbing" }}>
-                                <img src={`http://localhost:1337${item.imgProjectHome?.data?.attributes?.url}`}className="noselect"style={{ maxWidth: "20rem" }}/>
+                              <motion.div style={{overflow:"hidden", backgroundSize: "contain",backgroundRepeat: "no-repeat",position: "absolute",borderRadius: 5,cursor: "grab",...getRandomPosition(),}}drag dragConstraints={{top: -300,right: 700,bottom: 300,left: -700,}}dragTransition={{bounceStiffness: 600,bounceDamping: 20,}}dragElastic={0.5}whileTap={{ cursor: "grabbing" }}>
+                                <img src={`https://back.lucagrousset.eu${item.imgProjectHome?.data?.attributes?.url}`}className="noselect"style={{ maxWidth: "15rem", width:"100%" }}/>
                                 <div style={{width: "100%",height: "100%",position: "absolute",top: "0",}}></div>
                               </motion.div>
                                )
@@ -205,27 +212,3 @@ function thirdPart() {
 }
 export default thirdPart;
 
-{
-  /* <motion.div
-initial="offscreen"
-whileInView="onscreen"
-viewport={{ amount: 1 }}
-className="img-box position-absolute"
->
-<motion.img
-  key={item.attributes.miniature.data.attributes.url}
-  variants={cardVariants}
-  src={`https://back.lucagrousset.eu.eu${item.attributes.miniature.data.attributes.url}`}
-  className="card-img-top"
-  alt="..."
-/>
-</motion.div>
-<div className="card-body">
-<h3
-  className="card-title yrsa"
-  key={item.attributes.title}
->
-  {item.attributes.title}
-</h3>
-</div> */
-}

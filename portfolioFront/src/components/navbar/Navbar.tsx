@@ -3,7 +3,7 @@ import "./navbar.css";
 import gsap from "gsap";
 import Menu from "../home/firstPart/menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHome } from "@fortawesome/free-solid-svg-icons";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, animateScroll, Element as scroll, scrollSpy, scroller } from 'react-scroll'
@@ -46,14 +46,14 @@ function Navbar() {
         <div className="container-fluid navbarr">
           <Row>
             <Col className="">
-              <Link className=" noSelect nav-name" style={{color: isProjectPage ? 'white' : ' #e9967a' }} to="top" spy={true} smooth={true} duration={500} offset={0}>
+              <Link className=" noSelect nav-name" style={{color: 'white'}} to="top" spy={true} smooth={true} duration={500} offset={0}>
               <h4>Luca grousset</h4>
               </Link>
             </Col>
             <Col className="d-flex justify-content-end">
               <div className="navbtn">
                 {isProjectPage ? (
-                  <a href="/" className="nav-name px-2" style={{color: isProjectPage ? 'white' : ' #e9967a', fontSize: '1.5rem', textDecoration:'underline' }}>Home</a>
+                  <a href="/" className="nav-name px-2" style={{color: 'white', fontSize: '1.5rem', textDecoration:'underline' }}><FontAwesomeIcon icon={faHome} /></a>
                 ) : (
                   <span className="px-2 btnOpen" onClick={noscroll}>
                     <FontAwesomeIcon icon={faBars} />

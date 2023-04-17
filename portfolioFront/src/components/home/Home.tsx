@@ -86,11 +86,6 @@ if(isBrowser){
         <Hours />
         <div className="hiddebarmenu "></div>
         <div className="hiddebartime"></div>
-        <div className="messagedefilant2" style={{opacity: opacity}}>
-            <div className="noSelect" data-text="scroll down to see more ﹀ scroll down to see more ﹀">
-              <span className="noSelect">scroll down to see more ﹀ scroll down to see more ﹀</span>
-              </div>
-            </div>
       </BrowserView>
       <Row name="top" className="swictch whiteswitch">
         <FirstPart />

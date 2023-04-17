@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Aventine";
+    src: local("Aventine"), url(./fonts/Aventine.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Recoleta";
+    src: local("Recoleta"),
+      url(./fonts/Recoleta-Regular.ttf) format("truetype");
+  }
+
 body{
-    background-color: #F7EBDE!important;
+    background-color: #005291!important;
 }

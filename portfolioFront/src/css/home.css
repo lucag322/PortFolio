@@ -3,17 +3,17 @@ html {
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
   /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background:  #e9967a;
+  background:  #FFF;
   /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F7EBDE;
+  background-color: #005291;
   width: 100%;
   /* color of the scroll thumb */
   /* roundness of the scroll thumb */
@@ -38,12 +38,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .app {
-  color:  #e9967a;
+  color:  #FFF;
   overflow-x: hidden;
 }
 
 .footer {
-  color:  #e9967a;
+  color:  #FFF;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.5rem;
 }
@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bluemode {
-  background-color:  #e9967a !important;
+  background-color:  #00233D !important;
   color: white !important;
 }
 
@@ -86,7 +86,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hidde {
-  background-color:  #e9967a;
+  background-color:  transparent;
   position: fixed;
   width: 60px;
   height: 100vh;
@@ -101,79 +101,14 @@ body::-webkit-scrollbar-thumb {
 
 body {
   transition: background-color 0.5s ease;
-  color:  #e9967a !important;
+  color:  #FFF !important;
 }
 
 
 
 #error-page {
 height: 100vh;
-};  
-
-
-/* Texte défilant */
-.messagedefilant2 {
-  display: block;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  font-family: 'Recoleta';
-  transition: all 3s ease;
 }
 
-.messagedefilant2 div {
-  position: absolute;
-  min-width: 100%; /* au minimum la largeur du conteneur */
 
-}
 
-.messagedefilant2 div span,
-.messagedefilant2 div:after {
-  position: relative;
-  display: inline-block;
-  font-size: 2rem;
-  white-space: nowrap;
-  top: 0;
-  -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.messagedefilant2 div span {
-  animation: defilement 20s infinite linear;
-  font-size: 7rem;
-  line-height: 1!important;
-    font-family: 'Recoleta' !important;
-}
-
-.messagedefilant2 div:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: attr(data-text);
-  animation: defilement2 20s infinite linear;
-  font-size: 7rem;
-  line-height: 1!important;
-    font-family: 'Recoleta' !important;
-}
-
-@keyframes defilement {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -100%;
-  }
-}
-
-@keyframes defilement2 {
-  0% {
-    margin-left: 100%;
-  }
-  100% {
-    margin-left: 0%;
-  }
-}
