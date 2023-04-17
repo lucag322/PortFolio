@@ -159,7 +159,7 @@ if(!isLoading) return (
                   initial="offscreen3"
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 1 }}
-                  className="col d-flex align-items-center">
+                  className="col d-flex align-items-center mt-3 mt-md-0">
                   {isLoading? "loading": (
                     <motion.p variants={rowVariants} className="descProject"  key={projet[1].projectDescription}>
                       {projet[1].projectDescription}

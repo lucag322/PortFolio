@@ -79,7 +79,7 @@ textarea[name="message"] {
   text-align: left;
 }
 .mail:hover {
-  color:  #862403;
+  color:  lightskyblue;
   text-decoration: none;
 }
 @media (max-width: 768px) {
