@@ -126,7 +126,7 @@ if(!isLoading) return (
           ? "loading"
           : (
               <Row className=" mt-5">
-                <Col md={6}>
+                <Col xl={6}>
                   <Row>
                     <Col className="text-center">
                       <h3 key={projet[1].title} className="page-title">{projet[1].title}</h3>
@@ -154,7 +154,7 @@ if(!isLoading) return (
                    
                   </Row>
                 </Col>
-                <Col md={6}>
+                <Col xl={6}>
                 <motion.div
                   initial="offscreen3"
                   whileInView="onscreen"

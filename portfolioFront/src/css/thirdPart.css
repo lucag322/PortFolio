@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Aventine";
-  src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
+  font-family: "Brice-BlackExpanded";
+  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
 }
 * {
   margin: 0;
@@ -19,8 +19,8 @@
   position: absolute;
   top: 10%;
   left: 200px;
-  font-family: "Aventine";
-  font-size: 8rem!important;
+  font-family: "Brice-BlackExpanded";
+  font-size: 5rem!important;
   font-style: italic;
   
 }
@@ -62,9 +62,9 @@
 }
 .card-title {
   text-align: center;
-  font-family: "Aventine" !important;
-  font-size: 20rem!important;
-  line-height: 20rem!important;
+  font-family: "Brice-BlackExpanded" !important;
+  font-size: 10rem!important;
+  line-height: 10rem!important;
   transition: all 0.4s;
  
 }
@@ -130,9 +130,8 @@ padding: 7rem;
 }
 .mobile-projet-title{
   padding: 0px 1rem;
-  font-family: 'Aventine'!important;
-  font-size: 2.5rem!important;
-  line-height: unset!important;
+  font-family: 'Brice-BlackExpanded'!important;
+  font-size: 1.5rem!important;
   margin: 0!important;
 }
 .mobil-projet-titlebox{
@@ -205,7 +204,7 @@ body,html  {
   }
   .card-title {
     font-size: 7rem!important;
-    line-height: 1.5rem!important;
+    line-height: 6.5rem!important;
   }
   .project-title{
     font-size: 5rem!important;
@@ -230,7 +229,7 @@ body,html  {
   }
   .card-title {
     font-size: 2rem!important;
-    line-height: 1.5rem!important;
+    line-height: 2rem!important;
   }
   .project-title{
     font-size: 5rem!important;

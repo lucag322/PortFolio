@@ -191,7 +191,7 @@ function thirdPart() {
             <h2 className="mobil-projet-titlebox">Projets</h2>
             {isLoading
               ? "loading"
-              : projet.slice(-3).map((item: any, i: any) => (
+              : projet.map((item: any, i: any) => (
                   <div
                     className="mobile-project"
                     onClick={() => navigate(`project/${item.id}`)}

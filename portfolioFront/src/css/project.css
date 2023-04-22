@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'Aventine';
-  src: local('Aventine'), url(./../fonts/Aventine.ttf) format('truetype');
+  font-family: "Brice-BlackExpanded";
+  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
 }
 @font-face {
-  font-family: 'Recoleta';
-  src: local('Recoleta'), url(./../fonts/Recoleta-Regular.ttf) format('truetype');
+  font-family: "The-Northern";
+  src: local("The-Northern"), url(./../fonts/The-Northern.otf) format("opentype");
 }
+
 .Projet-page{
   background-color:  #FFF;
   color: white;
 }
 h3{
-  font-family: 'Aventine'!important;
-  font-size: 4rem!important;
+  font-family: 'Brice-BlackExpanded'!important;
+  font-size: 3rem!important;
   line-height: 4rem!important;
 }
 .telcapture{
@@ -21,7 +22,7 @@ h3{
   margin: 0 auto;
 }
 .descProject{
-  font-family: 'Recoleta';
+  font-family: 'The-Northern';
   font-size: 1.3rem;
 }
 #video{
@@ -30,7 +31,7 @@ h3{
 
 
 .role{
-  font-family: 'Recoleta';
+  font-family: 'The-Northern';
   font-size: 1.3rem;
   color:white;
 }
@@ -39,7 +40,7 @@ h3{
   text-underline-offset: 5px;
 }
 .roleName{
-  font-family: 'Recoleta';
+  font-family: 'The-Northern';
   font-size: 1.3rem;
 }
 .btnHome{
@@ -55,7 +56,7 @@ h3{
     border-top: 2px solid white;
   }
   .nextproject{
-    font-family: 'Recoleta';
+    font-family: 'The-Northern';
     font-size: 3rem!important;
   }
   @media (max-width: 992px) {
@@ -66,18 +67,18 @@ h3{
       height: auto;
     }
     .page-title{
-      font-size: 3rem!important;
+      font-size: 2.5rem!important;
     }
     .sideimage{
       width: 50%;
     }
     h3{
-      font-family: 'Aventine'!important;
+      font-family: 'Brice-BlackExpanded'!important;
       font-size: 3rem!important;
       line-height: 3rem!important;
     }
     .descProject{
-      font-family: 'Recoleta';
+      font-family: 'The-Northern';
       font-size: 1rem;
     }
   }

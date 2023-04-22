@@ -1,7 +1,7 @@
 @font-face {
-    font-family: "Aventine";
-    src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
-  }
+  font-family: "Brice-BlackExpanded";
+  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
+}
 .main-tool-bar {
   width: 100%;
   height: 80px;
@@ -26,7 +26,7 @@
 .nav-name{
   color:  #e9967a;
   text-decoration: none;
-  font-family: "Aventine" !important;
+  font-family: "Brice-BlackExpanded" !important;
 }
 
 .nav-name > h4 {

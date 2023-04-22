@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Aventine";
-  src: local("Aventine"), url(./../fonts/Aventine.ttf) format("truetype");
+  font-family: "Brice-BlackExpanded";
+  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
 }
 .noSelect {
   -moz-user-select: none;
@@ -9,9 +9,9 @@
   user-select: none;
 }
 h2 {
-  font-family: "Aventine" !important;
+  font-family: "Brice-BlackExpanded" !important;
   font-weight: 500;
-  font-size: 12em !important;
+  font-size: 7em !important;
   line-height: 10rem !important;
 }
 
@@ -22,20 +22,19 @@ h2 {
 }
 .namePart {
   padding: 5rem 0px 0px 0px;
-  -webkit-text-stroke: 2px  #FFF;
-  color: transparent;
+  color:  #FFF;
 }
 .favorite {
   text-align: end;
   width: 100%;
   font-style: italic;
   padding: 0px 0px 0px 0px;
-  color:  #FFF;
+  -webkit-text-stroke: 2px  #FFF;
+  color: transparent;
 }
 .frontend {
   padding: 0px 0px 0px 0px;
-  -webkit-text-stroke: 2px  #FFF;
-  color: transparent;
+  color: #FFF;
 }
 .firstRow {
   height: 95vh;
@@ -106,7 +105,7 @@ h2 {
   z-index: 5;
   border-radius: 5px;
   margin-right: 10px;
-  font-family: "Aventine" !important;
+  font-family: "Brice-BlackExpanded" !important;
 }
 
 .bluemodeheure {
@@ -149,10 +148,10 @@ h2 {
 
 .Menu > .Menu-items > a {
   color: #ffffff;
-  font-size: 5rem !important;
+  font-size: 3rem !important;
   text-decoration: none;
   position: relative;
-  font-family: "Aventine" !important;
+  font-family: "Brice-BlackExpanded" !important;
 }
 
 .Menu > .Menu-items > a::after {
@@ -208,26 +207,26 @@ h2 {
 }
 @media (max-width: 1700px) {
   h2 {
-    font-size: 9em !important;
-    line-height: 8rem !important;
+    font-size: 6em !important;
+    line-height: 6rem !important;
   }
 }
 @media (max-width: 1200px) {
   h2 {
-    font-size: 11em !important;
-    line-height: 9rem !important;
+    font-size: 5em !important;
+    line-height:5rem !important;
   }
 }
 @media (max-width: 992px) {
   h2 {
-    font-size: 9em !important;
-    line-height: 7rem !important;
+    font-size: 4em !important;
+    line-height: 4rem !important;
   }
 }
 @media (max-width: 768px) {
   h2 {
-    font-size: 7em !important;
-    line-height: 6rem !important;
+    font-size: 2.5em !important;
+    line-height: 2.5rem !important;
   }
   .name--col {
     padding-right: 25px;
@@ -236,7 +235,7 @@ h2 {
 }
 @media (max-width: 576px) {
   h2 {
-    font-size: 4em !important;
-    line-height: 4rem !important;
+    font-size: 2em !important;
+    line-height: 2rem !important;
   }
 }

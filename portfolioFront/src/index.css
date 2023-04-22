@@ -12,4 +12,5 @@ body{
     background-color: #005291!important;
     background-image: url('./img/bg.svg');
     background-size: cover;
+    background-position: bottom;
 }

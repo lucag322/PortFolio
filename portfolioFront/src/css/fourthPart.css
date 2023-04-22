@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Recoleta';
-  src: local('Recoleta'), url(./../fonts/Recoleta-Regular.ttf) format('truetype');
+  font-family: "The-Northern";
+  src: local("The-Northern"), url(./../fonts/The-Northern.otf) format("opentype");
 }
 
 .noSelect {
@@ -25,7 +25,7 @@ h2{
 
 .aboutText {
   font-size: 2rem;
-  font-family: 'Recoleta';
+  font-family: 'The-Northern';
 }
 .rrr {
   width: 300px;
@@ -39,7 +39,7 @@ h2{
   position: relative;
   width: 100%;
   height: 150px;
-  font-family: 'Recoleta';
+  font-family: 'The-Northern';
 }
 
 .messagedefilant div {
@@ -64,7 +64,7 @@ h2{
 .messagedefilant div span {
   animation: defilement 20s infinite linear;
   font-size: 7rem;
-    font-family: 'Recoleta' !important;
+    font-family: 'The-Northern' !important;
 }
 
 .messagedefilant div:after {
@@ -74,7 +74,7 @@ h2{
   content: attr(data-text);
   animation: defilement2 20s infinite linear;
   font-size: 7rem;
-    font-family: 'Recoleta' !important;
+    font-family: 'The-Northern' !important;
 }
 
 @keyframes defilement {
@@ -97,6 +97,6 @@ h2{
 @media (max-width: 768px) {
   .aboutText {
     font-size: 1.5rem;
-    font-family: 'Recoleta';
+    font-family: 'The-Northern';
   }
 }

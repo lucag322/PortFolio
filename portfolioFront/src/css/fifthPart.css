@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "Recoleta";
-  src: local("Recoleta"),
-    url(./../fonts/Recoleta-Regular.ttf) format("truetype");
+  font-family: "The-Northern";
+  src: local("The-Northern"), url(./../fonts/The-Northern.otf) format("opentype");
 }
+
 .FifthPart {
   background-color:  #005291;
   overflow: hidden;
@@ -32,7 +32,7 @@
   border: none;
   width: 100%;
   font-size: 24px;
-  font-family: "Recoleta";
+  font-family: "The-Northern";
 }
 .inputForm:focus-visible {
   border-bottom: 1px solid  #FFF !important;
@@ -75,7 +75,7 @@ textarea[name="message"] {
 .mail {
   font-size: 24px;
   color:  #FFF;
-  font-family: "Recoleta";
+  font-family: "The-Northern";
   text-align: left;
 }
 .mail:hover {
@@ -84,7 +84,7 @@ textarea[name="message"] {
 }
 @media (max-width: 768px) {
   .contact-title {
-    line-height: 5rem !important;
-    font-size: 5rem !important;
+    line-height: 3rem !important;
+    font-size: 2.5rem !important;
   }
 }
