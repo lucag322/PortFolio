@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Brice-BlackExpanded";
-  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
+  src: local("Brice-BlackExpanded"),
+    url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
 }
 * {
   margin: 0;
@@ -15,14 +16,13 @@
   display: flex;
   flex-wrap: nowrap;
 }
-.project-title{
+.project-title {
   position: absolute;
   top: 10%;
   left: 200px;
   font-family: "Brice-BlackExpanded";
-  font-size: 5rem!important;
+  font-size: 5rem !important;
   font-style: italic;
-  
 }
 .card-body {
   padding: 1rem 0px !important;
@@ -63,14 +63,13 @@
 .card-title {
   text-align: center;
   font-family: "Brice-BlackExpanded" !important;
-  font-size: 10rem!important;
-  line-height: 10rem!important;
+  font-size: 10rem !important;
+  line-height: 10rem !important;
   transition: all 0.4s;
- 
 }
-.title-box{
+.title-box {
   cursor: pointer;
-padding: 7rem;
+  padding: 7rem;
 }
 
 .img-box img {
@@ -113,38 +112,38 @@ padding: 7rem;
 .first {
   margin-left: 150px;
 }
-.thirdPartMobile{
+.thirdPartMobile {
   width: 95%;
   margin: 0 auto;
 }
 .thirdPartMobile div:last-child {
-  border-bottom: 1px  #FFF  solid;
+  border-bottom: 1px #fff solid;
 }
-.mobile-project{
+.mobile-project {
   cursor: pointer;
   padding: 0.5rem 0px;
-  border-top: 1px  #FFF solid;
+  border-top: 1px #fff solid;
 }
-.bluemodeborder{
-  border-color: white!important;
+.bluemodeborder {
+  border-color: white !important;
 }
-.mobile-projet-title{
+.mobile-projet-title {
   padding: 0px 1rem;
-  font-family: 'Brice-BlackExpanded'!important;
-  font-size: 1.5rem!important;
-  margin: 0!important;
+  font-family: "Brice-BlackExpanded" !important;
+  font-size: 1.5rem !important;
+  margin: 0 !important;
 }
-.mobil-projet-titlebox{
-font-style: italic;
-}
-
-#mouse-parallax-container{
-height: 100vh;
-display: contents;
+.mobil-projet-titlebox {
+  font-style: italic;
 }
 
+#mouse-parallax-container {
+  height: 100vh;
+  display: contents;
+}
 
-body,html  {
+body,
+html {
   background-color: #000;
   width: 100%;
   min-height: 100%;
@@ -157,8 +156,8 @@ body,html  {
   left: 50vw;
   z-index: 999;
   margin: auto;
-  
-  width :34px;
+
+  width: 34px;
   height: 55px;
 }
 .mousey {
@@ -177,13 +176,21 @@ body,html  {
   background-color: #fff;
   animation-name: scroll;
   animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
 }
 @keyframes scroll {
-  0% { opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(15px); opacity: 0;}
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }
 
 /* media querry pour les ecran en dessou de 1300px */
@@ -203,11 +210,11 @@ body,html  {
     height: 30rem;
   }
   .card-title {
-    font-size: 7rem!important;
-    line-height: 6.5rem!important;
+    font-size: 7rem !important;
+    line-height: 6.5rem !important;
   }
-  .project-title{
-    font-size: 5rem!important;
+  .project-title {
+    font-size: 5rem !important;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -228,11 +235,11 @@ body,html  {
     height: 30rem;
   }
   .card-title {
-    font-size: 2rem!important;
-    line-height: 2rem!important;
+    font-size: 2rem !important;
+    line-height: 2rem !important;
   }
-  .project-title{
-    font-size: 5rem!important;
+  .project-title {
+    font-size: 5rem !important;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -253,11 +260,11 @@ body,html  {
     height: 30rem;
   }
   .card-title {
-    font-size: 2rem!important;
-    line-height: 1.5rem!important;
+    font-size: 2rem !important;
+    line-height: 1.5rem !important;
   }
-  .project-title{
-    font-size: 3rem!important;
+  .project-title {
+    font-size: 3rem !important;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -278,11 +285,11 @@ body,html  {
     height: 30rem;
   }
   .card-title {
-    font-size: 2rem!important;
-    line-height: 1.5rem!important;
+    font-size: 2rem !important;
+    line-height: 1.5rem !important;
   }
-  .project-title{
-    font-size: 2rem!important;
+  .project-title {
+    font-size: 2rem !important;
     left: 50%;
     transform: translateX(-50%);
   }

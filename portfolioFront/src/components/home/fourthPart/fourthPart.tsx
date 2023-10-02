@@ -114,32 +114,72 @@ function fourthPart({
         </Row>
       </Container>
       <BrowserView>
-        <Row className="pb-5">
-          <Col lg={12} sm={12} xs={12} className=" p-0">
-            <motion.div
-              initial="offscreen2"
-              whileInView={"onscreen3"}
-              viewport={{ once: true, amount: 0.8 }}
-            >
-              <motion.div variants={cardVariants} className="messagedefilant">
-                {isLoading
-                  ? "loading"
-                  : homes.map((item: any) => (
-                      <div
-                        className="noSelect"
-                        key={item.attributes.texteDefile}
-                        data-text={item.attributes.texteDefile}
-                      >
-                        <span className="noSelect">
-                          {" "}
-                          {item.attributes.texteDefile}{" "}
-                        </span>
-                      </div>
-                    ))}
+        <div className="text-defile d-flex justify-content-center align-items-center">
+          <Row className="pb-5 w-100">
+            <Col lg={12} sm={12} xs={12} className=" p-0">
+              <motion.div
+                initial="offscreen2"
+                whileInView={"onscreen3"}
+                viewport={{ once: true, amount: 0.8 }}
+              >
+                <motion.div
+                  variants={cardVariants}
+                  className="messagedefilant2"
+                >
+                  {isLoading
+                    ? "loading"
+                    : homes.map((item: any) => (
+                        <div
+                          className="noSelect"
+                          key={item.attributes.texteDefile}
+                          data-text={item.attributes.texteDefile}
+                        >
+                          <span className="noSelect">
+                            {" "}
+                            {item.attributes.texteDefile}{" "}
+                          </span>
+                        </div>
+                      ))}
+                </motion.div>
+                <motion.div variants={cardVariants} className="messagedefilant">
+                  {isLoading
+                    ? "loading"
+                    : homes.map((item: any) => (
+                        <div
+                          className="noSelect"
+                          key={item.attributes.texteDefile}
+                          data-text={item.attributes.texteDefile}
+                        >
+                          <span className="noSelect">
+                            {" "}
+                            {item.attributes.texteDefile}{" "}
+                          </span>
+                        </div>
+                      ))}
+                </motion.div>
+                <motion.div
+                  variants={cardVariants}
+                  className="messagedefilant2"
+                >
+                  {isLoading
+                    ? "loading"
+                    : homes.map((item: any) => (
+                        <div
+                          className="noSelect"
+                          key={item.attributes.texteDefile}
+                          data-text={item.attributes.texteDefile}
+                        >
+                          <span className="noSelect">
+                            {" "}
+                            {item.attributes.texteDefile}{" "}
+                          </span>
+                        </div>
+                      ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </div>
       </BrowserView>
     </section>
   );

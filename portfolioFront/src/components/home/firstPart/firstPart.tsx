@@ -106,14 +106,8 @@ function FirstPart({
                 className="favorite tryguy noSelect"
               >
                 <h2 className="title3 m-0 fw-light fst-italic">
-                  Your Favorite
+                  Your Favorite Developer
                 </h2>
-              </motion.div>
-              <motion.div variants={rowVariants} className="frontend noSelect">
-                <h2 className="title2 m-0 fw-light">FrontEnd</h2>
-              </motion.div>
-              <motion.div variants={rowVariants} className="favorite noSelect">
-                <h2 className="title4 m-0 fw-light fst-italic ">Developer</h2>
               </motion.div>
             </Col>
           </Row>

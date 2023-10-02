@@ -1,38 +1,39 @@
 @font-face {
   font-family: "Brice-BlackExpanded";
-  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
+  src: local("Brice-BlackExpanded"),
+    url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
 }
 .main-tool-bar {
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
-  color:  #ffffff;
+  color: #ffffff;
   position: fixed;
   transition: ease 0.4s;
   z-index: 5;
 }
 
-
-.bluemodenav{
-    color: white!important;
-    border-bottom: 1px solid white;
+.bluemodenav {
+  color: white !important;
+  border-bottom: 1px solid white;
 }
-.btnOpen{
-    font-size: 1.5rem;
-    z-index: 5;
+.btnOpen {
+  font-size: 2rem;
+  z-index: 5;
 }
 
-.nav-name{
-  color:  #e9967a;
+.nav-name {
+  color: #e9967a;
   text-decoration: none;
   font-family: "Brice-BlackExpanded" !important;
 }
 
 .nav-name > h4 {
   padding-left: 10%;
+  font-size: 2rem;
 }
 
-.navbtn{
+.navbtn {
   padding-right: 10%;
 }
