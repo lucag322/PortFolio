@@ -8,29 +8,14 @@ import gsap from "gsap";
 import axios from "axios";
 //const axios = require('axios'); // legacy way
 
-function FirstPart() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [homes, setHomes] = useState<any>([null]);
-  var config = {
-    headers: {
-      Accept: "application/json",
-    },
-  };
-
-  useEffect(() => {
-    // Make a request for a user with a given ID
-    axios
-      .get("https://back.lucagrousset.eu/api/tests", config)
-      .then((res) => {
-        setHomes(Object.values(res.data.data));
-        setIsLoading(false);
-      })
-
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
+function FirstPart({
+  homes,
+  isLoadingHome,
+}: {
+  homes: any;
+  isLoadingHome: boolean;
+}) {
+  const isLoading = isLoadingHome;
 
   useEffect(() => {
     gsap.to(".title", {
@@ -95,24 +80,31 @@ function FirstPart() {
     },
   };
 
-
-
   return (
     <section className="firstPart">
       <BrowserView>
-        <motion.div className="container" initial="offscreen1" whileInView="onscreen" viewport={{ once: true, amount: 1 }}>
+        <motion.div
+          className="container"
+          initial="offscreen1"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 1 }}
+        >
           <Row className="firstRow d-flex align-items-center">
             <Col className="name--col">
-              <motion.div variants={rowVariants} className="namePart tryguy noSelect">
-                {isLoading
-                  ? "loading"
-                  : homes.map((item: any) => (
-                      <h2 className="title" key={item.attributes.title}>
-                        {item.attributes.title}
-                      </h2>
-                    ))}
+              <motion.div
+                variants={rowVariants}
+                className="namePart tryguy noSelect"
+              >
+                {!isLoading && homes && (
+                  <h2 className="title" key={homes[0].attributes.title}>
+                    {homes[0].attributes.title}
+                  </h2>
+                )}
               </motion.div>
-              <motion.div  variants={rowVariants} className="favorite tryguy noSelect">
+              <motion.div
+                variants={rowVariants}
+                className="favorite tryguy noSelect"
+              >
                 <h2 className="title3 m-0 fw-light fst-italic">
                   Your Favorite
                 </h2>
@@ -137,13 +129,11 @@ function FirstPart() {
           <Row className="firstRow d-flex align-items-center">
             <Col className="name--col">
               <div className="namePart tryguy noSelect">
-                {isLoading
-                  ? "loading"
-                  : homes.map((item: any) => (
-                      <h2 className="" key={item.attributes.title}>
-                        {item.attributes.title}
-                      </h2>
-                    ))}
+                {!isLoading && homes && (
+                  <h2 className="title" key={homes[0].attributes.title}>
+                    {homes[0].attributes.title}
+                  </h2>
+                )}
               </div>
               <div className="favorite tryguy noSelect">
                 <h2 className=" m-0 fw-light fst-italic">Your Favorite</h2>

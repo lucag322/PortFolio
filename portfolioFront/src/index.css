@@ -1,16 +1,15 @@
 @font-face {
-    font-family: "Aventine";
-    src: local("Aventine"), url(./fonts/Aventine.ttf) format("truetype");
-  }
-  @font-face {
-    font-family: "Recoleta";
-    src: local("Recoleta"),
-      url(./fonts/Recoleta-Regular.ttf) format("truetype");
-  }
+  font-family: "Aventine";
+  src: local("Aventine"), url(./fonts/Aventine.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Recoleta";
+  src: local("Recoleta"), url(./fonts/Recoleta-Regular.ttf) format("truetype");
+}
 
-body{
-    background-color: #005291!important;
-    background-image: url('./img/bg.svg');
-    background-size: cover;
-    background-position: bottom;
+body {
+  background-color: #005291 !important;
+  /* background-image: url('./img/bg.svg'); */
+  background-size: cover;
+  background-position: bottom;
 }

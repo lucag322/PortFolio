@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "The-Northern";
-  src: local("The-Northern"), url(./../fonts/The-Northern.otf) format("opentype");
+  font-family: "Mitr";
+  src: local("Mitr"), url(./../fonts/Mitr-Light.ttf) format("truetype");
 }
 
 .FifthPart {
-  background-color:  #005291;
+  background-color: #005291;
   overflow: hidden;
   min-height: 100vh;
-  color:  #FFF;
+  color: #fff;
   overflow-x: hidden;
-  width: 93% !important;
+  width: 100% !important;
   border-radius: 10px;
   margin: 0 auto;
   z-index: 2;
@@ -22,20 +22,21 @@
   border-radius: 10px;
 }
 .contact-title {
-  line-height: 6rem !important;
-  font-size: 6rem !important;
+  text-align: center;
+  line-height: 4rem !important;
+  font-size: 4rem !important;
 }
 
 .inputForm {
-  border-bottom: 1px solid  #FFF !important;
-  background-color:  #F7EBDE;
+  border-bottom: 1px solid #fff !important;
+  background-color: #f7ebde;
   border: none;
   width: 100%;
   font-size: 24px;
-  font-family: "The-Northern";
+  font-family: "Mitr";
 }
 .inputForm:focus-visible {
-  border-bottom: 1px solid  #FFF !important;
+  border-bottom: 1px solid #fff !important;
   border: none;
   width: 100%;
   font-size: 24px;
@@ -54,9 +55,9 @@ textarea[name="message"] {
   padding: 5px 20px;
   font-size: 20px;
   font-family: "yrsa";
-  border: 2px solid  #FFF;
+  border: 2px solid #fff;
   border-radius: 5px;
-  color:  #FFF;
+  color: #fff;
   transition: all 0.1s;
   width: 200px;
   -webkit-transition: all 0.1s;
@@ -70,16 +71,16 @@ textarea[name="message"] {
   font-family: "yrsa";
   font-size: 30px;
   padding-top: 15%;
-  color:  #FFF;
+  color: #fff;
 }
 .mail {
-  font-size: 24px;
-  color:  #FFF;
-  font-family: "The-Northern";
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Brice-BlackExpanded" !important;
   text-align: left;
 }
 .mail:hover {
-  color:  lightskyblue;
+  color: #f7ebde;
   text-decoration: none;
 }
 @media (max-width: 768px) {

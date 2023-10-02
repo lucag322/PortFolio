@@ -4,32 +4,22 @@ import { Container, Row, Col } from "react-bootstrap";
 import star from "../../../img/rrr.svg";
 import { useAnimation, motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 import axios from "axios";
 
-function fourthPart() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [homes, setHomes] = useState<any>([null]);
-  var config = {
-    headers: {
-      Accept: "application/json",
-    },
-  };
-
-  useEffect(() => {
-    // Make a request for a user with a given ID
-    axios
-      .get("https://back.lucagrousset.eu/api/tests", config)
-      .then((res) => {
-        setHomes(Object.values(res.data.data));
-        setIsLoading(false);
-      })
-
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
+function fourthPart({
+  homes,
+  isLoadingHome,
+}: {
+  homes: any;
+  isLoadingHome: boolean;
+}) {
+  const isLoading = isLoadingHome;
 
   const cardVariants: Variants = {
     offscreen: {
@@ -124,32 +114,32 @@ function fourthPart() {
         </Row>
       </Container>
       <BrowserView>
-      <Row className="pb-5">
-        <Col lg={12} sm={12} xs={12} className=" p-0">
-          <motion.div
-            initial="offscreen2"
-            whileInView={"onscreen3"}
-            viewport={{ once: true, amount: 0.8 }}
-          >
-            <motion.div variants={cardVariants} className="messagedefilant">
-              {isLoading
-                ? "loading"
-                : homes.map((item: any) => (
-                    <div
-                      className="noSelect"
-                      key={item.attributes.texteDefile}
-                      data-text={item.attributes.texteDefile}
-                    >
-                      <span className="noSelect">
-                        {" "}
-                        {item.attributes.texteDefile}{" "}
-                      </span>
-                    </div>
-                  ))}
+        <Row className="pb-5">
+          <Col lg={12} sm={12} xs={12} className=" p-0">
+            <motion.div
+              initial="offscreen2"
+              whileInView={"onscreen3"}
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <motion.div variants={cardVariants} className="messagedefilant">
+                {isLoading
+                  ? "loading"
+                  : homes.map((item: any) => (
+                      <div
+                        className="noSelect"
+                        key={item.attributes.texteDefile}
+                        data-text={item.attributes.texteDefile}
+                      >
+                        <span className="noSelect">
+                          {" "}
+                          {item.attributes.texteDefile}{" "}
+                        </span>
+                      </div>
+                    ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
       </BrowserView>
     </section>
   );
