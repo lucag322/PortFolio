@@ -18,7 +18,6 @@ import {
   isMobile,
 } from "react-device-detect";
 import { Col, Row } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 gsap.registerPlugin(ScrollTrigger);
