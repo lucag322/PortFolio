@@ -212,11 +212,11 @@ function Home() {
         <Row name="about" className="swictch whiteswitch">
           <FourthPart homes={homes} isLoadingHome={isLoadingHome} />
         </Row>
-        <Col name="project" className="swictch blueswitch mb-5">
+        {/* <Col name="project" className="swictch blueswitch mb-5">
           <ThirdPart projet={projet} isLoadingProjet={isLoadingProjet} />
-        </Col>
+        </Col> */}
         <Row name="contact" className=" swictch whiteswitch">
-          <FifthPart />
+          <FifthPart homes={homes} isLoadingHome={isLoadingHome} />
         </Row>
         <Row name="contact" className=" swictch whiteswitch">
           <Col lg={6} sm={6} xs={6} className="footerLeft text-left">

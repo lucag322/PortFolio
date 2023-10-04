@@ -20,31 +20,6 @@
     },
     "texteDefile": {
       "type": "string"
-    },
-    "Email": {
-      "type": "string"
-    },
-    "tel": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "github": {
-      "type": "string"
-    },
-    "malte": {
-      "type": "string"
-    },
-    "imageContact": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }

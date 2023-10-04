@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galleries",
+  "info": {
+    "singularName": "gallery",
+    "pluralName": "galleries",
+    "displayName": "photos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imageAlbum": {
+      "displayName": "imageAlbum",
+      "type": "component",
+      "repeatable": true,
+      "component": "album.image-album"
+    },
+    "AlbumTitle": {
+      "type": "string"
+    }
+  }
+}
