@@ -58,22 +58,9 @@ function fourthPart({
 
   return (
     <section className="fourthPart ">
-      <Container className="py-5">
+      <Container fluid className="py-5 mx-5">
         <Row>
           <Col md={8} className="">
-            <motion.div
-              initial="offscreen"
-              whileInView={"onscreen1"}
-              viewport={{ once: true, amount: 0.8 }}
-            >
-              <motion.h2
-                variants={cardVariants}
-                className="partName  fw-light fst-italic pt-2"
-                id="Titre"
-              >
-                about me
-              </motion.h2>
-            </motion.div>
             <motion.div
               initial="offscreen"
               whileInView={"onscreen1"}
@@ -84,7 +71,7 @@ function fourthPart({
                 : homes.map((item: any) => (
                     <motion.p
                       variants={cardVariants}
-                      className="yrsa position-relative zindex-sticky aboutText"
+                      className=" zindex-sticky aboutText"
                       key={item.attributes.about}
                     >
                       {item.attributes.about}
