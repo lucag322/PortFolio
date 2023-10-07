@@ -65,66 +65,6 @@ function Home() {
       });
   }, []);
 
-  if (isBrowser) {
-    useEffect(() => {
-      function blue() {
-        const body: any = document.querySelector("body");
-        const menu: any = document.querySelector(".btnOpen");
-        const partname: any = document.querySelector("#Titre");
-        const hiddebarmenu: any = document.querySelector(".hiddebarmenu");
-        const hiddebartime: any = document.querySelector(".hiddebartime");
-        const heure: any = document.querySelector(".heure");
-        const navbar: any = document.querySelector(".navbarr");
-        const navName: any = document.querySelector(".nav-name");
-
-        let observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (
-                entry.isIntersecting &&
-                entry.target.classList.contains("blueswitch")
-              ) {
-                body.classList.add("bluemode");
-                menu.classList.add("bluemodemenue");
-                partname.classList.add("bluemodename");
-                hiddebarmenu.classList.add("hidde");
-                hiddebartime.classList.add("hidde");
-                heure.classList.add("bluemodeheure");
-                navbar.classList.add("bluemodenav");
-                navName.classList.add("bluemodename");
-                setOpacity(1);
-              } else if (
-                entry.isIntersecting &&
-                entry.target.classList.contains("whiteswitch")
-              ) {
-                setOpacity(0);
-                body.classList.remove("bluemode");
-                menu.classList.remove("bluemodemenue");
-                partname.classList.remove("bluemodename");
-                hiddebarmenu.classList.remove("hidde");
-                hiddebartime.classList.remove("hidde");
-                heure.classList.remove("bluemodeheure");
-                navbar.classList.remove("bluemodenav");
-                navName.classList.remove("bluemodename");
-              }
-            });
-          },
-          {
-            rootMargin: "-47% 0px -47% 0px",
-          }
-        );
-
-        let target = ".swictch";
-        document.querySelectorAll(target).forEach((i) => {
-          if (i) {
-            observer.observe(i);
-          }
-        });
-      }
-
-      blue();
-    }, []);
-  }
   const loadingContainer = {
     width: "20vw",
     height: "20vh",
@@ -135,7 +75,7 @@ function Home() {
     display: "block",
     width: "5rem",
     height: "5rem",
-    backgroundColor: "#005291",
+    backgroundColor: "#001829",
     borderRadius: "50px",
   };
 

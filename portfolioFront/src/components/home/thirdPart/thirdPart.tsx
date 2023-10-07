@@ -53,12 +53,12 @@ function thirdPart({
             invalidateOnRefresh: true,
             anticipatePin: 1,
             scrub: 1,
-            // snap: {
-            //   snapTo: 1 / (totalPanels - 1),
-            //   duration: { min: 0.1, max: 0.3 },
-            //   delay: 0.001,
-            //   ease: "power3.inOut",
-            // },
+            snap: {
+              snapTo: 1 / (totalPanels - 1),
+              duration: { min: 0.1, max: 0.3 },
+              delay: 0.001,
+              ease: "power3.inOut",
+            },
             markers: true,
             end: () => "+=" + container.current.offsetWidth,
           },
@@ -96,7 +96,7 @@ function thirdPart({
             </div>
             {isLoading
               ? "loading"
-              : projet.map((item: any, i: any) => {
+              : projet.slice(-3).map((item: any, i: any) => {
                   return (
                     <>
                       <div
@@ -172,6 +172,28 @@ function thirdPart({
                     </>
                   );
                 })}
+            <div
+              className="projectcontainer panel"
+              ref={(e) => createPanelsRefs(e, 3)}
+              key={3}
+              id={"3"}
+            >
+              <div className="projet yrsa  position-relative d-flex align-items-center justify-content-center">
+                <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
+                  <div
+                    className="title-box "
+                    data-speed="1"
+                    onClick={() => navigate(`project`)}
+                  >
+                    <MouseParallaxChild factorX={0.3} factorY={0.5}>
+                      <h3 className="voirtout yrsa noSelect">
+                        Voir tout les projets
+                      </h3>
+                    </MouseParallaxChild>
+                  </div>
+                </MouseParallaxContainer>
+              </div>
+            </div>
           </div>
         </BrowserView>
       </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { items } from "./menuItems";
 import "../../../css/firstPart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,9 +11,23 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import { motion, useAnimation } from "framer-motion";
 import SquareBall from "./carrerBoule";
 
 function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
+  const controls = useAnimation();
+
+  controls.start({
+    rotate: 360,
+    speed: 1,
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      loop: Infinity,
+      ease: "linear",
+    },
+  });
+
   function scrollBack() {
     var Html = document.querySelector(".html");
     if (Html != null) {
@@ -54,10 +68,23 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
             ABOUT
           </Link>
         </div>
-        <div className="hoverBox">
+        <div
+          className="hoverBox"
+          // onMouseEnter={handleHover}
+          // onMouseLeave={handleHover}
+        >
           <div className="deco-one">
-            <SquareBall width={120} height={120} color="green" />
+            <SquareBall width={200} height={200} />
           </div>
+        </div>
+        <div
+          className="hoverBox2"
+          // onMouseEnter={handleHover}
+          // onMouseLeave={handleHover}
+        >
+          <motion.div className="deco-two" initial={{ rotate: 0 }}>
+            <span className="textDeco">✺</span>
+          </motion.div>
         </div>
         <div className="menu-items-list two">
           <Link

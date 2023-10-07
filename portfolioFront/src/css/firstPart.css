@@ -165,23 +165,48 @@ h2 {
   grid-column: 3 / 4; /* Commence à la colonne 1 */
   grid-row: 1 / 2; /* Commence à la ligne 1 */
   margin: 1rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hoverBox2 {
+  grid-column: 2 / 3; /* Commence à la colonne 1 */
+  grid-row: 2 / 3; /* Commence à la ligne 1 */
+  margin: 1rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textDeco {
+  text-decoration: none;
+  font-size: 10rem;
+  color: #fff;
 }
 .deco-one {
-  animation: spin 10s linear infinite;
-  transition: all 2s;
-}
-.hoverBox:hover > .deco-one {
-  animation: spin 2s linear infinite;
+  animation: spin 5s linear infinite;
+  transform-origin: 50% 50%;
+  animation-iteration-count: infinite;
 }
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
-
 .menu-item {
   text-align: center;
   color: #ffffff;
