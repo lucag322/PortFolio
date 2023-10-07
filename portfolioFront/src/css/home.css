@@ -36,7 +36,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .app {
-  color: #fff;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -97,18 +97,14 @@ body::-webkit-scrollbar-thumb {
   transition: background-color 0s ease 0.4s;
 }
 
-body {
-  transition: background-color 0.5s ease;
-  color: #fff !important;
-}
-
 .contact {
   color: white !important;
   border-radius: 20px;
 }
 .footerRight,
 .footerLeft {
-  background-color: #003a65 !important;
+  background: #001829 !important;
+  color: white !important;
   padding: 1rem;
 }
 #error-page {

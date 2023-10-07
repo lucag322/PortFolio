@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "Brice-BlackExpanded";
-  src: local("Brice-BlackExpanded"), url(./../fonts/Brice-BlackExpanded.ttf) format("truetype");
+  font-family: "GatwickBold";
+  src: local("PPGatwick-Bold"),
+    url(./../fonts/PPGatwick-Bold.otf) format("opentype");
 }
 .noSelect {
   -moz-user-select: none;
@@ -9,32 +10,33 @@
   user-select: none;
 }
 h2 {
-  font-family: "Brice-BlackExpanded" !important;
+  font-family: "GatwickBold" !important;
   font-weight: 500;
-  font-size: 7em !important;
-  line-height: 10rem !important;
+  font-size: 10rem !important;
+  line-height: 9rem !important;
 }
 
 .firstPart {
   width: 100%;
   height: 100vh;
-  color:  #FFF;
+  color: #001829;
 }
 .namePart {
   padding: 5rem 0px 0px 0px;
-  color:  #FFF;
+  color: #001829;
 }
 .favorite {
-  text-align: end;
-  width: 100%;
-  font-style: italic;
   padding: 0px 0px 0px 0px;
-  -webkit-text-stroke: 2px  #FFF;
+  -webkit-text-stroke: 2px #001829;
   color: transparent;
+}
+.favorite > h2 {
+  font-size: 7rem !important;
+  line-height: 9rem !important;
 }
 .frontend {
   padding: 0px 0px 0px 0px;
-  color: #FFF;
+  color: #fff;
 }
 .firstRow {
   height: 95vh;
@@ -53,6 +55,7 @@ h2 {
    */
   background-image: url(../img/arrow.svg);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .bounce {
@@ -89,7 +92,7 @@ h2 {
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  color:  #FFF;
+  color: #fff;
   background-color: white;
   border-radius: 5px;
 }
@@ -106,6 +109,7 @@ h2 {
   border-radius: 5px;
   margin-right: 10px;
   font-family: "Brice-BlackExpanded" !important;
+  color: #001829;
 }
 
 .bluemodeheure {
@@ -121,7 +125,7 @@ h2 {
   height: 100%;
   left: 0;
   top: 0;
-  background:  #005291;
+  background: #001829;
   transform: translate(-100%);
   transition: all 0.45s;
 }
@@ -142,19 +146,54 @@ h2 {
 
 .Menu > .Menu-items {
   display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 colonnes équales */
+  grid-template-rows: repeat(2, 1fr); /* 3 lignes équales */
   place-items: center;
   grid-gap: 10px;
 }
 
-.Menu > .Menu-items > a {
+.one {
+  grid-column: 2 / 3; /* Commence à la colonne 1 */
+  grid-row: 1 / 2; /* Commence à la ligne 1 */
+}
+
+.two {
+  grid-column: 3 / 4; /* Termine à la colonne 5 */
+  grid-row: 2 / 3; /* Termine à la ligne 3 */
+}
+.hoverBox {
+  grid-column: 3 / 4; /* Commence à la colonne 1 */
+  grid-row: 1 / 2; /* Commence à la ligne 1 */
+  margin: 1rem;
+}
+.deco-one {
+  animation: spin 10s linear infinite;
+  transition: all 2s;
+}
+.hoverBox:hover > .deco-one {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.menu-item {
+  text-align: center;
   color: #ffffff;
-  font-size: 3rem !important;
+  font-size: 5rem !important;
   text-decoration: none;
   position: relative;
   font-family: "Brice-BlackExpanded" !important;
 }
-
-.Menu > .Menu-items > a::after {
+.menu-item:hover {
+  color: #cae7ff;
+}
+.menu-item::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -165,27 +204,31 @@ h2 {
   transform: scaleX(0);
   transition: all 0.45s;
 }
-
-.Menu > .Menu-items > a:hover::after {
+.menu-item:hover::after {
   transform: scaleX(1);
 }
 
-.Menu.open .Menu-items > a:nth-child(1) {
+.menu-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:nth-child(1) {
   animation: animate ease-in-out;
   animation-duration: 0.7s;
 }
 
-.Menu.open .Menu-items > a:nth-child(2) {
+.menu-item:nth-child(2) {
   animation: animate ease-in-out;
   animation-duration: 0.85s;
 }
 
-.Menu.open .Menu-items > a:nth-child(3) {
+.menu-item:nth-child(3) {
   animation: animate ease-in-out;
   animation-duration: 1s;
 }
 
-.Menu.open .Menu-items > a:nth-child(4) {
+.menu-item:nth-child(4) {
   animation: animate ease-in-out;
   animation-duration: 1.15s;
 }
@@ -214,7 +257,7 @@ h2 {
 @media (max-width: 1200px) {
   h2 {
     font-size: 5em !important;
-    line-height:5rem !important;
+    line-height: 5rem !important;
   }
 }
 @media (max-width: 992px) {

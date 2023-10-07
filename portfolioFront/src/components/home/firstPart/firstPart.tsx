@@ -41,7 +41,7 @@ function FirstPart({
       },
     });
     gsap.to(".title3", {
-      x: -300,
+      x: 900,
 
       scrollTrigger: {
         trigger: ".start",
@@ -84,7 +84,7 @@ function FirstPart({
     <section className="firstPart">
       <BrowserView>
         <motion.div
-          className="container"
+          className="container-fluid"
           initial="offscreen1"
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}

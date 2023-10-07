@@ -21,13 +21,16 @@ function fourthPart({
 }) {
   const isLoading = isLoadingHome;
 
+  //get the screen width
+  const [width, setWidth] = useState(window.innerWidth);
+
   const cardVariants: Variants = {
     offscreen: {
       y: 100,
       opacity: 0,
     },
     offscreen2: {
-      x: 500,
+      x: width,
     },
     onscreen1: {
       y: 0,
@@ -74,16 +77,25 @@ function fourthPart({
                       className=" zindex-sticky aboutText"
                       key={item.attributes.about}
                     >
-                      {item.attributes.about}
+                      Je suis <b className="boldName">Luca Grousset</b>, un
+                      jeune développeur web passionné. J'aime créer des sites
+                      web <span className="spotlightText">interactifs</span>{" "}
+                      avec des animations et une réel{" "}
+                      <span className="spotlightTextBorder">expériences</span>{" "}
+                      utilisateur. J'adore voyager et apprendre de nouvelles
+                      choses.{" "}
+                      <span className="spotlightTextBold">Contactez-moi</span>{" "}
+                      pour un site web unique et mémorable.
                     </motion.p>
                   ))}
             </motion.div>
           </Col>
-          <Col lg={4} sm={4} xs={4} className=" p-0 d-none d-md-block">
+          <Col lg={4} sm={4} xs={4} className=" p-0 d-none d-md-block ">
             <motion.div
               initial="offscreen"
               whileInView={"onscreen2"}
               viewport={{ once: true, amount: 0.8 }}
+              className="d-flex justify-content-center"
             >
               <motion.img
                 src={star}

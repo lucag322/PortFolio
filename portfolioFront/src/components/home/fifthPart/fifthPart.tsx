@@ -56,7 +56,7 @@ function FifthPart({
     <section id="contacte" className="FifthPart d-flex align-items-center">
       <Container fluid className="contact m-5 d-flex justify-content-center ">
         <Row className="pb-5 w-100">
-          <Col>
+          <Col className="d-flex align-items-center">
             <div className="wrapper">
               <div className="contact w-100 h-100">
                 <div className="contact_title_wrapper">
@@ -66,7 +66,7 @@ function FifthPart({
                   <motion.div
                     variants={blockContactVariant}
                     whileHover="hover"
-                    className="contact_btn w-50 white"
+                    className="contact_btn_left w-50"
                   >
                     <span className="contact_btn_title">Mail</span>
                     <div className="contact_btn_title_icon">
@@ -76,11 +76,11 @@ function FifthPart({
                   <motion.div
                     variants={blockContactVariant}
                     whileHover="hover"
-                    className="contact_btn w-50 me-3"
+                    className="contact_btn_right w-50 me-3"
                   >
                     <span className="contact_btn_title">Tél</span>
                     <div className="contact_btn_title_icon">
-                      <ArrowUpRight width={52} height={52} color="black" />
+                      <ArrowUpRight width={52} height={52} color="#001829" />
                     </div>
                   </motion.div>
                 </div>

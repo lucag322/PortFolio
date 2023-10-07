@@ -19,8 +19,13 @@
   border-bottom: 1px solid white;
 }
 .btnOpen {
-  font-size: 2rem;
+  color: #001829;
+  font-family: "GatwickBold" !important;
+  font-size: 1.5rem;
   z-index: 5;
+  cursor: pointer;
+  border: 2px solid #001829;
+  border-radius: 50px;
 }
 
 .nav-name {
@@ -30,6 +35,8 @@
 }
 
 .nav-name > h4 {
+  color: #001829;
+  font-family: "GatwickBold" !important;
   padding-left: 10%;
   font-size: 2rem;
 }

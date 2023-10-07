@@ -135,7 +135,7 @@ function Home() {
     display: "block",
     width: "5rem",
     height: "5rem",
-    backgroundColor: "#FFF",
+    backgroundColor: "#005291",
     borderRadius: "50px",
   };
 
@@ -212,9 +212,9 @@ function Home() {
         <Row name="about" className="swictch whiteswitch">
           <FourthPart homes={homes} isLoadingHome={isLoadingHome} />
         </Row>
-        {/* <Col name="project" className="swictch blueswitch mb-5">
+        <Row name="project" className="swictch blueswitch mb-5">
           <ThirdPart projet={projet} isLoadingProjet={isLoadingProjet} />
-        </Col> */}
+        </Row>
         <Row name="contact" className=" swictch whiteswitch">
           <FifthPart homes={homes} isLoadingHome={isLoadingHome} />
         </Row>

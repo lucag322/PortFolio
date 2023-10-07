@@ -1,15 +1,3 @@
-@font-face {
-  font-family: "Mitr";
-  src: local("Mitr"), url(./../fonts/Mitr-Light.ttf) format("truetype");
-}
-.about_title {
-  font-family: "GatwickBold" !important;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #fff;
-  margin-top: 2rem;
-}
-
 .noSelect {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -27,7 +15,9 @@
   position: relative;
 }
 .fourthPart > .container-fluid {
-  min-height: 60vh;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
 }
 h2 {
   font-family: auto;
@@ -37,10 +27,32 @@ h2 {
 }
 
 .aboutText {
-  font-family: "PangramSansMedium";
+  font-family: "Space Grotesk", sans-serif;
   font-size: 5vh;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
+  color: #001829;
+  letter-spacing: -2px;
+  font-size: 2.8rem;
+}
+.boldName {
+  color: #001829;
+}
+.spotlightText {
+  background-color: #001829;
+  color: white;
+  padding: 0px 1rem;
+  border-radius: 50px;
+}
+.spotlightTextBorder {
+  color: #001829;
+  border: 2px solid #001829;
+  padding: 0px 1rem;
+  border-radius: 50px;
+}
+.spotlightTextBold {
+  font-family: "GatwickBold";
+  color: #001829;
 }
 .rrr {
   width: 250px;
@@ -71,6 +83,7 @@ h2 {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: all 0.1s;
 }
 
 .messagedefilant div span {
@@ -79,9 +92,15 @@ h2 {
   font-family: "Brice-BlackExpanded" !important;
   font-weight: 500;
   line-height: 8rem !important;
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 2px #001829;
 
   color: transparent;
+}
+
+.messagedefilant div span:hover,
+.messagedefilant div:hover::after {
+  color: #001829;
+  -webkit-text-stroke: 0px;
 }
 
 .messagedefilant div:after {
@@ -94,7 +113,7 @@ h2 {
   font-family: "Brice-BlackExpanded" !important;
   font-weight: 500;
   line-height: 8rem !important;
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 2px #001829;
 
   color: transparent;
 }
@@ -142,6 +161,13 @@ h2 {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: all 0.1s;
+}
+
+.messagedefilant2 div span:hover,
+.messagedefilant2 div:hover::after {
+  color: #001829;
+  -webkit-text-stroke: 0px;
 }
 
 .messagedefilant2 div span {
@@ -150,7 +176,7 @@ h2 {
   font-family: "Brice-BlackExpanded" !important;
   font-weight: 500;
   line-height: 8rem !important;
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 2px #001829;
 
   color: transparent;
 }
@@ -165,7 +191,7 @@ h2 {
   font-family: "Brice-BlackExpanded" !important;
   font-weight: 500;
   line-height: 8rem !important;
-  -webkit-text-stroke: 2px #fff;
+  -webkit-text-stroke: 2px #001829;
 
   color: transparent;
 }
@@ -190,6 +216,5 @@ h2 {
 @media (max-width: 768px) {
   .aboutText {
     font-size: 1.5rem;
-    font-family: "Mitr";
   }
 }

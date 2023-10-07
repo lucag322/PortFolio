@@ -6,10 +6,6 @@
   font-family: "Recoleta";
   src: local("Recoleta"), url(./fonts/Recoleta-Regular.ttf) format("truetype");
 }
-
 body {
-  background-color: #005291 !important;
-  /* background-image: url('./img/bg.svg'); */
-  background-size: cover;
-  background-position: bottom;
+  background-color: #ebf6ff !important;
 }

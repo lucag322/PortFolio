@@ -1,27 +1,24 @@
-
 html {
   overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 8px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #1b3b6f;        /* color of the tracking area */
+  background: #1b3b6f; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #3069C5;    /* color of the scroll thumb */      /* roundness of the scroll thumb */
-
+  background-color: #3069c5; /* color of the scroll thumb */ /* roundness of the scroll thumb */
 }
 .thirdPart {
   display: flex;
-  width: 600vw!important;
+  width: 600vw !important;
 }
 
-
-.noscroll{
+.noscroll {
   overflow: hidden;
 }
 .app {
@@ -34,7 +31,8 @@ body::-webkit-scrollbar-thumb {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.5rem;
 }
-.footerLeft, .footerRight {
+.footerLeft,
+.footerRight {
   z-index: 3;
 }
 
@@ -82,11 +80,9 @@ body {
   color: #1b3b6f !important;
 }
 
-
-
 @media only screen and (max-width: 1600px) {
- h2{
-  font-size: 12em !important;
+  h2 {
+    font-size: 12em !important;
     line-height: 10rem !important;
- }
+  }
 }
