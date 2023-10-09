@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { items } from "./menuItems";
 import "../../../css/firstPart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Container, Row, Col } from "react-bootstrap";
 import {
   Link,
   animateScroll,
@@ -69,7 +66,7 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
           </Link>
         </div>
         <div
-          className="hoverBox"
+          className="hoverBox d-none d-md-block"
           // onMouseEnter={handleHover}
           // onMouseLeave={handleHover}
         >
@@ -78,11 +75,11 @@ function Menu({ isOpen, onChange }: { isOpen: boolean; onChange: any }) {
           </div>
         </div>
         <div
-          className="hoverBox2"
+          className="hoverBox2 d-none d-md-block"
           // onMouseEnter={handleHover}
           // onMouseLeave={handleHover}
         >
-          <motion.div className="deco-two" initial={{ rotate: 0 }}>
+          <motion.div className="deco-two " initial={{ rotate: 0 }}>
             <span className="textDeco">✺</span>
           </motion.div>
         </div>

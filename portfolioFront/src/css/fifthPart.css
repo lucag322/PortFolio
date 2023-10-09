@@ -45,6 +45,21 @@
   background-color: #001829;
   border-radius: 20px;
 }
+.contact-link {
+  text-decoration: none;
+}
+.contact-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.contact-link-white {
+  text-decoration: none;
+  color: #001829;
+}
+.contact-link-white:hover {
+  text-decoration: none;
+  color: #001829;
+}
 .btn_wrapper {
   display: flex;
   justify-content: space-around;

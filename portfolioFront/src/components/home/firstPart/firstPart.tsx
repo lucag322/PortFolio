@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "../../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion, Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { BrowserView, MobileView } from "react-device-detect";
 import gsap from "gsap";
-import axios from "axios";
 //const axios = require('axios'); // legacy way
 
 function FirstPart({
@@ -130,13 +128,9 @@ function FirstPart({
                 )}
               </div>
               <div className="favorite tryguy noSelect">
-                <h2 className=" m-0 fw-light fst-italic">Your Favorite</h2>
-              </div>
-              <div className="frontend noSelect">
-                <h2 className=" m-0 fw-light">FrontEnd</h2>
-              </div>
-              <div className="favorite noSelect">
-                <h2 className=" m-0 fw-light fst-italic ">Developer</h2>
+                <h2 className="title3 m-0 fw-light fst-italic">
+                  Your Favorite Developer
+                </h2>
               </div>
             </Col>
           </Row>

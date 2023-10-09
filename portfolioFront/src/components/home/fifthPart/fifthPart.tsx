@@ -63,26 +63,30 @@ function FifthPart({
                   <div className="contact_title">contact</div>
                 </div>
                 <div className="btn_wrapper pt-3">
-                  <motion.div
+                  <motion.a
                     variants={blockContactVariant}
                     whileHover="hover"
-                    className="contact_btn_left w-50"
+                    target="_blank"
+                    className="contact_btn_left contact-link w-50"
+                    href="mailto:luca.grousset@gmail.com"
                   >
                     <span className="contact_btn_title">Mail</span>
                     <div className="contact_btn_title_icon">
                       <ArrowUpRight width={52} height={52} color="white" />
                     </div>
-                  </motion.div>
-                  <motion.div
+                  </motion.a>
+                  <motion.a
+                    href="https://www.linkedin.com/in/luca-grousset-b9122a1b5"
+                    target="_blank"
                     variants={blockContactVariant}
                     whileHover="hover"
-                    className="contact_btn_right w-50 me-3"
+                    className="contact_btn_right contact-link-white w-50 me-3"
                   >
-                    <span className="contact_btn_title">Tél</span>
+                    <span className="contact_btn_title">Linkedin</span>
                     <div className="contact_btn_title_icon">
                       <ArrowUpRight width={52} height={52} color="#001829" />
                     </div>
-                  </motion.div>
+                  </motion.a>
                 </div>
               </div>
             </div>

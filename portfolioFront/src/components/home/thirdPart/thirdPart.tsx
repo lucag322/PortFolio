@@ -59,7 +59,7 @@ function thirdPart({
               delay: 0.001,
               ease: "power3.inOut",
             },
-            markers: true,
+            markers: false,
             end: () => "+=" + container.current.offsetWidth,
           },
         });

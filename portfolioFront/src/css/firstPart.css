@@ -307,3 +307,20 @@ h2 {
     line-height: 2rem !important;
   }
 }
+
+@media (max-width: 576px) {
+  .Menu-items {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .menu-item {
+    font-size: 3rem !important;
+  }
+  .one {
+    grid-column: 1 !important;
+    grid-row: 1 / 2;
+  }
+  .two {
+    grid-column: 1 !important;
+    grid-row: 2 / 3;
+  }
+}
