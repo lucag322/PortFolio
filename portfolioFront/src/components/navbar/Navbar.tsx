@@ -64,7 +64,7 @@ function Navbar() {
                 <h4>Luca grousset</h4>
               </Link>
             </Col>
-            <Col className="d-flex justify-content-end">
+            <Col className="d-flex justify-content-end align-items-center">
               <div className="navbtn">
                 {isProjectPage ? (
                   <a

@@ -168,6 +168,12 @@ function Home() {
         </Row>
       </>
     );
+  } else {
+    return (
+      <>
+        <p>Loading</p>
+      </>
+    );
   }
 }
 

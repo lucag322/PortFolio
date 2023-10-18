@@ -3,7 +3,9 @@ import "../../../css/firstPart.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion, Variants } from "framer-motion";
 import { BrowserView, MobileView } from "react-device-detect";
+import ScrollText from "./ScrollText";
 import gsap from "gsap";
+import ArrowDown from "./ArrowDown";
 //const axios = require('axios'); // legacy way
 
 function FirstPart({
@@ -82,7 +84,7 @@ function FirstPart({
     <section className="firstPart">
       <BrowserView>
         <motion.div
-          className="container-fluid"
+          className="container-fluid text-center"
           initial="offscreen1"
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
@@ -111,7 +113,10 @@ function FirstPart({
           </Row>
           <Row>
             <Col>
-              <div className="arrow bounce noSelect start"></div>
+              <div className="arrow bounce noSelect start d-flex justify-content-center align-items-center">
+                <ScrollText size={100} />
+                <ArrowDown size={50} className="position-absolute" />
+              </div>
             </Col>
           </Row>
         </motion.div>

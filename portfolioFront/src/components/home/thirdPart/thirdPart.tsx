@@ -15,6 +15,10 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
+import ArrowDown from "../firstPart/ArrowDown";
+import ScrollText from "../firstPart/ScrollText";
+import { Col, Container, Row } from "react-bootstrap";
+import ArrowUpRightIcon from "./ArrowUpRight";
 
 function thirdPart({
   projet,
@@ -84,15 +88,16 @@ function thirdPart({
       positions.push({ x: randomX, y: randomY }); // On ajoute la position générée dans le tableau
       return { x: randomX, y: randomY };
     };
-
+    useEffect(() => {
+      console.log("propro", projet);
+    }, [isLoading]);
     return (
       <>
         <BrowserView>
           <div className="thirdPart " id="thirdPart" ref={container}>
-            <div className="scroll-downs">
-              <div className="mousey">
-                <div className="scroller"></div>
-              </div>
+            <div className="arrow bounce noSelect start d-flex justify-content-center align-items-center scrollProject">
+              <ScrollText size={100} />
+              <ArrowDown size={50} className="position-absolute" />
             </div>
             {isLoading
               ? "loading"
@@ -105,68 +110,65 @@ function thirdPart({
                         key={item.id}
                         id={i}
                       >
-                        <div className="projet yrsa  position-relative d-flex align-items-center justify-content-center">
-                          <MouseParallaxContainer
-                            globalFactorX={0.1}
-                            globalFactorY={0.1}
-                          >
-                            <div
-                              className="title-box "
-                              data-speed="1"
-                              onClick={() => navigate(`project/${item.id}`)}
-                            >
-                              <MouseParallaxChild factorX={0.3} factorY={0.5}>
-                                <h3
-                                  className="card-title yrsa noSelect"
-                                  key={item.attributes.title}
-                                >
-                                  {item.attributes.title}
-                                </h3>
-                              </MouseParallaxChild>
-                            </div>
-                          </MouseParallaxContainer>
-                          {item.attributes.ImgHomePage?.map((item: any) => {
-                            return (
-                              <motion.div
-                                style={{
-                                  overflow: "hidden",
-                                  backgroundSize: "contain",
-                                  backgroundRepeat: "no-repeat",
-                                  position: "absolute",
-                                  borderRadius: 5,
-                                  cursor: "grab",
-                                  ...getRandomPosition(),
-                                }}
-                                drag
-                                dragConstraints={{
-                                  top: -300,
-                                  right: 700,
-                                  bottom: 300,
-                                  left: -700,
-                                }}
-                                dragTransition={{
-                                  bounceStiffness: 600,
-                                  bounceDamping: 20,
-                                }}
-                                dragElastic={0.5}
-                                whileTap={{ cursor: "grabbing" }}
-                              >
-                                <img
-                                  src={`https://back.lucagrousset.eu${item.imgProjectHome?.data?.attributes?.url}`}
-                                  className="noselect"
-                                  style={{ maxWidth: "15rem", width: "100%" }}
-                                />
-                                <div
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    position: "absolute",
-                                    top: "0",
-                                  }}
-                                ></div>
-                              </motion.div>
-                            );
-                          })}
+                        <div className="projet yrsa  position-relative align-items-center justify-content-center h-100 w-100">
+                          <Container className="projetContentContainer h-100">
+                            <Row className="">
+                              <Col className="p-0">
+                                <Container fluid className="h-100">
+                                  <Row className="projet_content_row_one mb-2">
+                                    <Col className="projet_content_col_one p-0">
+                                      <img
+                                        className="projet_img"
+                                        src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
+                                        alt=""
+                                      />
+                                      <div className="projet_content_number_wrapper ">
+                                        <div className="projet_content_number">
+                                          <h3 className="projet_title yrsa noSelect">
+                                            {/* item id  */}
+                                            {item.id - 1}
+                                          </h3>
+                                        </div>
+                                      </div>
+                                      <div className=" projet_content_title_wrapper ">
+                                        <div className="projet_content_title">
+                                          <h3
+                                            className="projet_title yrsa noSelect"
+                                            key={item.attributes.title}
+                                          >
+                                            {item.attributes.title}
+                                          </h3>
+                                        </div>
+                                      </div>
+                                    </Col>
+                                  </Row>
+                                  <Row className="projet_content_row_two">
+                                    <Col
+                                      sm={9}
+                                      className="projet_content_col_desc"
+                                    >
+                                      <p
+                                        className="projet_description"
+                                        key={item.attributes.projectDescription}
+                                      >
+                                        {item.attributes.projectDescription}
+                                      </p>
+                                    </Col>
+                                    <Col className="projet_content_col_link d-flex justify-content-end">
+                                      <div
+                                        className="projet_content_link"
+                                        onClick={() =>
+                                          navigate(`project/${item.id}`)
+                                        }
+                                      >
+                                        <ArrowUpRightIcon size={"150px"} />
+                                      </div>
+                                    </Col>
+                                  </Row>
+                                </Container>
+                              </Col>
+                            </Row>
+                          </Container>
                         </div>
                       </div>
                     </>
@@ -186,8 +188,13 @@ function thirdPart({
                     onClick={() => navigate(`project`)}
                   >
                     <MouseParallaxChild factorX={0.3} factorY={0.5}>
-                      <h3 className="voirtout yrsa noSelect">
-                        Voir tout les projets
+                      <h3 className="voirtout  yrsa noSelect">
+                        <span className="card-title position-relative">
+                          Voir tout les
+                        </span>
+                        <span className="card-title position-relative">
+                          projets
+                        </span>
                       </h3>
                     </MouseParallaxChild>
                   </div>
@@ -206,7 +213,7 @@ function thirdPart({
             <h2 className="mobil-projet-titlebox">Projets</h2>
             {isLoading
               ? "loading"
-              : projet.map((item: any, i: any) => (
+              : projet.slice(-3).map((item: any, i: any) => (
                   <div
                     className="mobile-project"
                     onClick={() => navigate(`project/${item.id}`)}

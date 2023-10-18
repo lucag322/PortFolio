@@ -11,6 +11,13 @@ import {
   isMobile,
 } from "react-device-detect";
 import axios from "axios";
+import {
+  Link,
+  animateScroll,
+  Element as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 function fourthPart({
   homes,
@@ -20,6 +27,13 @@ function fourthPart({
   isLoadingHome: boolean;
 }) {
   const isLoading = isLoadingHome;
+
+  function scrollBack() {
+    var Html = document.querySelector(".html");
+    if (Html != null) {
+      Html.classList.remove("noscroll");
+    }
+  }
 
   //get the screen width
   const [width, setWidth] = useState(window.innerWidth);
@@ -61,7 +75,7 @@ function fourthPart({
 
   return (
     <section className="fourthPart ">
-      <Container fluid className="py-5 mx-5">
+      <Container fluid className="py-5 mx-md-4 mx-lg-5 ">
         <Row>
           <Col md={8} className="">
             <motion.div
@@ -84,30 +98,21 @@ function fourthPart({
                       <span className="spotlightTextBorder">expériences</span>{" "}
                       utilisateur. J'adore voyager et apprendre de nouvelles
                       choses.{" "}
-                      <span className="spotlightTextBold">Contactez-moi</span>{" "}
+                      <Link
+                        activeClass="active"
+                        to={"contacte"}
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={0}
+                        onClick={() => scrollBack()}
+                        className="spotlightTextBold"
+                      >
+                        Contactez-moi
+                      </Link>{" "}
                       pour un site web unique et mémorable.
                     </motion.p>
                   ))}
-            </motion.div>
-          </Col>
-          <Col lg={4} sm={4} xs={4} className=" p-0 d-none d-md-block ">
-            <motion.div
-              initial="offscreen"
-              whileInView={"onscreen2"}
-              viewport={{ once: true, amount: 0.8 }}
-              className="d-flex justify-content-center"
-            >
-              <motion.img
-                src={star}
-                variants={cardVariants}
-                className="rrr"
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-              />
             </motion.div>
           </Col>
         </Row>
@@ -121,41 +126,6 @@ function fourthPart({
                 whileInView={"onscreen3"}
                 viewport={{ once: true, amount: 0.8 }}
               >
-                <motion.div
-                  variants={cardVariants}
-                  className="messagedefilant2"
-                >
-                  {isLoading
-                    ? "loading"
-                    : homes.map((item: any) => (
-                        <div
-                          className="noSelect"
-                          key={item.attributes.texteDefile}
-                          data-text={item.attributes.texteDefile}
-                        >
-                          <span className="noSelect">
-                            {" "}
-                            {item.attributes.texteDefile}{" "}
-                          </span>
-                        </div>
-                      ))}
-                </motion.div>
-                <motion.div variants={cardVariants} className="messagedefilant">
-                  {isLoading
-                    ? "loading"
-                    : homes.map((item: any) => (
-                        <div
-                          className="noSelect"
-                          key={item.attributes.texteDefile}
-                          data-text={item.attributes.texteDefile}
-                        >
-                          <span className="noSelect">
-                            {" "}
-                            {item.attributes.texteDefile}{" "}
-                          </span>
-                        </div>
-                      ))}
-                </motion.div>
                 <motion.div
                   variants={cardVariants}
                   className="messagedefilant2"
