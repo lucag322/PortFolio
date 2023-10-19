@@ -18,7 +18,7 @@ import {
 import ArrowDown from "../firstPart/ArrowDown";
 import ScrollText from "../firstPart/ScrollText";
 import { Col, Container, Row } from "react-bootstrap";
-import ArrowUpRightIcon from "./ArrowUpRight";
+import Spline from "@splinetool/react-spline";
 
 function thirdPart({
   projet,
@@ -111,61 +111,22 @@ function thirdPart({
                         id={i}
                       >
                         <div className="projet yrsa  position-relative align-items-center justify-content-center h-100 w-100">
-                          <Container className="projetContentContainer h-100">
+                          <Container
+                            fluid
+                            className="projetContentContainer h-100"
+                          >
                             <Row className="">
-                              <Col className="p-0">
-                                <Container fluid className="h-100">
-                                  <Row className="projet_content_row_one mb-2">
-                                    <Col className="projet_content_col_one p-0">
-                                      <img
-                                        className="projet_img"
-                                        src={`https://back.lucagrousset.eu${item.attributes.miniature.data.attributes.url}`}
-                                        alt=""
-                                      />
-                                      <div className="projet_content_number_wrapper ">
-                                        <div className="projet_content_number">
-                                          <h3 className="projet_title yrsa noSelect">
-                                            {/* item id  */}
-                                            {item.id - 1}
-                                          </h3>
-                                        </div>
-                                      </div>
-                                      <div className=" projet_content_title_wrapper ">
-                                        <div className="projet_content_title">
-                                          <h3
-                                            className="projet_title yrsa noSelect"
-                                            key={item.attributes.title}
-                                          >
-                                            {item.attributes.title}
-                                          </h3>
-                                        </div>
-                                      </div>
-                                    </Col>
-                                  </Row>
-                                  <Row className="projet_content_row_two">
-                                    <Col
-                                      sm={9}
-                                      className="projet_content_col_desc"
-                                    >
-                                      <p
-                                        className="projet_description"
-                                        key={item.attributes.projectDescription}
-                                      >
-                                        {item.attributes.projectDescription}
-                                      </p>
-                                    </Col>
-                                    <Col className="projet_content_col_link d-flex justify-content-end">
-                                      <div
-                                        className="projet_content_link"
-                                        onClick={() =>
-                                          navigate(`project/${item.id}`)
-                                        }
-                                      >
-                                        <ArrowUpRightIcon size={"150px"} />
-                                      </div>
-                                    </Col>
-                                  </Row>
-                                </Container>
+                              <Col className="p-0 d-flex justify-content-center align-items-center col-projet">
+                                <h3 className="projetTitle yrsa noSelect position-absolute">
+                                  {item.attributes.title}
+                                </h3>
+                                <Spline
+                                  scene={
+                                    item.attributes.presentation.data.attributes
+                                      .alternativeText
+                                  }
+                                  className="spline"
+                                />
                               </Col>
                             </Row>
                           </Container>
