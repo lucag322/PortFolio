@@ -6,6 +6,7 @@
 }
 .text-defile {
   height: auto;
+  transform: rotate(350deg);
 }
 
 .fourthPart {
@@ -15,9 +16,10 @@
   position: relative;
 }
 .fourthPart > .container-fluid {
-  min-height: 75vh;
+  min-height: 45vh;
   display: flex;
   align-items: center;
+  padding-top: 5rem;
 }
 
 .image2 {
@@ -25,32 +27,29 @@
 }
 
 .aboutText {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 5vh;
+  font-family: "MoriRegulat";
+  font-size: 3vw !important;
   font-weight: 400;
-  line-height: normal;
+  line-height: 3.5vw;
   color: #001829;
   font-size: 3rem;
 }
 .boldName {
   color: #001829;
 }
-.spotlightText {
+/* .spotlightText {
   background-color: #001829;
   color: white;
-  padding: 0px 1rem;
+  padding: 5px 1rem;
   border-radius: 50px;
 }
 .spotlightTextBorder {
   color: #001829;
   border: 2px solid #001829;
-  padding: 0px 1rem;
+  padding: 5px 1rem;
   border-radius: 50px;
-}
-.spotlightTextBold {
-  font-family: "GatwickBold";
-  color: #001829;
-}
+} */
+
 .spotlightTextBold:hover {
   color: #0061a7;
   cursor: pointer;

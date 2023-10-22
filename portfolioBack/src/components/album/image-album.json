@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_album_image_albums",
+  "info": {
+    "displayName": "imageAlbum"
+  },
+  "options": {},
+  "attributes": {
+    "titleimage": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

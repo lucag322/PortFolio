@@ -60,11 +60,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 10;
 }
 
-.bluemode {
-  background-color: #00233d !important;
-  color: white !important;
-}
-
 .bluemodemenue {
   color: white !important;
 }
@@ -72,15 +67,6 @@ body::-webkit-scrollbar-thumb {
 .bluemodename {
   -webkit-text-stroke: 0px !important;
   color: white !important;
-}
-
-.bluemodedrag {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 3px 12px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .hidde {
@@ -109,4 +95,24 @@ body::-webkit-scrollbar-thumb {
 }
 #error-page {
   height: 100vh;
+}
+
+.bounc-loader {
+  position: absolute;
+  background-color: #ebf6ff;
+  z-index: 10;
+}
+.loaded {
+  display: none;
+}
+
+html,
+body {
+  overflow-y: hidden;
+  background-color: #ebf6ff;
+  width: 100vw !important;
+}
+
+.htmlLoaded {
+  overflow-y: scroll !important;
 }

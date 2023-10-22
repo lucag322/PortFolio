@@ -22,11 +22,13 @@
 }
 .projetContentContainer > .row > .col {
   position: relative;
+  cursor: pointer;
 }
 .projetTitle {
   color: #001829;
-  font-family: "GatwickBold";
-  font-size: 8vw !important;
+  font-family: "MoriBold";
+  font-size: 10vw !important;
+  text-align: center;
 }
 .spline {
   z-index: 1;
@@ -79,7 +81,7 @@
 .card-title {
   text-align: center;
   color: #001829;
-  font-family: "GatwickBold";
+  font-family: "MoriBold";
   font-size: 10rem !important;
   line-height: 10rem !important;
   transition: all 0.4s;

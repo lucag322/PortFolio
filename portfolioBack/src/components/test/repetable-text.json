@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_test_repetable_texts",
+  "info": {
+    "displayName": "repetable_text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "repeatable_text": {
+      "type": "richtext"
+    }
+  }
+}

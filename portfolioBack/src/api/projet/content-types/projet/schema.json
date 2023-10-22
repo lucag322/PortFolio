@@ -15,15 +15,6 @@
     "title": {
       "type": "string"
     },
-    "miniature": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
     "presentation": {
       "type": "media",
       "multiple": false,
@@ -85,6 +76,20 @@
       "type": "component",
       "repeatable": true,
       "component": "imghomepage.img-homme-page"
+    },
+    "Spline_Url": {
+      "type": "string"
+    },
+    "repeatable_zone": {
+      "type": "dynamiczone",
+      "components": [
+        "test.repetable-text",
+        "imghomepage.img-homme-page"
+      ]
+    },
+    "enAvant": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

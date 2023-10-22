@@ -1,19 +1,21 @@
 {
   "collectionName": "components_imghomepage_img_homme_pages",
   "info": {
-    "displayName": "imgHommePage"
+    "displayName": "imgHommePage",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "imgProjectHome": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

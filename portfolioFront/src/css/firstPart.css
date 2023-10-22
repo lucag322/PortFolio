@@ -3,6 +3,16 @@
   src: local("PPGatwick-Bold"),
     url(./../fonts/PPGatwick-Bold.otf) format("opentype");
 }
+@font-face {
+  font-family: "MoriRegulat";
+  src: local("PPMori-Regular"),
+    url(./../fonts/PPMori-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "MoriBold";
+  src: local("PPMori-SemiBold"),
+    url(./../fonts/PPMori-SemiBold.otf) format("opentype");
+}
 .noSelect {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -10,15 +20,15 @@
   user-select: none;
 }
 h2 {
-  font-family: "GatwickBold" !important;
+  font-family: "MoriBold" !important;
 }
 .title {
-  font-size: 10rem;
-  line-height: 9rem;
+  font-size: 9vw;
+  width: fit-content;
 }
 .title3 {
-  font-size: 7rem;
-  line-height: 9rem;
+  font-size: 5vw;
+  width: fit-content;
 }
 
 .firstPart {
@@ -27,7 +37,6 @@ h2 {
   color: #001829;
 }
 .namePart {
-  padding: 5rem 0px 0px 0px;
   color: #001829;
 }
 .favorite {

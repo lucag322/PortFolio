@@ -75,7 +75,7 @@ function fourthPart({
 
   return (
     <section className="fourthPart ">
-      <Container fluid className="py-5 mx-md-4 mx-lg-5 ">
+      <Container fluid className=" mx-md-4 mx-lg-5 ">
         <Row>
           <Col md={8} className="">
             <motion.div
@@ -98,19 +98,6 @@ function fourthPart({
                       <span className="spotlightTextBorder">expériences</span>{" "}
                       utilisateur. J'adore voyager et apprendre de nouvelles
                       choses.{" "}
-                      <Link
-                        activeClass="active"
-                        to={"contacte"}
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        offset={0}
-                        onClick={() => scrollBack()}
-                        className="spotlightTextBold"
-                      >
-                        Contactez-moi
-                      </Link>{" "}
-                      pour un site web unique et mémorable.
                     </motion.p>
                   ))}
             </motion.div>

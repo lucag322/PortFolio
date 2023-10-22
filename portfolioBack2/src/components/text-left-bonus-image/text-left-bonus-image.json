@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_text_left_bonus_image_text_left_bonus_images",
+  "info": {
+    "displayName": "TextLeftBonusImage"
+  },
+  "options": {},
+  "attributes": {
+    "TextLeftBonusImage": {
+      "type": "text"
+    },
+    "ImageBonusTextLeft": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

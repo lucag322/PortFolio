@@ -23,9 +23,11 @@ import Spline from "@splinetool/react-spline";
 function thirdPart({
   projet,
   isLoadingProjet,
+  setSplineLoading,
 }: {
   projet: any;
   isLoadingProjet: boolean;
+  setSplineLoading: any;
 }) {
   const isLoading = isLoadingProjet;
   const { pathname } = useLocation();
@@ -33,6 +35,11 @@ function thirdPart({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  function onLoad(spline: any) {
+    console.log("spline loaded", spline);
+    setSplineLoading(false);
+  }
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -116,16 +123,17 @@ function thirdPart({
                             className="projetContentContainer h-100"
                           >
                             <Row className="">
-                              <Col className="p-0 d-flex justify-content-center align-items-center col-projet">
+                              <Col
+                                className="p-0 d-flex justify-content-center align-items-center col-projet"
+                                onClick={() => navigate(`project/${item.id}`)}
+                              >
                                 <h3 className="projetTitle yrsa noSelect position-absolute">
                                   {item.attributes.title}
                                 </h3>
                                 <Spline
-                                  scene={
-                                    item.attributes.presentation.data.attributes
-                                      .alternativeText
-                                  }
+                                  scene={item.attributes.Spline_Url}
                                   className="spline"
+                                  onLoad={onLoad}
                                 />
                               </Col>
                             </Row>

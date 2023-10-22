@@ -84,7 +84,7 @@ function FirstPart({
     <section className="firstPart">
       <BrowserView>
         <motion.div
-          className="container-fluid text-center"
+          className="container text-center"
           initial="offscreen1"
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
@@ -105,9 +105,7 @@ function FirstPart({
                 variants={rowVariants}
                 className="favorite tryguy noSelect"
               >
-                <h2 className="title3 m-0 fw-light fst-italic">
-                  Your Favorite Developer
-                </h2>
+                <h2 className="title3 m-0 fw-light">Your Favorite Developer</h2>
               </motion.div>
             </Col>
           </Row>
@@ -133,9 +131,7 @@ function FirstPart({
                 )}
               </div>
               <div className="favorite tryguy noSelect">
-                <h2 className="title3 m-0 fw-light fst-italic">
-                  Your Favorite Developer
-                </h2>
+                <h2 className="title3 m-0">Your Favorite Developer</h2>
               </div>
             </Col>
           </Row>
