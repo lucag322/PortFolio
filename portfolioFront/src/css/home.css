@@ -116,3 +116,10 @@ body {
 .htmlLoaded {
   overflow-y: scroll !important;
 }
+
+.fakeLoaderNumber {
+  font-family: "MoriBold";
+  font-size: 8vw;
+  color: #001829;
+  display: inline-block;
+}

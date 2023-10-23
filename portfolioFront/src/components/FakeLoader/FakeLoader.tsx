@@ -42,7 +42,7 @@ const FakeLoader: React.FC<{ fullLoaded: boolean; setFakeLoaderEnd: any }> = ({
 
   return (
     <div className="loader-container">
-      <h3>{formatCount(count)}</h3>
+      <h3 className="fakeLoaderNumber">{formatCount(count)}</h3>
     </div>
   );
 };
